@@ -2,7 +2,6 @@
 
 You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-questions/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-目录	2
 
 第一章 数学基础	1
 
