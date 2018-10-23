@@ -6,15 +6,23 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 请尊重作者的知识产权，版权所有，翻版必究。   2018.6.27  Tan 
 
+寻求有愿意继续完善的朋友、编辑、写手，合作出书；
+
+如有意合作，完善出书（成为共同作者），请联系scutjy2015@163.com
+
+加微信Tan：tan_weixin88
+
+2018.10.23  Tan 
+
 ##############################################################
 
-第一章 数学基础	1
+# 第一章 数学基础	1
 
-第二章 机器学习基础	14
+# 第二章 机器学习基础	14
 
-2.1 各种常见算法图示	14
+- 2.1 各种常见算法图示	14
 
-2.2监督学习、非监督学习、半监督学习、弱监督学习？	15
+- 2.2监督学习、非监督学习、半监督学习、弱监督学习？	15
 
 2.3 监督学习有哪些步骤	16
 
@@ -554,6 +562,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 5.28 简述卷积神经网络进化史	216
 
+
 第六章 循环神经网络(RNN)	218
 
 6.1 RNNs和FNNs有什么区别？	218
@@ -581,6 +590,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 6.6.6 LSTM Netwoorks	224
 
 6.6.7 Clockwork RNNs(CW-RNNs)	225
+
 
 第七章 目标检测	228
 
@@ -631,6 +641,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 7.4.7 YOLOv3	263
 
 7.4.8 YOLOv3改进	264
+
 
 第八章 图像分割	269
 
@@ -698,6 +709,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 8.8.4统一的框架	299
 
+
 第九章 强化学习	301
 
 9.1强化学习的主要特点？	301
@@ -718,6 +730,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 9.9深度强化学习算法小结	307
 
+
 第十章 迁移学习	309
 
 10.1 什么是迁移学习？	309
@@ -733,6 +746,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 10.6 端到端的深度学习有什么挑战？	311
 
 10.7 端到端的深度学习优缺点？	312
+
 
 第十三章 优化算法	314
 
@@ -832,6 +846,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 13.44提升算法性能思路	346
 
+
 第十四章 超参数调整	358
 
 14.1 调试处理	358
@@ -843,6 +858,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 14.4 为超参数选择合适的范围	359
 
 14.5 如何搜索超参数？	359
+
 
 第十五章 正则化	361
 
@@ -871,6 +887,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 15.11 dropout有什么缺点？	363
 
 15.12 其他正则化方法？	364
+
 
 参考文献	366
 
