@@ -18,7 +18,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 # 第一章 数学基础	1
 
-## 第二章 机器学习基础	14
+# 第二章 机器学习基础	14
 
 - 2.1 各种常见算法图示	14
 
