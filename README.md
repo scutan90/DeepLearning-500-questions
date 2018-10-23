@@ -16,13 +16,13 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 ##############################################################
 
-# 第一章 数学基础	1
+## 第一章 数学基础	1
 
-# 第二章 机器学习基础	14
+## 第二章 机器学习基础	14
 
-- 2.1 各种常见算法图示	14
+2.1 各种常见算法图示	14
 
-- 2.2监督学习、非监督学习、半监督学习、弱监督学习？	15
+2.2监督学习、非监督学习、半监督学习、弱监督学习？	15
 
 2.3 监督学习有哪些步骤	16
 
@@ -221,7 +221,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 2.32 四种聚类方法之比较	84
 
 
-第三章 深度学习基础	88
+## 第三章 深度学习基础	88
 3.1基本概念	88
 
 3.1.1神经网络组成？	88
@@ -355,7 +355,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 3.27 Padding 系列问题	128
 
 
-第四章 经典网络	129
+## 第四章 经典网络	129
 
 4.1LetNet5	129
 
@@ -436,7 +436,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 4.9为什么现在的CNN模型都是在GoogleNet、VGGNet或者AlexNet上调整的？	167
 
 
-第五章 卷积神经网络(CNN)	170
+## 第五章 卷积神经网络(CNN)	170
 
 5.1 卷积神经网络的组成层	170
 
@@ -563,7 +563,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 5.28 简述卷积神经网络进化史	216
 
 
-第六章 循环神经网络(RNN)	218
+## 第六章 循环神经网络(RNN)	218
 
 6.1 RNNs和FNNs有什么区别？	218
 
@@ -592,7 +592,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 6.6.7 Clockwork RNNs(CW-RNNs)	225
 
 
-第七章 目标检测	228
+## 第七章 目标检测	228
 
 7.1基于候选区域的目标检测器	228
 
@@ -643,7 +643,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 7.4.8 YOLOv3改进	264
 
 
-第八章 图像分割	269
+## 第八章 图像分割	269
 
 8.1 传统的基于CNN的分割方法缺点？	269
 
@@ -710,7 +710,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 8.8.4统一的框架	299
 
 
-第九章 强化学习	301
+## 第九章 强化学习	301
 
 9.1强化学习的主要特点？	301
 
@@ -731,7 +731,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 9.9深度强化学习算法小结	307
 
 
-第十章 迁移学习	309
+## 第十章 迁移学习	309
 
 10.1 什么是迁移学习？	309
 
@@ -748,7 +748,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 10.7 端到端的深度学习优缺点？	312
 
 
-第十三章 优化算法	314
+## 第十三章 优化算法	314
 
 13.1 CPU和GPU 的区别？	314
 
@@ -847,7 +847,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 13.44提升算法性能思路	346
 
 
-第十四章 超参数调整	358
+## 第十四章 超参数调整	358
 
 14.1 调试处理	358
 
@@ -860,7 +860,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 14.5 如何搜索超参数？	359
 
 
-第十五章 正则化	361
+## 第十五章 正则化	361
 
 15.1 什么是正则化？	361
 
@@ -889,5 +889,5 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 15.12 其他正则化方法？	364
 
 
-参考文献	366
+## 参考文献	366
 
