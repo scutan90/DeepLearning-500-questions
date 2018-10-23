@@ -458,25 +458,25 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 5.3.2扩张卷积	175
 
-5.3.3转置卷积	176
+5.3.3转置卷积	176  
 
 5.3.4可分离卷积	177
 
-5.3 图解12种不同类型的2D卷积？	178
+5.3 图解12种不同类型的2D卷积？	178 
 
-5.4 2D卷积与3D卷积有什么区别？	181
+5.4 2D卷积与3D卷积有什么区别？	181  
 
-5.4.1 2D 卷积	181
+5.4.1 2D 卷积	181  
 
-5.4.2 3D卷积	182
+5.4.2 3D卷积	182  
 
-5.5 有哪些池化方法？	183
+5.5 有哪些池化方法？	183  
 
-5.5.1一般池化（General Pooling）	183
+5.5.1一般池化（General Pooling）	183  
 
-5.5.2重叠池化（OverlappingPooling）	184
+5.5.2重叠池化（OverlappingPooling）	184  
 
-5.5.3空金字塔池化（Spatial Pyramid Pooling）	184
+5.5.3空金字塔池化（Spatial Pyramid Pooling）	184  
 
 5.6 1x1卷积作用？	186
 
