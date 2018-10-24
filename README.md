@@ -16,7 +16,8 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 请联系scutjy2015@163.com　；　加微信Tan：tan_weixin88
 
-微信交流群：《深度学习500问》交流群
+微信交流群：《深度学习500问》交流群  
+
 ![《深度学习500问》交流群二维码](WechatIMG3.jpeg)
 
 2018.10.23  Tan 
