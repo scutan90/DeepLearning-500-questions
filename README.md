@@ -14,9 +14,8 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 如有意合作，完善出书（成为共同作者），
 
-请联系scutjy2015@163.com　；　加微信Tan：
+请联系scutjy2015@163.com　；　加微信Tan：tan_weixin88
 
-群满100人了，新加入的可以加微信号：HQJ199508212176(委托人)
 
 微信交流群：《深度学习500问》交流群  
 
