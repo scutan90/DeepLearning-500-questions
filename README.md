@@ -17,12 +17,9 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 #### 第十章 迁移学习
 ### 感谢以上贡献者1
 
-寻求有愿意继续完善的朋友、编辑、写手，合作出书；
-
-如有意合作，完善出书（成为共同作者），
+寻求有愿意继续完善的朋友、编辑、写手，合作出书；如有意合作，完善出书（成为共同作者），
 
 请联系scutjy2015@163.com　；　加微信Tan：tan_weixin88
-
 
 微信交流群：《深度学习500问》交流群  
 
