@@ -477,7 +477,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 5.3 图解12种不同类型的2D卷积？	178 
 
-5.4 2D卷积与3D卷积有什么区别？	181  
+5.4 2D卷积与3D卷积有什么区别？	181  nao esta certo
 
 5.4.1 2D 卷积	181  
 
