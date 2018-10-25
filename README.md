@@ -30,7 +30,9 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 #### 第一章 数学基础	
 #### 第三章 深度学习基础
 #### 第四章 经典网络
+#### 第八章 图像分割
 #### 第十章 迁移学习
+#### 第十三章 优化算法
 #### 第十四章 超参数
 #### 第十五章 正则化
 ### 感谢以上贡献者1
