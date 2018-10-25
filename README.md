@@ -46,9 +46,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 ## 第二章 机器学习基础	14
 
 2.1 各种常见算法图示	14
-
 2.2监督学习、非监督学习、半监督学习、弱监督学习？	15
-
 2.3 监督学习有哪些步骤	16
 
 2.4 多实例学习？	17
