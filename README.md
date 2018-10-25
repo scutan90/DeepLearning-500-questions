@@ -29,6 +29,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 ### 已提交MD版本章节：
 #### 第一章 数学基础	
 #### 第三章 深度学习基础
+#### 第四章 经典网络
 #### 第十章 迁移学习
 #### 第十四章 超参数
 #### 第十五章 正则化
