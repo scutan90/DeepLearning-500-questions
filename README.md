@@ -38,7 +38,7 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 ##############################################################
 
-请联系scutjy2015@163.com　；　加微信Tan：  
+请联系scutjy2015@163.com　；　加微信Tan：  tan_weixin88
 
 进群请加微信　委托人１：HQJ199508212176　　委托人２：Xuwumin1203　　委托人３：tianyuzy 
 
