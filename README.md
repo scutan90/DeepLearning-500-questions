@@ -36,7 +36,9 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 寻求有愿意继续完善的朋友、编辑、写手，合作出书；如有意合作，完善出书（成为共同作者），
 
-请联系scutjy2015@163.com　；　加微信Tan：  委托人１：HQJ199508212176　　委托人２：Xuwumin1203　　委托人３：tianyuzy 
+请联系scutjy2015@163.com　；　加微信Tan：  
+
+委托人１：HQJ199508212176　　委托人２：Xuwumin1203　　委托人３：tianyuzy 
 
 微信交流群：《深度学习500问》交流群  
 ![《深度学习500问》交流群二维码](/img/WechatIMG3.jpeg) 
