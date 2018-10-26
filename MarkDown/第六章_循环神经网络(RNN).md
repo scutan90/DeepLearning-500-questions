@@ -19,7 +19,7 @@ RNNs的目的使用来处理序列数据。在传统的神经网络模型中，�
 RNNs之所以称为循环神经网路，即一个序列当前的输出与前面的输出也有关。具体的表现形式为网络会对前面的信息进行记忆并应用于当前输出的计算中，即隐藏层之间的节点不再无连接而是有连接的，并且隐藏层的输入不仅包括输入层的输出还包括上一时刻隐藏层的输出。理论上，RNNs能够对任何长度的序列数据进行处理。但是在实践中，为了降低复杂性往往假设当前的状态只与前面的几个状态相关，下图便是一个典型的RNNs：
 
 ![](../img/ch6/figure_6.2_1.png)
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.2_2.jpg)
+![](../img/ch6/figure_6.2_2.jpg)
 
 输入单元(Input units)：输入集$\bigr\{x_0,x_1,...,x_t,x_{t+1},...\bigr\}$，
 输出单元(Output units)：输出集$\bigr\{y_0,y_1,...,y_t,y_{y+1},...\bigr\}$，
@@ -45,7 +45,7 @@ RNNs已经被在实践中证明对NLP是非常成功的。如词向量表达、�
 语音识别是指给一段声波的声音信号，预测该声波对应的某种指定源语言的语句以及该语句的概率值。 
 **（4）图像描述生成 (Generating Image Descriptions)**
 和卷积神经网络(convolutional Neural Networks, CNNs)一样，RNNs已经在对无标图像描述自动生成中得到应用。将CNNs与RNNs结合进行图像描述自动生成。
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.4_1.png)
+![](../img/ch6/figure_6.4_1.png)
 
 ## 6.5 RNNs训练和传统ANN训练异同点？
 **相同点**：同样使用BP误差反向传播算法。
@@ -60,15 +60,15 @@ RNNs已经被在实践中证明对NLP是非常成功的。如词向量表达、�
 ### 6.6.1Simple RNNs(SRNs)
 SRNs是RNNs的一种特例，它是一个三层网络，并且在隐藏层增加了上下文单元，下图中的**y**便是隐藏层，**u**便是上下文单元。上下文单元节点与隐藏层中的节点的连接是固定(谁与谁连接)的，并且权值也是固定的(值是多少)，其实是一个上下文节点与隐藏层节点一一对应，并且值是确定的。在每一步中，使用标准的前向反馈进行传播，然后使用学习算法进行学习。上下文每一个节点保存其连接的隐藏层节点的上一步的输出，即保存上文，并作用于当前步对应的隐藏层节点的状态，即隐藏层的输入由输入层的输出与上一步的自己的状态所决定的。因此SRNs能够解决标准的多层感知机(MLP)无法解决的对序列数据进行预测的任务。 
 SRNs网络结构如下图所示：
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.1_1.png)
+![](../img/ch6/figure_6.6.1_1.png)
 
 ### 6.6.2Bidirectional RNNs
 Bidirectional RNNs(双向网络)的改进之处便是，假设当前的输出(第t步的输出)不仅仅与前面的序列有关，并且还与后面的序列有关。例如：预测一个语句中缺失的词语那么就需要根据上下文来进行预测。Bidirectional RNNs是一个相对较简单的RNNs，是由两个RNNs上下叠加在一起组成的。输出由这两个RNNs的隐藏层的状态决定的。如下图所示：
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.2_1.png)
+![](../img/ch6/figure_6.6.2_1.png)
 
 ### 6.6.3Deep(Bidirectional) RNNs
 Deep(Bidirectional)RNNs与Bidirectional RNNs相似，只是对于每一步的输入有多层网络。这样，该网络便有更强大的表达与学习能力，但是复杂性也提高了，同时需要更多的训练数据。Deep(Bidirectional)RNNs的结构如下图所示：
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.3_1.png)
+![](../img/ch6/figure_6.6.3_1.png)
 
 ### 6.6.4Echo State Networks（ESNs）
 ESNs(回声状态网络)虽然也是一种RNNs，但是它与传统的RNNs相差很大。**ESNs具有三个特点**：
@@ -78,21 +78,21 @@ ESNs(回声状态网络)虽然也是一种RNNs，但是它与传统的RNNs相差
 从结构上讲，ESNs是一种特殊类型的循环神经网络，其基本思想是：使用大规模随机连接的循环网络取代经典神经网络中的中间层，从而简化网络的训练过程。因此ESNs的关键是中间的储备池。网络中的参数包括：W为储备池中节点的连接权值矩阵，Win为输入层到储备池之间的连接权值矩阵，表明储备池中的神经元之间是连接的，Wback为输出层到储备池之间的反馈连接权值矩阵，表明储备池会有输出层来的反馈，Wout为输入层、储备池、输出层到输出层的连接权值矩阵，表明输出层不仅与储备池连接，还与输入层和自己连接。Woutbias表示输出层的偏置项。 
 对于ESNs，关键是储备池的四个参数，如储备池内部连接权谱半径SR(SR=λmax=max{|W的特征指|}，只有SR <1时，ESNs才能具有回声状态属性)、储备池规模N(即储备池中神经元的个数)、储备池输入单元尺度IS(IS为储备池的输入信号连接到储备池内部神经元之前需要相乘的一个尺度因子)、储备池稀疏程度SD(即为储备池中互相连接的神经元个数占储备池神经元总个数的比例)。对于IS，如果需要处理的任务的非线性越强，那么输入单元尺度越大。该原则的本质就是通过输入单元尺度IS，将输入变换到神经元激活函数相应的范围(神经元激活函数的不同输入范围，其非线性程度不同)。
 ESNs的结构如下图所示：
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.4_1.png)
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.4_2.png)
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.4_3.png)
+![](../img/ch6/figure_6.6.4_1.png)
+![](../img/ch6/figure_6.6.4_2.png)
+![](../img/ch6/figure_6.6.4_3.png)
 
 ### 6.6.5Gated Recurrent Unit Recurrent Neural Networks
 GRUs也是一般的RNNs的改良版本，主要是从以下**两个方面**进行改进。
 **一是**，序列中不同的位置处的单词(已单词举例)对当前的隐藏层的状态的影响不同，越前面的影响越小，即每个前面状态对当前的影响进行了距离加权，距离越远，权值越小。
 **二是**，在产生误差error时，误差可能是由某一个或者几个单词而引发的，所以应当仅仅对对应的单词weight进行更新。GRUs的结构如下图所示。GRUs首先根据当前输入单词向量word vector已经前一个隐藏层的状态hidden state计算出update gate和reset gate。再根据reset gate、当前word vector以及前一个hidden state计算新的记忆单元内容(new memory content)。当reset gate为1的时候，new memory content忽略之前的所有memory content，最终的memory是之前的hidden state与new memory content的结合。
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.5_1.png)
+![](../img/ch6/figure_6.6.5_1.png)
 
 ### 6.6.6LSTM Netwoorks
 LSTMs与GRUs类似，目前非常流行。它与一般的RNNs结构本质上并没有什么不同，只是使用了不同的函数去去计算隐藏层的状态。在LSTMs中，i结构被称为cells，可以把cells看作是黑盒用以保存当前输入xt之前的保存的状态ht−1，这些cells更加一定的条件决定哪些cell抑制哪些cell兴奋。它们结合前面的状态、当前的记忆与当前的输入。已经证明，该网络结构在对长序列依赖问题中非常有效。LSTMs的网络结构如下图所示。
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.6_1.png)
+![](../img/ch6/figure_6.6.6_1.png)
 LSTMs与GRUs的区别如图所示：
-![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.6_2.png)
+![](../img/ch6/figure_6.6.6_2.png)
 
 从上图可以看出，它们之间非常相像，**不同在于**：
 （1）new memory的计算方法都是根据之前的state及input进行计算，但是GRUs中有一个reset gate控制之前state的进入量，而在LSTMs里没有这个gate；
