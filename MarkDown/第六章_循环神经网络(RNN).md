@@ -93,6 +93,7 @@ LSTMs与GRUs类似，目前非常流行。它与一般的RNNs结构本质上并�
 ![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.6_1.png)
 LSTMs与GRUs的区别如图所示：
 ![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.6_2.png)
+
 从上图可以看出，它们之间非常相像，**不同在于**：
 （1）new memory的计算方法都是根据之前的state及input进行计算，但是GRUs中有一个reset gate控制之前state的进入量，而在LSTMs里没有这个gate；
 （2）产生新的state的方式不同，LSTMs有两个不同的gate，分别是forget gate (f gate)和input gate(i gate)，而GRUs只有一个update gate(z gate)；
