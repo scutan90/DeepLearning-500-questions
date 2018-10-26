@@ -9,7 +9,7 @@ http://blog.csdn.net/heyongluoyao8/article/details/48636251
 
 
 ##6.1 RNNs和FNNs有什么区别？
-&#160; &#160; &#160; &#160;不同于传统的前馈神经网络(FNNs)，RNNs引入了定向循环，能够处理那些输入之间前后关联的问题。定向循环结构如下图所示：
+    不同于传统的前馈神经网络(FNNs)，RNNs引入了定向循环，能够处理那些输入之间前后关联的问题。定向循环结构如下图所示：
 ![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.1_1.jpg)
 
 ##6.2 RNNs典型特点？
@@ -98,16 +98,3 @@ http://blog.csdn.net/heyongluoyao8/article/details/48636251
 &#160; &#160; &#160; &#160;CW-RNNs与SRNs网络结构类似，也包括输入层(Input)、隐藏层(Hidden)、输出层(Output)，它们之间也有向前连接，输入层到隐藏层的连接，隐藏层到输出层的连接。但是与SRN不同的是，隐藏层中的神经元会被划分为若干个组，设为$g$，每一组中的神经元个数相同，设为$k$，并为每一个组分配一个时钟周期$T_i\epsilon\{T_1,T_2,...,T_g\}$，每一个组中的所有神经元都是全连接，但是组$j$到组$i$的循环连接则需要满足$T_j$大于$T_i$。如下图所示，将这些组按照时钟周期递增从左到右进行排序，即$T_1<T_2<...<T_g$，那么连接便是从右到左。例如：隐藏层共有256个节点，分为四组，周期分别是[1,2,4,8]，那么每个隐藏层组256/4=64个节点，第一组隐藏层与隐藏层的连接矩阵为64$\times$64的矩阵，第二层的矩阵则为64$\times$128矩阵，第三组为64$\times$(3$\times$64)=64$\times$192矩阵，第四组为64$\times$(4$\times$64)=64$\times$256矩阵。这就解释了上一段的后面部分，速度慢的组连到速度快的组，反之则不成立。
   CW-RNNs的网络结构如下图所示： 
 ![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.6.7_1.png)
-
-**参考文献**
-[1] Hinton G E. Learning Distributed Representations of Concepts[C]. Proceedings of the 8th Annual Conference of the Cognitive Science Society. 1986, 1: 12. 
-[2] Elman, J. L. Finding structure in time. CRL Technical Report 8801, Center for Research in Language, University 
-of California, San Diego, 1988. 
-[3] Schuster M, Paliwal K K. Bidirectional recurrent neural networks[J]. Signal Processing, IEEE Transactions on, 1997, 45(11): 2673-2681. 
-[4] Graves A, Mohamed A R, Hinton G. Speech Recognition with Deep Recurrent Neural Networks[J]. Acoustics Speech & Signal Processing . icassp. international Conference on, 2013:6645 - 6649. 
-[5] Jaeger H, Haas H. Harnessing nonlinearity: Predicting chaotic systems and saving energy in wireless communication[J]. Science, 2004, 304(5667): 78-80. 
-[6] Cho K, Van Merrienboer B, Gulcehre C, et al. Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation[J]. Eprint Arxiv, 2014. 
-[7] Hochreiter S, Schmidhuber J. Long short-term memory.[J]. Neural Computation, 1997, 9(8):1735-1780. 
-[8] Chung J, Gulcehre C, Cho K H, et al. Empirical evaluation of gated recurrent neural networks on sequence modeling[J]. arXiv preprint arXiv:1412.3555, 2014. 
-[9] Jan Koutnik, Klaus Greff, Faustino Gomez, Juergen Schmidhuber. A Clockwork RNN[J]. Proceedings of The 31st International Conference on Machine Learning, pp. 1863–1871, 2014. 
-[10] Sutskever, Ilya, Martens, James, Dahl, George E., and Hinton, Geoffrey E. On the importance of initialization and momentum in deep learning. In Dasgupta, Sanjoy and Mcallester, David (eds.), Proceedings of the 30th International Conference on Machine Learning (ICML-13), volume 28, pp. 1139–1147.
