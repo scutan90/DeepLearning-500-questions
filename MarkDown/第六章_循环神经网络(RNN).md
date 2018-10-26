@@ -11,14 +11,18 @@ http://blog.csdn.net/heyongluoyao8/article/details/48636251
 ##6.1 RNNs和FNNs有什么区别？
 
 不同于传统的前馈神经网络(FNNs)，RNNs引入了定向循环，能够处理那些输入之间前后关联的问题。定向循环结构如下图所示：
+
 ![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.1_1.jpg)
 
 ##6.2 RNNs典型特点？
 
 RNNs的目的使用来处理序列数据。在传统的神经网络模型中，是从输入层到隐含层再到输出层，层与层之间是全连接的，每层之间的节点是无连接的。但是这种普通的神经网络对于很多问题却无能无力。例如，你要预测句子的下一个单词是什么，一般需要用到前面的单词，因为一个句子中前后单词并不是独立的。
 &#160; &#160; &#160; &#160;RNNs之所以称为循环神经网路，即一个序列当前的输出与前面的输出也有关。具体的表现形式为网络会对前面的信息进行记忆并应用于当前输出的计算中，即隐藏层之间的节点不再无连接而是有连接的，并且隐藏层的输入不仅包括输入层的输出还包括上一时刻隐藏层的输出。理论上，RNNs能够对任何长度的序列数据进行处理。但是在实践中，为了降低复杂性往往假设当前的状态只与前面的几个状态相关，下图便是一个典型的RNNs：
+
 ![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.2_1.png)
+
 ![](https://github.com/tectal/DeepLearning-500-questions/blob/master/img/ch6/figure_6.2_2.jpg)
+
 输入单元(Input units)：输入集$\bigr\{x_0,x_1,...,x_t,x_{t+1},...\bigr\}$，
 输出单元(Output units)：输出集$\bigr\{y_0,y_1,...,y_t,y_{y+1},...\bigr\}$，
 隐藏单元(Hidden units)：输出集$\bigr\{s_0,s_1,...,s_t,s_{t+1},...\bigr\}$。
@@ -30,7 +34,8 @@ RNNs的目的使用来处理序列数据。在传统的神经网络模型中，�
 
 
 ##6.3RNNs能干什么？
-&#160; &#160; &#160; &#160;RNNs已经被在实践中证明对NLP是非常成功的。如词向量表达、语句合法性检查、词性标注等。在RNNs中，目前使用最广泛最成功的模型便是LSTMs(Long Short-Term Memory，长短时记忆模型)模型，该模型通常比 vanilla RNNs 能够更好地对长短时依赖进行表达，该模型相对于一般的RNNs，只是在隐藏层做了改变。
+
+RNNs已经被在实践中证明对NLP是非常成功的。如词向量表达、语句合法性检查、词性标注等。在RNNs中，目前使用最广泛最成功的模型便是LSTMs(Long Short-Term Memory，长短时记忆模型)模型，该模型通常比 vanilla RNNs 能够更好地对长短时依赖进行表达，该模型相对于一般的RNNs，只是在隐藏层做了改变。
 
 
 ##6.4 RNNs在NLP中典型应用？
