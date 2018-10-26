@@ -10,7 +10,6 @@ http://blog.csdn.net/heyongluoyao8/article/details/48636251
 ## 6.1 RNNs和FNNs有什么区别？
 
 不同于传统的前馈神经网络(FNNs)，RNNs引入了定向循环，能够处理那些输入之间前后关联的问题。定向循环结构如下图所示：
-
 ![](../img/ch6/figure_6.1_1.jpg)
 
 ## 6.2 RNNs典型特点？
