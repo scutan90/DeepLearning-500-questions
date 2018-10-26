@@ -44,14 +44,14 @@ RNNs已经被在实践中证明对NLP是非常成功的。如词向量表达、�
 **（1）语言模型与文本生成(Language Modeling and Generating Text)**
 
 给一个单词序列，需要根据前面的单词预测每一个单词的可能性。语言模型能够一个语句正确的可能性，这是机器翻译的一部分，往往可能性越大，语句越正确。另一种应用便是使用生成模型预测下一个单词的概率，从而生成新的文本根据输出概率的采样。
+
 **（2）机器翻译(Machine Translation)**
-
 机器翻译是将一种源语言语句变成意思相同的另一种源语言语句，如将英语语句变成同样意思的中文语句。与语言模型关键的区别在于，需要将源语言语句序列输入后，才进行输出，即输出第一个单词时，便需要从完整的输入序列中进行获取。
+
 **（3）语音识别(Speech Recognition)**
-
 语音识别是指给一段声波的声音信号，预测该声波对应的某种指定源语言的语句以及该语句的概率值。 
-**（4）图像描述生成 (Generating Image Descriptions)**
 
+**（4）图像描述生成 (Generating Image Descriptions)**
 和卷积神经网络(convolutional Neural Networks, CNNs)一样，RNNs已经在对无标图像描述自动生成中得到应用。将CNNs与RNNs结合进行图像描述自动生成。
 ![](../img/ch6/figure_6.4_1.png)
 
@@ -118,7 +118,9 @@ LSTMs与GRUs的区别如图所示：
 从上图可以看出，它们之间非常相像，**不同在于**：
 
 （1）new memory的计算方法都是根据之前的state及input进行计算，但是GRUs中有一个reset gate控制之前state的进入量，而在LSTMs里没有这个gate；
+
 （2）产生新的state的方式不同，LSTMs有两个不同的gate，分别是forget gate (f gate)和input gate(i gate)，而GRUs只有一个update gate(z gate)；
+
 （3）LSTMs对新产生的state又一个output gate(o gate)可以调节大小，而GRUs直接输出无任何调节。
 
 ### 6.6.7Clockwork RNNs(CW-RNNs)
