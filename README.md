@@ -1,7 +1,3 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-questions/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
 ##############################################################
 
 请尊重作者的知识产权，版权所有，翻版必究。   2018.6.27  Tan 
@@ -27,6 +23,22 @@ You can use the [editor on GitHub](https://github.com/scutan90/DeepLearning-500-
 
 
 ### 已提交MD版本章节：请查看MarkDown
+第一章 数学基础
+第二章 机器学习基础
+第三章 深度学习基础
+第四章 经典网络
+第五章 卷积神经网络CNN
+第六章 循环神经网络RNN
+第七章 生成对抗网络GAN
+第八章 目标检测
+第九章 图像分割
+第十章 强化学习
+第十一章 迁移学习
+第十二章 网络搭建及训练
+第十三章 优化算法
+第十四章 超参数调整
+第十五章 GPU和框架选型
+第十六章 NLP（待定）
 
 寻求有愿意继续完善的朋友、编辑、写手；如有意合作，完善出书（成为共同作者）
 
