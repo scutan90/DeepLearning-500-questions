@@ -509,3 +509,4 @@
 15.11 dropout有什么缺点？	363  
 15.12 其他正则化方法？	364  
 ## 参考文献	366  
+hey you are looked like a cool developer.
