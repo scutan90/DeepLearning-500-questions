@@ -512,3 +512,4 @@ scutjy2015@163.com　(唯一官方邮箱)；现出现不法分子冒充发起人
 15.12 其他正则化方法？	364  
 ## 参考文献	366  
 hey you are looked like a cool developer.
+Translate it in english.
