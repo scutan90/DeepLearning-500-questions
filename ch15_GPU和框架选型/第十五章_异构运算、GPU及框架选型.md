@@ -58,6 +58,20 @@
 * Caffe2
 
 * MxNet
+MxNet是dmlc社区推出的深度学习框架，MXNet由学术界发起，包括数个顶尖大学的多个学科的研究人员的贡献，在2017年被亚马逊指定为官方框架。
+mxnet的最知名的优点就是其对多GPU的支持和扩展性强，其优秀的性能使之在工业界占有一席之地，在amazon支持之后，其文档和开发进度明显好很多。除了高可扩展性，MXNet 还提供混合编程模型（命令式和声明式），同时兼容多种编程语言（包括 Python、C ++、R、Scala、Julia、Matlab 和 JavaScript）的代码，目前主要在推python高层接口gluon
+
+优点： 
+（1）多GPU支持好，扩展性强，支持多种编程语言接口，主要是由华人团队开发，中文社区活跃，中文文档资源和课程丰富
+（2）针对两大热门领域推出gluoncv和gluonNLP模块，复现经典论文，达到State-of-the-art，接口设计简单，文档齐全，拿来就可以用
+缺点:  
+（1）现在mxnet官方社区主要在推gluon接口，接口稍有混乱，坑较多，入手门槛稍高
+（2）偏小众，经典网络和项目的开源实现相对于tensorflow和pytorch还是比较少，很多还是需要自己手动实现
+相关资源链接：
+1，官方教程：http://mxnet.incubator.apache.org 提供有快速入门教程和详细文档说明  
+2，中文教程：http://zh.gluon.ai/ 官方的中文教程，此课程有对应的中文版视频，主要由李沐大神讲课  
+3，中文论坛：https://discuss.gluon.ai/ 官方发中文论坛，mxnet的主要作者都在这里，论坛比较活跃，可及时得到作者的回答  
+4，基于mxnet的开源实现：https://github.com/chinakook/Awesome-MXNet  这里主要列举了mxnet在各个领域的项目的开源实现  
 
 * CNTK
 
