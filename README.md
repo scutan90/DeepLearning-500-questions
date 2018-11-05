@@ -57,7 +57,7 @@
 |<font size="2">第十四章 超参数调整</font>|<font size="2">中兴通讯有限公司算法工程师－王超锋</font>|<font size="2">可加</font>|
 |<font size="2">第十五章 GPU和框架选型</font>|<font size="2">澳洲monash大学Research Scientist/Telstra(澳洲电信)Data Scientist-钟申俊博士；平安科技算法工程师-崔永明</font>|<font size="2">可加</font>|
 |<font size="2">第十六章 自然语言处理NLP</font>|<font size="2">电子科技大学博士-盛泳潘；深圳乌灵图明科技有限公司CTO-何建宏;DaoCloud研发工程师-张善干；澳洲monash大学Research Scientist/Telstra(澳洲电信)Data Scientist-钟申俊博士；华南理工大学&UCI博士-黄振华</font>||
-|<font size="2">第十七章 移动端框架部署（新增）                                         </font>|<font size="2">川大硕士-顺丰科技-谈继勇；贵州大学硕士-三星-张达峰</font>|<font size="2">可加</font>|
+|<font size="2">第十七章 移动端框架部署（新增）                                         </font>|<font size="2">川大硕士-顺丰科技-谈继勇；贵州大学硕士-三星-张达峰</font>|<font size="2">可加   </font>|
 
 
 # 5. 更多
