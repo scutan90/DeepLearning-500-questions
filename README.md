@@ -41,23 +41,23 @@
 
 | 内容              |  负责人   | 状态|
 | :--------------- | :-------- | :--------|
-|<font size="2">第一章 数学基础</font>|<font size="2">哈工大博士-袁笛</font>| <font size="2">待定</font> |
-|<font size="2">第二章 机器学习</font>|<font size="2">稿定科技计算机视觉工程师-刘鹏</font>|<font size="2">待定</font>|
-|<font size="2">第三章 深度学习基础</font>|<font size="2">同济大学研究生-乔成磊；稿定科技计算机视觉工程师-刘鹏</font>|<font size="2">可加</font>|
-|<font size="2">第四章 经典网络</font>|<font size="2">华南理工研究生-黄钦建</font>|<font size="2">可加</font>|
-|<font size="2">第五章 卷积神经网络CNN</font> |<font size="2">杜克大学硕士、data scientist李骁丹；重庆大学研究生-刘畅；铪星创新科技联合创始人-杨文英；</font>|<font size="2">可加</font>|
-|<font size="2">第六章 循环神经网络RNN</font>|<font size="2">杜克大学硕士、data scientist李骁丹</font>|<font size="2">可加</font>|
-|<font size="2">第七章 生成对抗网络GAN</font>|<font size="2">牛津大学博士泽华；中科院硕士、爱奇艺算法工程师-郭晓锋；</font>||
-|<font size="2">第八章 目标检测</font>|<font size="2">稿定科技计算机视觉工程师-刘鹏；哈工大博士袁笛；上海大学研究生-陈方杰</font>||
-|<font size="2">第九章 图像分割</font>|<font size="2">华南理工研究生-黄钦建；电子科大研究生-孙洪卫、张越；中国农业科学院-杨国峰</font>||
-|<font size="2">第十章 强化学习</font>|<font size="2">复旦大学研究生明杰，杭州启飞CTO-徐武民</font>|<font size="2">可加</font>|
-|<font size="2">第十一章 迁移学习</font>|<font size="2">中科院计算技术研究所博士－王晋东</font>|<font size="2">可加</font>|
-|<font size="2">第十二章 网络搭建及训练</font>|    |<font size="2">待定</font>|
-|<font size="2">第十三章 优化算法</font>|<font size="2">杭州启飞CTO-徐武民</font>|<font size="2">可加</font>|
-|<font size="2">第十四章 超参数调整</font>|<font size="2">中兴通讯有限公司算法工程师－王超锋</font>|<font size="2">可加</font>|
-|<font size="2">第十五章 GPU和框架选型</font>|<font size="2">澳洲monash大学Research Scientist/Telstra(澳洲电信)Data Scientist-钟申俊博士；平安科技算法工程师-崔永明</font>|<font size="2">可加</font>|
-|<font size="2">第十六章 自然语言处理NLP</font>|<font size="2">电子科技大学博士-盛泳潘；深圳乌灵图明科技有限公司CTO-何建宏;DaoCloud研发工程师-张善干；澳洲monash大学Research Scientist/Telstra(澳洲电信)Data Scientist-钟申俊博士；华南理工大学&UCI博士-黄振华</font>||
-|<font size="2">第十七章 移动端框架部署（新增）                                         </font>|<font size="2">川大硕士-顺丰科技-谈继勇；贵州大学硕士-三星-张达峰</font>|<font size="2">可加   </font>|
+|<font size="1">第一章 数学基础</font>|<font size="1">哈工大博士-袁笛</font>| <font size="1">待定</font> |
+|<font size="1">第二章 机器学习</font>|<font size="1">稿定科技计算机视觉工程师-刘鹏</font>|<font size="1">待定</font>|
+|<font size="1">第三章 深度学习基础</font>|<font size="1">同济大学研究生-乔成磊；稿定科技计算机视觉工程师-刘鹏</font>|<font size="1">可加</font>|
+|<font size="1">第四章 经典网络</font>|<font size="1">华南理工研究生-黄钦建</font>|<font size="1">可加</font>|
+|<font size="1">第五章 卷积神经网络CNN</font> |<font size="1">杜克大学硕士、data scientist李骁丹；重庆大学研究生-刘畅；铪星创新科技联合创始人-杨文英；</font>|<font size="2">可加</font>|
+|<font size="1">第六章 循环神经网络RNN</font>|<font size="1">杜克大学硕士、data scientist李骁丹</font>|<font size="1">可加</font>|
+|<font size="1">第七章 生成对抗网络GAN</font>|<font size="1">牛津大学博士泽华；中科院硕士、爱奇艺算法工程师-郭晓锋；</font>||
+|<font size="1">第八章 目标检测</font>|<font size="1">稿定科技计算机视觉工程师-刘鹏；哈工大博士袁笛；上海大学研究生-陈方杰</font>||
+|<font size="1">第九章 图像分割</font>|<font size="1">华南理工研究生-黄钦建；电子科大研究生-孙洪卫、张越；中国农业科学院-杨国峰</font>||
+|<font size="1">第十章 强化学习</font>|<font size="1">复旦大学研究生明杰，杭州启飞CTO-徐武民</font>|<font size="1">可加</font>|
+|<font size="1">第十一章 迁移学习</font>|<font size="1">中科院计算技术研究所博士－王晋东</font>|<font size="1">可加</font>|
+|<font size="1">第十二章 网络搭建及训练</font>|    |<font size="1">待定</font>|
+|<font size="1">第十三章 优化算法</font>|<font size="2">杭州启飞CTO-徐武民</font>|<font size="1">可加</font>|
+|<font size="1">第十四章 超参数调整</font>|<font size="1">中兴通讯有限公司算法工程师－王超锋</font>|<font size="1">可加</font>|
+|<font size="1">第十五章 GPU和框架选型</font>|<font size="1">澳洲monash大学Research Scientist/Telstra(澳洲电信)Data Scientist-钟申俊博士；平安科技算法工程师-崔永明</font>|<font size="1">可加</font>|
+|<font size="1">第十六章 自然语言处理NLP</font>|<font size="1">电子科技大学博士-盛泳潘；深圳乌灵图明科技有限公司CTO-何建宏;DaoCloud研发工程师-张善干；澳洲monash大学Research Scientist/Telstra(澳洲电信)Data Scientist-钟申俊博士；华南理工大学&UCI博士-黄振华</font>||
+|<font size="1">第十七章 移动端框架部署（新增）                                         </font>|<font size="1">川大硕士-顺丰科技-谈继勇；贵州大学硕士-三星-张达峰</font>|<font size="1">可加   </font>|
 
 
 # 5. 更多
