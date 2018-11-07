@@ -94,43 +94,46 @@ Nvidia一般每一两年发布一次新版本的GPU，例如2017年发布的是G
 （1）官网下载，地址  
 cuda8.0  https://developer.nvidia.com/cuda-80-ga2-download-archive  
 cuda9.0  https://developer.nvidia.com/cuda-90-download-archive  
-进入网址之后选择对应的系统版本即可，如下图所示：
+进入网址之后选择对应的系统版本即可，如下图所示：  
 ![cuda8.0](./img/ch15/cuda8.0.png)  
+
 ![cuda9.0](./img/ch15/cuda9.0.png)  
 
-（2）命令行中进入到cuda所在的位置，授予运行权限：
-cuda8.0:   sudo chmod +x cuda_8.0.61_375.26_linux.run
-cuda9.0:    sudo chmod +x cuda_9.0.176_384.81_linux.run
+（2）命令行中进入到cuda所在的位置，授予运行权限：  
+cuda8.0:   sudo chmod +x cuda_8.0.61_375.26_linux.run  
+cuda9.0:    sudo chmod +x cuda_9.0.176_384.81_linux.run  
 
-（3）执行命令安装cuda：
-cuda8.0:    sudo sh cuda_8.0.61_375.26_linux.run
-cuda9.0:    sudo sh cuda_9.0.176_384.81_linux.run
-之后命令之后下面就是安装步骤，cuda8.0和cuda9.0几乎一致：
-1） 首先出现cuda软件的版权说明，可以直接按q键跳过阅读
+（3）执行命令安装cuda：  
+cuda8.0:    sudo sh cuda_8.0.61_375.26_linux.run  
+cuda9.0:    sudo sh cuda_9.0.176_384.81_linux.run  
+之后命令之后下面就是安装步骤，cuda8.0和cuda9.0几乎一致：  
+  1） 首先出现cuda软件的版权说明，可以直接按q键跳过阅读  
+  
 
-2） Do you accept the previously read EULA?
-accept/decline/quit:   **accept**
+  2） Do you accept the previously read EULA?  
+      accept/decline/quit:   **accept**
 
-3)   Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?
-(y)es/(n)o/(q)uit:  **no**
+  3） Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?  
+      (y)es/(n)o/(q)uit:  **no**  
+            
+  4） Install the CUDA 9.0 Toolkit?  
+      (y)es/(n)o/(q)uit:  **yes**  
+      
+  5） Enter Toolkit Location  
+     [ default is /usr/local/cuda-9.0 ]:  直接按enter键即可
 
-4） Install the CUDA 9.0 Toolkit?
-(y)es/(n)o/(q)uit:  **yes**
+  6） Do you want to install a symbolic link at /usr/local/cuda?  
+      (y)es/(n)o/(q)uit:  **yes**  
 
-5) Enter Toolkit Location
- [ default is /usr/local/cuda-9.0 ]:    直接按enter键即可
-
-6）Do you want to install a symbolic link at /usr/local/cuda?
-(y)es/(n)o/(q)uit:  **yes**
-
-7)   Install the CUDA 9.0 Samples?
-(y)es/(n)o/(q)uit:  **yes**
-
-以上步骤基本就是cuda的安装步骤。
+  7） Install the CUDA 9.0 Samples?  
+     (y)es/(n)o/(q)uit:  **yes**  
+     
+以上步骤基本就是cuda的安装步骤。  
 
 
-2，安装cudnn
-cudnn是nvidia的专门针对深度学习的加速库。。。
+2，安装cudnn  
+cudnn是nvidia的专门针对深度学习的加速库。。。  
+
 
 ### 15.6.3 本机安装还是使用docker？
 
