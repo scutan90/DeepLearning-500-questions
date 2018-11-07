@@ -94,8 +94,9 @@ Nvidia一般每一两年发布一次新版本的GPU，例如2017年发布的是G
 （1）官网下载，地址  
 cuda8.0  https://developer.nvidia.com/cuda-80-ga2-download-archive  
 cuda9.0  https://developer.nvidia.com/cuda-90-download-archive  
-进入网址之后选择对应的系统版本即可，如下图所示：
+进入网址之后选择对应的系统版本即可，如下图所示：  
 ![cuda8.0](./img/ch15/cuda8.0.png)  
+
 ![cuda9.0](./img/ch15/cuda9.0.png)  
 
 （2）命令行中进入到cuda所在的位置，授予运行权限：
