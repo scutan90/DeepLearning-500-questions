@@ -113,21 +113,19 @@ cuda9.0:    sudo sh cuda_9.0.176_384.81_linux.run
   2） Do you accept the previously read EULA?  
       accept/decline/quit:   **accept**
 
-  3)  Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?  
+  3） Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?  
       (y)es/(n)o/(q)uit:  **no**  
-      
-      
+            
   4） Install the CUDA 9.0 Toolkit?  
       (y)es/(n)o/(q)uit:  **yes**  
       
-
-  5) Enter Toolkit Location  
+  5） Enter Toolkit Location  
      [ default is /usr/local/cuda-9.0 ]:  直接按enter键即可
 
-  6）Do you want to install a symbolic link at /usr/local/cuda?  
-     (y)es/(n)o/(q)uit:  **yes**  
+  6） Do you want to install a symbolic link at /usr/local/cuda?  
+      (y)es/(n)o/(q)uit:  **yes**  
 
-  7) Install the CUDA 9.0 Samples?  
+  7） Install the CUDA 9.0 Samples?  
      (y)es/(n)o/(q)uit:  **yes**  
      
 以上步骤基本就是cuda的安装步骤。  
