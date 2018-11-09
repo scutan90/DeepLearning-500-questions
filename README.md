@@ -40,7 +40,7 @@
 | 内容              |  负责人   | 状态|
 | :--------------- | :-------- | :--------|
 |<font size="1">第一章 数学基础</font>|<font size="1">哈工大博士-袁笛</font>| <font size="1">待定</font> |
-|<font size="1">第二章 机器学习</font>|<font size="1">稿定科技计算机视觉工程师-刘鹏</font>|<font size="1">待定</font>|
+|<font size="1">第二章 机器学习</font>|<font size="1">稿定科技计算机视觉工程师-刘鹏；魅族科技有限公司-梁志成</font>|<font size="1">待定</font>|
 |<font size="1">第三章 深度学习基础</font>|<font size="1">同济大学研究生-乔成磊；稿定科技计算机视觉工程师-刘鹏</font>|<font size="1">可加</font>|
 |<font size="1">第四章 经典网络</font>|<font size="1">华南理工研究生-黄钦建</font>|<font size="1">可加</font>|
 |<font size="1">第五章 卷积神经网络CNN</font> |<font size="1">杜克大学硕士、data scientist李骁丹；重庆大学研究生-刘畅；铪星创新科技联合创始人-杨文英；</font>|<font size="2">可加</font>|
