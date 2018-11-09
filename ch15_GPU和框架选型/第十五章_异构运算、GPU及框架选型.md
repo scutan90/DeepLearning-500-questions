@@ -77,19 +77,67 @@ Nvidia有面向个人用户（例如GTX系列）和企业用户（例如Tesla系
 Nvidia一般每一两年发布一次新版本的GPU，例如2017年发布的是GTX 1000系列。每个系列中会有数个不同的型号，分别对应不同的性能。
 
 ## 15.6 软件环境搭建
-深度学习其实就是指基于一套完整的软件系统来构建算法，训练模型，如何搭建一套完整的软件系统，比如操作系统的选择？安装环境中遇到的问题等等，本节做一个简单的总结。
+深度学习其实就是指基于一套完整的软件系统来构建算法，训练模型。如何搭建一套完整的软件系统，比如操作系统的选择？安装环境中遇到的问题等等，本节做一个简单的总结。
 
 ### 15.6.1 操作系统选择？
-针对硬件厂商来说，比如NVIDIA，对各个操作系统的支持都是比较好的 ，比如windows10,linux系列，但是由于linux系统对专业技术人员是非常友好的，所以目前几乎所有的深度学习系统构建都是基于linux的，比较常用的系统如ubuuntu系列，centos系列等等。
+针对硬件厂商来说，比如NVIDIA，对各个操作系统的支持都是比较好的 ，比如windows系列,linux系列，但是由于linux系统对专业技术人员比较友好，所以目前几乎所有的深度学习系统构建都是基于linux的，比较常用的系统如ubuuntu系列，centos系列等等。
 在构建系统的时候，如何选择合适的操作系是一个刚刚入门深度学习的工作者面临的问题，在这里给出几点建议：  
-（1）刚刚入门，熟悉windows系统，但是对linux和深度学习都不太熟，这个时候可以基于windows10等系统来做入门学习  
-（2）简单了解linux的使用，不太懂深度学习相关知识，可以直接基于linux系统来搭建框架，跑一些开源的项目，慢慢研究
-（3）熟悉linux，毫无疑问，强烈推荐使用linux系统，安装软件简单，工作效率高
+（1）刚刚入门，熟悉windows系统，但是对linux和深度学习都不太熟，这个时候可以基于windows系列系统来做入门学习  
+（2）简单了解linux的使用，不太懂深度学习相关知识，可以直接基于linux系统来搭建框架，跑一些开源的项目，慢慢深入研究学习  
+（3）熟悉linux，不熟悉深度学习理论，毫无疑问，强烈推荐使用linux系统，安装软件简单，工作效率高
 总之一句话，如果不熟悉linux，就先慢慢熟悉，最终还是要回归到linux系统来构建深度学习系统  
 
-### 15.6.2 本机安装还是使用docker？
+### 15.6.2 常用基础软件安装？
+目前有众多深度学习框架可供大家使用，但是所有框架基本都有一个共同的特点，目前几乎都是基于nvidia的gpu来训练模型，要想更好的使用nvidia的gpu，cuda和cudnn就是必备的软件安装。
+1，安装cuda
+上文中有关于cuda的介绍，这里只是简单介绍基于linux系统安装cuda的具体步骤，可以根据自己的需要安装cuda8.0或者cuda9.0，这两种版本的安装步骤基本一致，这里以最常用的ubuntu 16.04 lts版本为例：
+（1）官网下载，地址  
+cuda8.0  https://developer.nvidia.com/cuda-80-ga2-download-archive  
+cuda9.0  https://developer.nvidia.com/cuda-90-download-archive  
+进入网址之后选择对应的系统版本即可，如下图所示：  
+![cuda8.0](./img/ch15/cuda8.0.png)  
 
-### 15.6.3 GPU驱动问题
+![cuda9.0](./img/ch15/cuda9.0.png)  
+
+（2）命令行中进入到cuda所在的位置，授予运行权限：  
+cuda8.0:   sudo chmod +x cuda_8.0.61_375.26_linux.run  
+cuda9.0:    sudo chmod +x cuda_9.0.176_384.81_linux.run  
+
+（3）执行命令安装cuda：  
+cuda8.0:    sudo sh cuda_8.0.61_375.26_linux.run  
+cuda9.0:    sudo sh cuda_9.0.176_384.81_linux.run  
+之后命令之后下面就是安装步骤，cuda8.0和cuda9.0几乎一致：  
+  1） 首先出现cuda软件的版权说明，可以直接按q键跳过阅读  
+  
+
+  2） Do you accept the previously read EULA?  
+      accept/decline/quit:   **accept**
+
+  3） Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?  
+      (y)es/(n)o/(q)uit:  **no**  
+            
+  4） Install the CUDA 9.0 Toolkit?  
+      (y)es/(n)o/(q)uit:  **yes**  
+      
+  5） Enter Toolkit Location  
+     [ default is /usr/local/cuda-9.0 ]:  直接按enter键即可
+
+  6） Do you want to install a symbolic link at /usr/local/cuda?  
+      (y)es/(n)o/(q)uit:  **yes**  
+
+  7） Install the CUDA 9.0 Samples?  
+     (y)es/(n)o/(q)uit:  **yes**  
+     
+以上步骤基本就是cuda的安装步骤。  
+
+
+2，安装cudnn  
+cudnn是nvidia的专门针对深度学习的加速库。。。  
+
+
+### 15.6.3 本机安装还是使用docker？
+
+### 15.6.4 GPU驱动问题
 
 ## 15.7 框架选择
 
@@ -102,6 +150,13 @@ Nvidia一般每一两年发布一次新版本的GPU，例如2017年发布的是G
 * Tensorflow
 
 * PyTorch
+pytorch是Facebook于2017年才推出的深度学习框架，相对于其它框架，算是比较晚的了，但是这个同时也是优势，在设计的时候就会避免很多之前框架的问题，所以一经推出，就收到大家极大的欢迎
+优点：接口简洁且规范，和python无缝结合，代码设计优秀且易懂，社区非常活跃，官方修复bug及时  
+缺点:  目前模型在工业界部署相对其它框架稍有劣势，不过后续的pytorch1.0版本应该会有很大改善，和caffe2合并后，caffe2的优秀的模型部署能力可以弥补这个不足  
+相关资源链接：  
+（1）官网教程：https://pytorch.org/tutorials/  
+（2）基于pytorch的开源项目汇总：https://github.com/bharathgs/Awesome-pytorch-list  
+（3）
 
 * Keras
 
@@ -158,7 +213,7 @@ mxnet的最知名的优点就是其对多GPU的支持和扩展性强，其优秀
 
 * Tensorflow 
 
-* PyTorch
+* PyTorch  
 
 
 ### 15.8.2 是不是可以分布式训练？
@@ -234,9 +289,7 @@ keras是一种高层编程接口，其可以选择不同的后端，比如tensor
 缺点:   封装的太好了导致不理解其技术细节
 
 3,pytorch:  
-pytorch是Facebook于2017年才推出的深度学习框架，相对于其它框架，算是比较晚的了，但是这个同时也是优势，在设计的时候就会避免很多之前框架的问题，所以一经推出，就收到大家极大的欢迎
-优点：接口简洁且规范，和python无缝结合，代码设计优秀且易懂，社区非常活跃，官方修复bug及时  
-缺点:  目前模型在工业界部署相对其它框架稍有劣势，不过后续的pytorch1.0版本应该会有很大改善，和caffe2合并后，caffe2的优秀的模型部署能力可以弥补这个不足
+
 
 4,caffe2:  
 caffe2是在caffe之后的第二代版本，同属于Facebook。。。
