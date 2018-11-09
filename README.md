@@ -40,7 +40,7 @@
 | 内容              |  负责人   | 状态|
 | :--------------- | :-------- | :--------|
 |<font size="1">第一章 数学基础</font>|<font size="1">哈工大博士-袁笛</font>| <font size="1">待定</font> |
-|<font size="1">第二章 机器学习</font>|<font size="1">稿定科技计算机视觉工程师-刘鹏；魅族科技有限公司-梁志成</font>|<font size="1">待定</font>|
+|<font size="1">第二章 机器学习</font>|<font size="1">稿定科技计算机视觉工程师-刘鹏；魅族科技-梁志成</font>|<font size="1">待定</font>|
 |<font size="1">第三章 深度学习基础</font>|<font size="1">同济大学研究生-乔成磊；稿定科技计算机视觉工程师-刘鹏</font>|<font size="1">可加</font>|
 |<font size="1">第四章 经典网络</font>|<font size="1">华南理工研究生-黄钦建</font>|<font size="1">可加</font>|
 |<font size="1">第五章 卷积神经网络CNN</font> |<font size="1">杜克大学硕士、data scientist李骁丹；重庆大学研究生-刘畅；铪星创新科技联合创始人-杨文英；</font>|<font size="2">可加</font>|
@@ -56,7 +56,7 @@
 |<font size="1">第十五章 GPU和框架选型</font>|<font size="1">澳洲monash大学Research Scientist/Telstra(澳洲电信)Data Scientist-钟申俊博士；平安科技算法工程师-崔永明</font>|<font size="1">可加</font>|
 |<font size="1">第十六章 自然语言处理NLP</font>|<font size="1">电子科技大学博士-盛泳潘；深圳乌灵图明科技有限公司CTO-何建宏;DaoCloud研发工程师-张善干；澳洲monash大学Research Scientist/Telstra(澳洲电信)Data Scientist-钟申俊博士；华南理工大学&UCI博士-黄振华</font>||
 |<font size="1">第十七章 移动端框架部署（新增）                                         </font>|<font size="1">川大硕士-顺丰科技-谈继勇；贵州大学硕士-三星-张达峰</font>|<font size="1">可加   </font>|
-|<font size="1">第十八章 后端分布式框架部署（新增）                                         </font>|<font size="1">广东工业大学学士-魅族科技有限公司-梁志成</font>|<font size="1">可加   </font>|
+|<font size="1">第十八章 后端分布式框架部署（新增）                                         </font>|<font size="1">广工学士-魅族科技-梁志成</font>|<font size="1">可加   </font>|
 
 # 5. 更多
 
