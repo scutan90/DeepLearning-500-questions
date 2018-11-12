@@ -57,7 +57,7 @@
 |<font size="1">第十六章 自然语言处理NLP</font>|<font size="1">电子科技大学博士-盛泳潘；深圳乌灵图明科技有限公司CTO-何建宏;DaoCloud研发工程师-张善干；澳洲monash大学Research Scientist/Telstra(澳洲电信)Data Scientist-钟申俊博士；华南理工大学&UCI博士-黄振华</font>||
 |<font size="1">第十七章 移动端框架部署（新增）                                         </font>|<font size="1">川大硕士-顺丰科技-谈继勇；贵州大学硕士-三星-张达峰</font>|<font size="1">可加   </font>|
 |<font size="1">第十八章 后端分布式框架部署（新增）                                         </font>|<font size="1">广工学士-魅族科技-梁志成</font>|<font size="1">可加   </font>|
-|<font size="1">MD编辑</font>|<font size="2">汪明阔；南京大学硕士研究生-汪然；乐刻-张梦欣</font>|<font size="1">可加</font>|
+|<font size="1">MD编辑</font>|<font size="2">汪明阔；南京大学硕士研究生-汪然；乐刻-张梦欣;梅红伟大－长虹－云服务开发</font>|<font size="1">可加</font>|
 # 5. 更多
 
 1. 寻求有愿意继续完善的朋友、编辑、写手; 如有意合作，完善出书（成为共同作者）。    
