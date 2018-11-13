@@ -44,7 +44,7 @@ $$JS(P_1||P_2)=\frac{1}{2}KL(P_1||\frac{P_1+P_2}{2})$$
 3. 对更新后的权重强制截断到一定范围内，比如[-0.01，0.01]，以满足lipschitz连续性条件。
 4. 论文中也推荐使用SGD，RMSprop等优化器，不要基于使用动量的优化算法，比如adam。
 
-然而，由于D和G其实是各自有一个loss的，G和D是可以**用不同的优化器**的。个人认为Best Practice是G用SGD或RMSprop，而D用Adam。
+然而，由于D和G其实是各自有一个loss的，G和D是可以**用不同的优化器**的。个人认为Best Practice是G用SGD或RMSprop，而D用Adam。
 
 很期待未来有专门针对寻找均衡态的优化方法。
 
@@ -71,7 +71,7 @@ $$L^{infoGAN}_{G}=L^{GAN}_G-\lambda L_1(c,c')$$
 ## Self-Attention GAN
 
 ## GAN训练有什么难点？
-由于GAN的收敛要求**两个网络（D&G）同时达到一个均衡**，
+由于GAN的收敛要求**两个网络（D&G）同时达到一个均衡**，
 
 ## GAN与强化学习中的AC网络有何区别？
 强化学习中的AC网络也是Dual Network，似乎从某个角度上理解可以为一个GAN。但是GAN本身
