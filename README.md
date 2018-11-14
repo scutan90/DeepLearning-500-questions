@@ -574,6 +574,6 @@
 
 **参考文献	366**  
 
-hey you are looked like a cool developer.
+hey you look like a cool developer.
 Translate it in english.
 
