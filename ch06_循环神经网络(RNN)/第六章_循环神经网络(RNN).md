@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 # 第六章 循环神经网络(RNN)
 
     Markdown Revision 2;

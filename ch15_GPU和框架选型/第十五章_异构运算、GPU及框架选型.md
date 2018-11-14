@@ -1,4 +1,9 @@
+[TOC]
+
+
+
 # 第十五章 异构计算， GPU和框架选型指南
+
 深度学习训练和推理的过程中，会涉及到大量的向量(vector)，矩阵(matrix)和张量(tensor)操作，通常需要大量的浮点计算，包括高精度（在训练的时候）和低精度（在推理和部署的时候）。GPU， 作为一种通用可编程的加速器，最初设计是用来进行图形处理和渲染功能，但是从2007年开始，英伟达(NVIDIA)公司提出了第一个可编程通用计算平台（GPGPU），同时提出了CUDA框架，从此开启了GPU用于通用计算的新纪元。此后，不计其数的科研人员和开发者，对各种不同类型的算法用CUDA进行（部分）改写，从而达到几倍到数百倍的加速效果。尤其是在机器学习，特别是深度学习的浪潮来临后，GPU加速已经是各类工具实现的基本底层构架之一。本章里，会简单介绍GPU的基本架构，性能指标，框架选择等等和深度学习相关的内容。
 
 ## 15.1 什么是异构计算？
@@ -153,26 +158,26 @@ cuda8.0:    sudo sh cuda_8.0.61_375.26_linux.run
 cuda9.0:    sudo sh cuda_9.0.176_384.81_linux.run  
 之后命令之后下面就是安装步骤，cuda8.0和cuda9.0几乎一致：  
   1） 首先出现cuda软件的版权说明，可以直接按q键跳过阅读  
-  
+
 
   2） Do you accept the previously read EULA?  
-      accept/decline/quit:   **accept**
+​      accept/decline/quit:   **accept**
 
   3） Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?  
-      (y)es/(n)o/(q)uit:  **no**  
-            
+​      (y)es/(n)o/(q)uit:  **no**  
+​            
   4） Install the CUDA 9.0 Toolkit?  
-      (y)es/(n)o/(q)uit:  **yes**  
-      
+​      (y)es/(n)o/(q)uit:  **yes**  
+​      
   5） Enter Toolkit Location  
-     [ default is /usr/local/cuda-9.0 ]:  直接按enter键即可
+​     [ default is /usr/local/cuda-9.0 ]:  直接按enter键即可
 
   6） Do you want to install a symbolic link at /usr/local/cuda?  
-      (y)es/(n)o/(q)uit:  **yes**  
+​      (y)es/(n)o/(q)uit:  **yes**  
 
   7） Install the CUDA 9.0 Samples?  
-     (y)es/(n)o/(q)uit:  **yes**  
-     
+​     (y)es/(n)o/(q)uit:  **yes**  
+​     
 以上步骤基本就是cuda的安装步骤。  
 
 
@@ -276,7 +281,6 @@ mxnet的最知名的优点就是其对多GPU的支持和扩展性强，其优秀
 
 ### 15.8.6 未来量子计算对于深度学习等AI技术的影响？
 
-
 -------
 
 
@@ -364,7 +368,7 @@ mxnet是dmlc社区推出的深度学习框架，在2017年被亚马逊指定为�
 （1）tensorRT  
 
  (2)TVM  
- 
+
  (3)ONNX  
- 
+
 
