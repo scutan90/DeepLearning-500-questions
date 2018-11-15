@@ -22,6 +22,20 @@ GAN能够从一个模型引入一个随机数之后「生成」无限的output�
 
 ### 7.4.1 DCGAN
 
+[DCGAN](http://arxiv.org/abs/1511.06434)是GAN较为早期的「生成」效果最好的GAN了，很多人用DCGAN的简单、有效的生成能力做了很多很皮的工作，比如[GAN生成二次元萌妹](https://blog.csdn.net/liuxiao214/article/details/74502975)之类。
+关于DCGAN主要集中讨论以下问题：
+
+1. DCGAN的contribution？
+2. DCGAN实操上有什么问题？
+
+效果好个人主要认为是引入了卷积并且给了一个非常优雅的结构，DCGAN的Generator和Discriminator几乎是**对称的**，而之后很多研究都遵从了这个对称结构，如此看来学界对这种对称架构有极大的肯定。完全使用了卷积层代替全链接层，没有pooling和upsample。其中upsample是将low resolution到high resolution的方法，而DCGAN用卷积的逆运算来完成low resolution到high resolution的操作，这简单的替换为什么成为提升GAN稳定性的原因？
+![Upsample原理](./img/ch7/upsample.png)
+
+图中是Upsample的原理图，十分的直观，宛如低分屏换高分屏。然而Upsample和逆卷积最大的不一样是Upsample其实只能放一样的颜色来填充，而逆卷积它是个求值的过程，也就是它要算出一个具体值来，可能是一样的也可能是不一样的——如此，孰优孰劣高下立判。
+
+DCGAN提出了其生成的特征具有向量的计算特性。
+
+[DCGAN Keras实现](https://github.com/jacobgil/keras-dcgan)
 ### 7.4.2 WGAN/WGAN-GP
 
 WGAN及其延伸是被讨论的最多的部分，原文连发两文，第一篇(Towards principled methods for training generative adversarial networks)非常solid的提了一堆的数学，一作Arjovsky克朗所的数学能力果然一个打十几个。后来给了第二篇Wasserstein GAN，可以说直接给结果了，和第一篇相比，第二篇更加好接受。
@@ -72,15 +86,20 @@ $$L^{infoGAN}_{G}=L^{GAN}_G-\lambda L_1(c,c')$$
 ### 7.4.6 StarGAN
 目前Image-to-Image Translation做的最好的GAN。
 
-### 7.4.7 Self-Attention GAN
-
 ## 7.5 GAN训练有什么难点？
 由于GAN的收敛要求**两个网络（D&G）同时达到一个均衡**，
 
 ## 7.6 GAN与强化学习中的AC网络有何区别？
 强化学习中的AC网络也是Dual Network，似乎从某个角度上理解可以为一个GAN。但是GAN本身
+
 ## 7.7 GAN的可创新的点
-GAN是一种半监督学习模型，对训练集不需要太多有标签的数据。
+GAN是一种半监督学习模型，对训练集不需要太多有标签的数据。我认为GAN用在Super Resolution、Inpainting、Image-to-Image Translation（俗称鬼畜变脸）也好，无非是以下三点：
+
+1. 更高效的无监督的利用卷积结构或者结合网络结构的特点对特征进行**复用**。（如Image-to-Image Translation提取特征之后用loss量化特征及其share的信息以完成整个特征复用过程）
+2. 一个高效的loss function来**量化变化**。
+3. 一个短平快的拟合分布的方法。（如WGAN对GAN的贡献等）
+
+当然还有一些非主流的方案，比如说研究latent space甚至如何优雅的加噪声，这类方案虽然很重要，但是囿于本人想象力及实力不足，难以想到解决方案。
 
 ## 7.8 如何训练GAN？
 判别器D在GAN训练中是比生成器G更强的网络
