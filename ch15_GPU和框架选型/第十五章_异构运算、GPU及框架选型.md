@@ -75,7 +75,7 @@ ImageNet的例子
 ## 15.5 GPU硬件环境配置推荐
 
 ### 15.5.1 GPU主要性能指标
-GPU的性能主要由以下三个参数构成：  
+GPU的性能主要由以下三个参数构成：
 
 1. 计算能力。通常我们关心的是32位浮点计算能力。16位浮点训练也开始流行，如果只做预测的话也可以用8位整数。
 2. 内存大小。当模型越大，或者训练时的批量越大时，所需要的GPU内存就越多。
@@ -95,7 +95,7 @@ GPU的性能主要由以下三个参数构成：
 如果大家继续比较GTX较早的系列，也可以发现类似的规律。据此，我们推荐大家在能力范围内尽可能买较新的GPU。
 
 ### 15.5.2 购买建议
-##### 首先给出一些总体的建议  
+##### 首先给出一些总体的建议
 最好的GPU整体（小幅度）：Titan Xp
 综合性价比高，但略贵：GTX 1080 Ti，GTX 1070，GTX 1080
 性价比还不错且便宜：GTX 1060（6GB）
@@ -130,59 +130,59 @@ Nvidia一般每一两年发布一次新版本的GPU，例如2017年发布的是G
 深度学习其实就是指基于一套完整的软件系统来构建算法，训练模型。如何搭建一套完整的软件系统，比如操作系统的选择？安装环境中遇到的问题等等，本节做一个简单的总结。
 
 ### 15.6.1 操作系统选择？
-针对硬件厂商来说，比如NVIDIA，对各个操作系统的支持都是比较好的 ，比如windows系列,linux系列，但是由于linux系统对专业技术人员比较友好，所以目前几乎所有的深度学习系统构建都是基于linux的，比较常用的系统如ubuuntu系列，centos系列等等。
-在构建系统的时候，如何选择合适的操作系是一个刚刚入门深度学习的工作者面临的问题，在这里给出几点建议：  
-（1）刚刚入门，熟悉windows系统，但是对linux和深度学习都不太熟，这个时候可以基于windows系列系统来做入门学习  
-（2）简单了解linux的使用，不太懂深度学习相关知识，可以直接基于linux系统来搭建框架，跑一些开源的项目，慢慢深入研究学习  
-（3）熟悉linux，不熟悉深度学习理论，毫无疑问，强烈推荐使用linux系统，安装软件简单，工作效率高
-总之一句话，如果不熟悉linux，就先慢慢熟悉，最终还是要回归到linux系统来构建深度学习系统  
+针对硬件厂商来说，比如NVIDIA，对各个操作系统的支持都是比较好的 ，比如Windows系列,Linux系列，但是由于Linux系统对专业技术人员比较友好，所以目前几乎所有的深度学习系统构建都是基于Linux的，比较常用的系统如Ubuntu系列，CentOS系列等等。
+在构建系统的时候，如何选择合适的操作系是一个刚刚入门深度学习的工作者面临的问题，在这里给出几点建议：
+（1）刚刚入门，熟悉Windows系统，但是对Linux和深度学习都不太熟，这个时候可以基于windows系列系统来做入门学习
+（2）简单了解Linux的使用，不太懂深度学习相关知识，可以直接基于Linux系统来搭建框架，跑一些开源的项目，慢慢深入研究学习
+（3）熟悉Linux，不熟悉深度学习理论，毫无疑问，强烈推荐使用Linux系统，安装软件简单，工作效率高
+总之一句话，如果不熟悉Linux，就先慢慢熟悉，最终还是要回归到Linux系统来构建深度学习系统
 
 ### 15.6.2 常用基础软件安装？
-目前有众多深度学习框架可供大家使用，但是所有框架基本都有一个共同的特点，目前几乎都是基于nvidia的gpu来训练模型，要想更好的使用nvidia的gpu，cuda和cudnn就是必备的软件安装。
+目前有众多深度学习框架可供大家使用，但是所有框架基本都有一个共同的特点，目前几乎都是基于Nvidia的GPU来训练模型，要想更好的使用Nvidia的GPU，cuda和cudnn就是必备的软件安装。
 1，安装cuda
-上文中有关于cuda的介绍，这里只是简单介绍基于linux系统安装cuda的具体步骤，可以根据自己的需要安装cuda8.0或者cuda9.0，这两种版本的安装步骤基本一致，这里以最常用的ubuntu 16.04 lts版本为例：
-（1）官网下载，地址  
-cuda8.0  https://developer.nvidia.com/cuda-80-ga2-download-archive  
-cuda9.0  https://developer.nvidia.com/cuda-90-download-archive  
-进入网址之后选择对应的系统版本即可，如下图所示：  
-![cuda8.0](./img/ch15/cuda8.0.png)  
+上文中有关于cuda的介绍，这里只是简单介绍基于Linux系统安装cuda的具体步骤，可以根据自己的需要安装cuda8.0或者cuda9.0，这两种版本的安装步骤基本一致，这里以最常用的ubuntu 16.04 lts版本为例：
+（1）官网下载，地址
+cuda8.0https://developer.nvidia.com/cuda-80-ga2-download-archive
+cuda9.0https://developer.nvidia.com/cuda-90-download-archive
+进入网址之后选择对应的系统版本即可，如下图所示：
+![cuda8.0](./img/ch15/cuda8.0.png)
 
-![cuda9.0](./img/ch15/cuda9.0.png)  
+![cuda9.0](./img/ch15/cuda9.0.png)
 
-（2）命令行中进入到cuda所在的位置，授予运行权限：  
-cuda8.0:   sudo chmod +x cuda_8.0.61_375.26_linux.run  
-cuda9.0:    sudo chmod +x cuda_9.0.176_384.81_linux.run  
+（2）命令行中进入到cuda所在的位置，授予运行权限：
+cuda8.0: sudo chmod +x cuda_8.0.61_375.26_linux.run
+cuda9.0:sudo chmod +x cuda_9.0.176_384.81_linux.run
 
-（3）执行命令安装cuda：  
-cuda8.0:    sudo sh cuda_8.0.61_375.26_linux.run  
-cuda9.0:    sudo sh cuda_9.0.176_384.81_linux.run  
-之后命令之后下面就是安装步骤，cuda8.0和cuda9.0几乎一致：  
-  1） 首先出现cuda软件的版权说明，可以直接按q键跳过阅读  
-
-
-  2） Do you accept the previously read EULA?  
-​      accept/decline/quit:   **accept**
-
-  3） Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?  
-​      (y)es/(n)o/(q)uit:  **no**  
-​            
-  4） Install the CUDA 9.0 Toolkit?  
-​      (y)es/(n)o/(q)uit:  **yes**  
-​      
-  5） Enter Toolkit Location  
-​     [ default is /usr/local/cuda-9.0 ]:  直接按enter键即可
-
-  6） Do you want to install a symbolic link at /usr/local/cuda?  
-​      (y)es/(n)o/(q)uit:  **yes**  
-
-  7） Install the CUDA 9.0 Samples?  
-​     (y)es/(n)o/(q)uit:  **yes**  
-​     
-以上步骤基本就是cuda的安装步骤。  
+（3）执行命令安装cuda：
+cuda8.0:sudo sh cuda_8.0.61_375.26_linux.run
+cuda9.0:sudo sh cuda_9.0.176_384.81_linux.run
+之后命令之后下面就是安装步骤，cuda8.0和cuda9.0几乎一致：
+1） 首先出现cuda软件的版权说明，可以直接按q键跳过阅读
 
 
-2，安装cudnn  
-cudnn是nvidia的专门针对深度学习的加速库。。。  
+2） Do you accept the previously read EULA?
+​accept/decline/quit: **accept**
+
+3） Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?
+​(y)es/(n)o/(q)uit:**no**
+​
+4） Install the CUDA 9.0 Toolkit?
+​(y)es/(n)o/(q)uit:**yes**
+​
+5） Enter Toolkit Location
+​ [ default is /usr/local/cuda-9.0 ]:直接按enter键即可
+
+6） Do you want to install a symbolic link at /usr/local/cuda?
+​(y)es/(n)o/(q)uit:**yes**
+
+7） Install the CUDA 9.0 Samples?
+​ (y)es/(n)o/(q)uit:**yes**
+​
+以上步骤基本就是cuda的安装步骤。
+
+
+2，安装cudnn
+cudnn是Nvidia的专门针对深度学习的加速库。。。
 
 
 ### 15.6.3 本机安装还是使用docker？
@@ -201,11 +201,11 @@ cudnn是nvidia的专门针对深度学习的加速库。。。
 
 * PyTorch
 pytorch是Facebook于2017年才推出的深度学习框架，相对于其它框架，算是比较晚的了，但是这个同时也是优势，在设计的时候就会避免很多之前框架的问题，所以一经推出，就收到大家极大的欢迎
-优点：接口简洁且规范，和python无缝结合，代码设计优秀且易懂，社区非常活跃，官方修复bug及时  
-缺点:  目前模型在工业界部署相对其它框架稍有劣势，不过后续的pytorch1.0版本应该会有很大改善，和caffe2合并后，caffe2的优秀的模型部署能力可以弥补这个不足  
-相关资源链接：  
-（1）官网教程：https://pytorch.org/tutorials/  
-（2）基于pytorch的开源项目汇总：https://github.com/bharathgs/Awesome-pytorch-list  
+优点：接口简洁且规范，和python无缝结合，代码设计优秀且易懂，社区非常活跃，官方修复bug及时
+缺点:目前模型在工业界部署相对其它框架稍有劣势，不过后续的pytorch1.0版本应该会有很大改善，和caffe2合并后，caffe2的优秀的模型部署能力可以弥补这个不足
+相关资源链接：
+（1）官网教程：https://pytorch.org/tutorials/
+（2）基于pytorch的开源项目汇总：https://github.com/bharathgs/Awesome-pytorch-list
 （3）
 
 * Keras
@@ -220,17 +220,17 @@ pytorch是Facebook于2017年才推出的深度学习框架，相对于其它框�
 MxNet是dmlc社区推出的深度学习框架，MXNet由学术界发起，包括数个顶尖大学的多个学科的研究人员的贡献，在2017年被亚马逊指定为官方框架。
 mxnet的最知名的优点就是其对多GPU的支持和扩展性强，其优秀的性能使之在工业界占有一席之地，在amazon支持之后，其文档和开发进度明显好很多。除了高可扩展性，MXNet 还提供混合编程模型（命令式和声明式），同时兼容多种编程语言（包括 Python、C ++、R、Scala、Julia、Matlab 和 JavaScript）的代码，目前主要在推python高层接口gluon
 
-优点：  
+优点：
 （1）多GPU支持好，扩展性强，支持多种编程语言接口，主要是由华人团队开发，中文社区活跃，中文文档资源和课程丰富
 （2）针对两大热门领域推出gluoncv和gluonNLP模块，复现经典论文，达到State-of-the-art，接口设计简单，文档齐全，拿来就可以用
-缺点:  
+缺点:
 （1）现在mxnet官方社区主要在推gluon接口，接口稍有混乱，坑较多，入手门槛稍高
-（2）偏小众，经典网络和项目的开源实现相对于tensorflow和pytorch还是比较少，很多还是需要自己手动实现  
-相关资源链接：  
-1，官方教程：http://mxnet.incubator.apache.org 提供有快速入门教程和详细文档说明  
-2，中文教程：http://zh.gluon.ai/ 官方的中文教程，此课程有对应的中文版视频，主要由李沐大神讲课  
-3，中文论坛：https://discuss.gluon.ai/ 官方发中文论坛，mxnet的主要作者都在这里，论坛比较活跃，可及时得到作者的回答  
-4，基于mxnet的开源项目实现：https://github.com/chinakook/Awesome-MXNet  这里主要列举了mxnet在各个领域的项目的开源实现  
+（2）偏小众，经典网络和项目的开源实现相对于tensorflow和pytorch还是比较少，很多还是需要自己手动实现
+相关资源链接：
+1，官方教程：http://mxnet.incubator.apache.org 提供有快速入门教程和详细文档说明
+2，中文教程：http://zh.gluon.ai/ 官方的中文教程，此课程有对应的中文版视频，主要由李沐大神讲课
+3，中文论坛：https://discuss.gluon.ai/ 官方发中文论坛，mxnet的主要作者都在这里，论坛比较活跃，可及时得到作者的回答
+4，基于mxnet的开源项目实现：https://github.com/chinakook/Awesome-MXNet这里主要列举了mxnet在各个领域的项目的开源实现
 
 * CNTK
 
@@ -261,9 +261,9 @@ mxnet的最知名的优点就是其对多GPU的支持和扩展性强，其优秀
 
 ### 15.8.1 多GPU环境的配置
 
-* Tensorflow 
+* Tensorflow
 
-* PyTorch  
+* PyTorch
 
 
 ### 15.8.2 是不是可以分布式训练？
@@ -291,7 +291,7 @@ mxnet的最知名的优点就是其对多GPU的支持和扩展性强，其优秀
 
 深度学习训练通常需要大量的计算资源。GPU目前是深度学习最常使用的计算加速硬件。相对于CPU来说，GPU更便宜且计算更加密集。一方面，相同计算能力的GPU的价格一般是CPU价格的十分之一。另一方面，一台服务器通常可以搭载8块或者16块GPU。因此，GPU数量可以看作是衡量一台服务器的深度学习计算能力的一个标准。
 
-### 15.1.1 如何选择GPU  
+### 15.1.1 如何选择GPU
 
 
 ### 15.1.2 GPU的主要性能指标
@@ -327,20 +327,20 @@ mxnet的最知名的优点就是其对多GPU的支持和扩展性强，其优秀
 
 ### 15.2.1 常用框架简介
 
-1，tensorflow：  
+1，tensorflow：
 tensorflow由于有google的强大背书，加上其优秀的分布式设计，丰富的教程资源和论坛，工业部署方便，基本很多人都是从tensorflow入门的
-优点：google的强大背书，分布式训练，教程资源丰富，常见问题基本都可以在互联网中找到解决办法，工业部署方便  
+优点：google的强大背书，分布式训练，教程资源丰富，常见问题基本都可以在互联网中找到解决办法，工业部署方便
 缺点: 接口混乱，官方文档不够简洁，清晰，
 
 2，keras:
 keras是一种高层编程接口，其可以选择不同的后端，比如tensorflow，therao等等
-优点：  接口简洁，上手快，文档好，资源多
-缺点:   封装的太好了导致不理解其技术细节
+优点：接口简洁，上手快，文档好，资源多
+缺点: 封装的太好了导致不理解其技术细节
 
-3,pytorch:  
+3,pytorch:
 
 
-4,caffe2:  
+4,caffe2:
 caffe2是在caffe之后的第二代版本，同属于Facebook。。。
 优点：支持模型的全平台部署，。。。。
 缺点:使用人数相对较少，资源较少，和pytorch合并后应该会更受欢迎
@@ -348,27 +348,25 @@ caffe2是在caffe之后的第二代版本，同属于Facebook。。。
 5,mxnet
 mxnet是dmlc社区推出的深度学习框架，在2017年被亚马逊指定为官方框架
 优点：支持多种语言，代码设计优秀，省显存，华人团队开发，中文社区活跃，官方复现经典论文推出gluoncv和gluonNLP模块，非常方便，拿来就可以用。
-缺点:  现在mxnet官方社区主要在推gluon接口，接口稍有混乱，坑较多，入手门槛稍高
+缺点:现在mxnet官方社区主要在推gluon接口，接口稍有混乱，坑较多，入手门槛稍高
 
-6，caffe：  
-目前很多做深度学习比较早的大厂基本都是在用caffe，因为在2013-2015年基本就是caffe的天下，并且caffe的代码设计很优秀，基本所有代码都被翻了很多遍了，被各种分析，大厂基本都是魔改caffe，基于caffe来进行二次开发，所在目前在很多大厂还是在使用caffe  
-优点：资源丰富，代码容易理解，部署方便  
-缺点：入门门槛高，文档较少  
+6，caffe：
+目前很多做深度学习比较早的大厂基本都是在用caffe，因为在2013-2015年基本就是caffe的天下，并且caffe的代码设计很优秀，基本所有代码都被翻了很多遍了，被各种分析，大厂基本都是魔改caffe，基于caffe来进行二次开发，所在目前在很多大厂还是在使用caffe
+优点：资源丰富，代码容易理解，部署方便
+缺点：入门门槛高，文档较少
 
-###  15.2.1 框架选型总结
-1，新手入门，首推pytorch，上手快，资源丰富,官方文档写的非常好(https://pytorch.org/tutorials/) 
-2，目前工业部署，tensorflow是首选,资源丰富，并且在分布式训练这一块基本一家独大  
-3，mxnet的gluon接口有比较丰富的中文资源（教程：zh.gluon.ai，论坛：discuss.gluon.ai）,gluoncv模块（https://gluon-cv.mxnet.io）,gluonNLP模块（https://gluon-nlp.mxnet.io）  
+###15.2.1 框架选型总结
+1，新手入门，首推pytorch，上手快，资源丰富,官方文档写的非常好(https://pytorch.org/tutorials/)
+2，目前工业部署，tensorflow是首选,资源丰富，并且在分布式训练这一块基本一家独大
+3，mxnet的gluon接口有比较丰富的中文资源（教程：zh.gluon.ai，论坛：discuss.gluon.ai）,gluoncv模块（https://gluon-cv.mxnet.io）,gluonNLP模块（https://gluon-nlp.mxnet.io）
 
 
-##  15.3 模型部署
+##15.3 模型部署
 我们一般都是通过python或者其他语言来编码训练模型，然后基于后端来进行部署
 一般的框架都有自身的部署框架，比如tensorflow，pytorch，caffe2，mxnet等等
-有一些框架是专门做推理部署使用的，比如  
-（1）tensorRT  
+有一些框架是专门做推理部署使用的，比如
+（1）tensorRT
 
- (2)TVM  
+ (2)TVM
 
- (3)ONNX  
-
-
+ (3)ONNX
