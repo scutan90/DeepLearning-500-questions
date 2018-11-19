@@ -3,6 +3,47 @@
 
 
 # 第七章_生成对抗网络(GAN)
+# 什么是生成对抗网络
+## GAN的通俗化介绍
+
+生成对抗网络(GAN, Generative adversarial network)自从2014年被Ian Goodfellow提出以来，掀起来了一股研究热潮。GAN由生成器和判别器组成，生成器负责生成样本，判别器负责判断生成器生成的样本是否为真。生成器要尽可能迷惑判别器，而判别器要尽可能区分生成器生成的样本和真实样本。
+
+在GAN的原作[1]中，作者将生成器比喻为印假钞票的犯罪分子，判别器则类比为警察。犯罪分子努力让钞票看起来逼真，警察则不断提升对于假钞的辨识能力。二者互相博弈，随着时间的进行，都会越来越强。
+
+# GAN的形式化表达
+上述例子只是简要介绍了一下GAN的思想，下面对于GAN做一个形式化的，更加具体的定义。通常情况下，无论是生成器还是判别器，我们都可以用神经网络来实现。那么，我们可以把通俗化的定义用下面这个模型来表示：
+![GAN网络结构](/images/7.1-gan_structure.png)
+
+上述模型左边是生成器G，其输入是$$z$$，对于原始的GAN，$$z$$是由高斯分布随机采样得到的噪声。噪声$$z$$通过生成器得到了生成的假样本。
+
+生成的假样本与真实样本放到一起，被随机抽取送入到判别器D，由判别器去区分输入的样本是生成的假样本还是真实的样本。整个过程简单明了，生成对抗网络中的“生成对抗”主要体现在生成器和判别器之间的对抗。
+
+# GAN的目标函数
+对于上述神经网络模型，如果想要学习其参数，首先需要一个目标函数。GAN的目标函数定义如下：
+
+$$
+\mathop {\min }\limits_G \mathop {\max }\limits_D V(D,G) = {{\rm E}*{x\sim{p*{data}}(x)}[\log D(x)] + {{\rm E}_{z\sim{p_z}(z)}}[\log (1 - D(G(z)))]}
+$$
+
+这个目标函数可以分为两个部分来理解：
+
+判别器的优化通过$$\mathop {\max}\limits_D V(D,G)$$实现，$$V(D,G)$$为判别器的目标函数，其第一项$${{\rm E}_{x\sim{p_{data}}(x)}}[\log D(x)]$$表示对于从真实数据分布 中采用的样本 ,其被判别器判定为真实样本概率的数学期望。对于真实数据分布 中采样的样本，其预测为正样本的概率当然是越接近1越好。因此希望最大化这一项。第二项$${{\rm E}_{z\sim{p_z}(z)}}[\log (1 - D(G(z)))]$$表示：对于从噪声P_z(z)分布当中采样得到的样本经过生成器生成之后得到的生成图片，然后送入判别器，其预测概率的负对数的期望，这个值自然是越大越好，这个值越大， 越接近0，也就代表判别器越好。
+
+生成器的优化通过$$\mathop {\min }\limits_G({\mathop {\max }\limits_D V(D,G)})$$实现。注意，生成器的目标不是$$\mathop {\min }\limits_GV(D,G)$$，即生成器**不是最小化判别器的目标函数**，生成器最小化的是**判别器目标函数的最大值**，判别器目标函数的最大值代表的是真实数据分布与生成数据分布的JS散度(详情可以参阅附录的推导)，JS散度可以度量分布的相似性，两个分布越接近，JS散度越小。
+
+
+# GAN的目标函数和交叉熵
+判别器目标函数写成离散形式即为$$V(D,G)=-\frac{1}{m}\sum_{i=1}^{i=m}logD(x^i)-\frac{1}{m}\sum_{i=1}^{i=m}log(1-D(\tilde{x}^i))$$
+可以看出，这个目标函数和交叉熵是一致的，即**判别器的目标是最小化交叉熵损失，生成器的目标是最小化生成数据分布和真实数据分布的JS散度**
+
+
+
+
+
+-------------------
+[1]: Goodfellow, Ian, et al. "Generative adversarial nets." Advances in neural information processing systems. 2014.
+[2]
+
 
 ## 7.1 GAN的「生成」的本质是什么？
 GAN的形式是：两个网络，G（Generator）和D（Discriminator）。Generator是一个生成图片的网络，它接收一个随机的噪声z，记做G(z)。Discriminator是一个判别网络，判别一张图片是不是“真实的”。它的输入是x，x代表一张图片，输出D（x）代表x为真实图片的概率，如果为1，就代表100%是真实的图片，而输出为0，就代表不可能是真实的图片。
@@ -87,7 +128,7 @@ $$L^{infoGAN}_{G}=L^{GAN}_G-\lambda L_1(c,c')$$
 目前Image-to-Image Translation做的最好的GAN。
 
 ## 7.5 GAN训练有什么难点？
-由于GAN的收敛要求**两个网络（D&G）同时达到一个均衡**，
+由于GAN的收敛要求**两个网络（D&G）同时达到一个均衡**
 
 ## 7.6 GAN与强化学习中的AC网络有何区别？
 强化学习中的AC网络也是Dual Network，似乎从某个角度上理解可以为一个GAN。但是GAN本身
@@ -112,15 +153,22 @@ Instance Norm比Batch Norm的效果要更好。
 
 GAN只适用于连续型数据的生成，对于离散型数据效果不佳，因此假如NLP方法直接应用的是character-wise的方案，Gradient based的GAN是无法将梯度Back propagation（BP）给生成网络的，因此从训练结果上看，GAN中G的表现长期被D压着打。
 ## 7.10 Reference
+
 ### DCGAN部分：
 * Radford, A., Metz, L., & Chintala, S. (2015). Unsupervised representation learning with deep convolutional generative adversarial networks. arXiv preprint arXiv:1511.06434.
 * Long, J., Shelhamer, E., & Darrell, T. (2015). Fully convolutional networks for semantic segmentation. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 3431-3440).
 * [可视化卷积操作](https://github.com/vdumoulin/conv_arithmetic)
 ### WGAN部分：
-* Arjovsky, M., & Bottou, L. (2017). Towards principled methods for training generative adversarial networks. arXiv preprint arXiv:1701.04862.
 * Arjovsky, M., Chintala, S., & Bottou, L. (2017). Wasserstein gan. arXiv preprint arXiv:1701.07875.
 * Nowozin, S., Cseke, B., & Tomioka, R. (2016). f-gan: Training generative neural samplers using variational divergence minimization. In Advances in Neural Information Processing Systems (pp. 271-279).
 * Wu, J., Huang, Z., Thoma, J., Acharya, D., & Van Gool, L. (2018, September). Wasserstein Divergence for GANs. In Proceedings of the European Conference on Computer Vision (ECCV) (pp. 653-668).
 
-### CycleGAN
-Zhu, J. Y., Park, T., Isola, P., & Efros, A. A. (2017). Unpaired image-to-image translation using cycle-consistent adversarial networks. arXiv preprint.
+
+### Image2Image Translation
+* Isola P, Zhu JY, Zhou T, Efros AA. Image-to-image translation with conditional adversarial networks. arXiv preprint. 2017 Jul 21.
+* Zhu, J. Y., Park, T., Isola, P., & Efros, A. A. (2017). Unpaired image-to-image translation using cycle-consistent adversarial networks. arXiv preprint.（CycleGAN)
+* Choi, Y., Choi, M., Kim, M., Ha, J. W., Kim, S., & Choo, J. (2017). Stargan: Unified generative adversarial networks for multi-domain image-to-image translation. arXiv preprint, 1711.
+* Murez, Z., Kolouri, S., Kriegman, D., Ramamoorthi, R., & Kim, K. (2017). Image to image translation for domain adaptation. arXiv preprint arXiv:1712.00479, 13.
+
+### GAN的训练
+* Arjovsky, M., & Bottou, L. (2017). Towards principled methods for training generative adversarial networks. arXiv preprint arXiv:1701.04862.
