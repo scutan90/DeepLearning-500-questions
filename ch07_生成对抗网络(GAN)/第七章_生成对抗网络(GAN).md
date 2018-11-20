@@ -391,4 +391,7 @@ https://blog.csdn.net/qq_25737169/article/details/78857788
 一般没有特别要求，常用有高斯分布、均匀分布。噪声的维数至少要达到数据流形的内在维数，才能产生足够的diversity，mnist大概是6维，CelebA大概是20维（参考：https://zhuanlan.zhihu.com/p/26528060）  
 https://blog.csdn.net/witnessai1/article/details/78507065/
 
-
+# 现有GAN存在哪些关键属性缺失？   
+http://www.elecfans.com/d/707141.html   
+# 图解什么是GAN
+https://www.cnblogs.com/Darwin2000/p/6984253.html   
