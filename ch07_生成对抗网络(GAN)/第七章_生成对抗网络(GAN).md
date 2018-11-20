@@ -395,3 +395,9 @@ https://blog.csdn.net/witnessai1/article/details/78507065/
 http://www.elecfans.com/d/707141.html   
 # 图解什么是GAN
 https://www.cnblogs.com/Darwin2000/p/6984253.html   
+
+# GAN有哪些训练难点\原因及解决方案
+https://www.sohu.com/a/143961544_741733
+
+# 近年GAN有哪些突破口?
+https://baijiahao.baidu.com/s?id=1593092872607620265&wfr=spider&for=pc
