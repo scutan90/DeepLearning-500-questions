@@ -138,51 +138,49 @@ Nvidia一般每一两年发布一次新版本的GPU，例如2017年发布的是G
 总之一句话，如果不熟悉Linux，就先慢慢熟悉，最终还是要回归到Linux系统来构建深度学习系统
 
 ### 15.6.2 常用基础软件安装？
-目前有众多深度学习框架可供大家使用，但是所有框架基本都有一个共同的特点，目前几乎都是基于Nvidia的GPU来训练模型，要想更好的使用Nvidia的GPU，cuda和cudnn就是必备的软件安装。
-1，安装cuda
-上文中有关于cuda的介绍，这里只是简单介绍基于Linux系统安装cuda的具体步骤，可以根据自己的需要安装cuda8.0或者cuda9.0，这两种版本的安装步骤基本一致，这里以最常用的ubuntu 16.04 lts版本为例：
-（1）官网下载，地址
-cuda8.0https://developer.nvidia.com/cuda-80-ga2-download-archive
-cuda9.0https://developer.nvidia.com/cuda-90-download-archive
-进入网址之后选择对应的系统版本即可，如下图所示：
-![cuda8.0](./img/ch15/cuda8.0.png)
+目前有众多深度学习框架可供大家使用，但是所有框架基本都有一个共同的特点，目前几乎都是基于Nvidia的GPU来训练模型，要想更好的使用Nvidia的GPU，cuda和cudnn就是必备的软件安装。  
+1. **安装cuda**  
+上文中有关于cuda的介绍，这里只是简单介绍基于Linux系统安装cuda的具体步骤，可以根据自己的需要安装cuda8.0或者cuda9.0，这两种版本的安装步骤基本一致，这里以最常用的ubuntu 16.04 lts版本为例：  
+   1. 官网下载，地址  
+    cuda8.0https://developer.nvidia.com/cuda-80-ga2-download-archive  
+    cuda9.0https://developer.nvidia.com/cuda-90-download-archive  
+    进入网址之后选择对应的系统版本即可，如下图所示：  
+    ![cuda8.0](./img/ch15/cuda8.0.png)
 
-![cuda9.0](./img/ch15/cuda9.0.png)
+    ![cuda9.0](./img/ch15/cuda9.0.png)  
 
-（2）命令行中进入到cuda所在的位置，授予运行权限：
-cuda8.0: sudo chmod +x cuda_8.0.61_375.26_linux.run
-cuda9.0:sudo chmod +x cuda_9.0.176_384.81_linux.run
+   2. 命令行中进入到cuda所在的位置，授予运行权限：    
+    cuda8.0: sudo chmod +x cuda_8.0.61_375.26_linux.run  
+    cuda9.0:sudo chmod +x cuda_9.0.176_384.81_linux.run
 
-（3）执行命令安装cuda：
-cuda8.0:sudo sh cuda_8.0.61_375.26_linux.run
-cuda9.0:sudo sh cuda_9.0.176_384.81_linux.run
-之后命令之后下面就是安装步骤，cuda8.0和cuda9.0几乎一致：
-1） 首先出现cuda软件的版权说明，可以直接按q键跳过阅读
+   3. 执行命令安装cuda：  
+    cuda8.0:sudo sh cuda_8.0.61_375.26_linux.run  
+    cuda9.0:sudo sh cuda_9.0.176_384.81_linux.run  
+    之后命令之后下面就是安装步骤，cuda8.0和cuda9.0几乎一致：  
+    * 首先出现cuda软件的版权说明，可以直接按q键跳过阅读  
 
+    * Do you accept the previously read EULA?
+     ​accept/decline/quit: **accept**
 
-2） Do you accept the previously read EULA?
-​accept/decline/quit: **accept**
+    * Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?
+     ​(y)es/(n)o/(q)uit:**no**
 
-3） Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81?
-​(y)es/(n)o/(q)uit:**no**
-​
-4） Install the CUDA 9.0 Toolkit?
-​(y)es/(n)o/(q)uit:**yes**
-​
-5） Enter Toolkit Location
-​ [ default is /usr/local/cuda-9.0 ]:直接按enter键即可
+    * Install the CUDA 9.0 Toolkit?
+     ​(y)es/(n)o/(q)uit:**yes**
+  
+    * Enter Toolkit Location
+     ​ [ default is /usr/local/cuda-9.0 ]:直接按enter键即可
 
-6） Do you want to install a symbolic link at /usr/local/cuda?
-​(y)es/(n)o/(q)uit:**yes**
+    *  Do you want to install a symbolic link at /usr/local/cuda?
+     ​(y)es/(n)o/(q)uit:**yes**
 
-7） Install the CUDA 9.0 Samples?
-​ (y)es/(n)o/(q)uit:**yes**
-​
-以上步骤基本就是cuda的安装步骤。
+    * Install the CUDA 9.0 Samples?
+     ​ (y)es/(n)o/(q)uit:**yes**
 
+    以上步骤基本就是cuda的安装步骤。
 
-2，安装cudnn
-cudnn是Nvidia的专门针对深度学习的加速库。。。
+2. **安装cudnn**  
+   cudnn是Nvidia的专门针对深度学习的加速库。。。
 
 
 ### 15.6.3 本机安装还是使用docker？
@@ -197,40 +195,93 @@ cudnn是Nvidia的专门针对深度学习的加速库。。。
 
 ### 15.7.2 框架详细信息
 
-* Tensorflow
+* Tensorflow  
+Tensorflow是Google于2015年开源的基于数据流编程的深度学习框架，得益于Google强大的技术实力和品牌背书，目前Tensorflow发展迅猛，其用户量远远超过其它框架用户。  
+优点：  
+   1. 由谷歌开发、维护，因此可以保障支持、开发的持续性
+   2. 巨大、活跃的社区
+   3. 网络训练的低级、高级接口
+   4. 「TensorBoard」是一款强大的可视化套件，旨在跟踪网络拓扑和性能，使调试更加简单
+   5. TensorFlow 不仅支持深度学习，还有支持强化学习和其他算法的工具
+缺点：  
+   1. 计算图是纯 Python 的，因此速度较慢
+   2. 图构造是静态的，意味着图必须先被「编译」再运行
+
 
 * PyTorch
 pytorch是Facebook于2017年才推出的深度学习框架，相对于其它框架，算是比较晚的了，但是这个同时也是优势，在设计的时候就会避免很多之前框架的问题，所以一经推出，就收到大家极大的欢迎
-优点：接口简洁且规范，和python无缝结合，代码设计优秀且易懂，社区非常活跃，官方修复bug及时
-缺点:目前模型在工业界部署相对其它框架稍有劣势，不过后续的pytorch1.0版本应该会有很大改善，和caffe2合并后，caffe2的优秀的模型部署能力可以弥补这个不足
-相关资源链接：
-（1）官网教程：https://pytorch.org/tutorials/
-（2）基于pytorch的开源项目汇总：https://github.com/bharathgs/Awesome-pytorch-list
-（3）
+优点：  
+   1. 接口简洁且规范，文档齐全，和python无缝结合，
+   2. 社区非常活跃，开源实现较多
+   3. 提供动态计算图（意味着图是在运行时生成的），允许你处理可变长度的输入和输出，例如，在使用 RNN 时非常有用
+   4. 易于编写自己的图层类型，易于在 GPU 上运行
+   5. 「TensorBoard」缺少一些关键功能时，「Losswise」可以作为 Pytorch 的替代品
+
+
+缺点:  
+   1. 模型部署相对其它框架稍有劣势，不过后续的pytorch1.0版本应该会有很大改善，和caffe2合并后，caffe2的优秀的模型部署能力可以弥补这个不足
+   2. 
+   3. 
+
+
+相关资源链接：  
+   1. 官网教程：https://pytorch.org/tutorials/
+   2. 基于pytorch的开源项目汇总：https://github.com/bharathgs/Awesome-pytorch-list
+   3.
 
 * Keras
+Keras 是一个更高级、对用户最友好的 API，具有可配置的后端，由 Google Brain 团队成员 Francis Chollet 编写和维护
+优点：  
+   1. 提供高级 API 来构建深度学习模型，使其易于阅读和使用 
+   2. 编写规范的文档
+   3. 大型、活跃的社区
+   4. 位于其他深度学习库（如 Theano 和 TensorFlow，可配置）之上
+   5. 使用面向对象的设计，因此所有内容都被视为对象（如网络层、参数、优化器等）。所有模型参数都可以作为对象属性进行访问
+缺点：  
+   1. 由于用途非常普遍，所以在性能方面比较欠缺
+   2. 与 TensorFlow 后端配合使用时会出现性能问题（因为并未针对其进行优化），但与 Theano 后端配合使用时效果良好
+   3. 不像 TensorFlow 或 PyTorch 那样灵活
+
+
 
 * Sonnet
 
-* Caffe
+* Caffe  
+caffe是第一个主流产品级深度学习库，于 2014 年由 UC Berkeley 发布开源
+优点：  
+   1. 简单网络结构无需编写代码，可快速实现
+   2. 漂亮的 Matlab 和 Python 接口
+   3. 完全由c++编程实现，部署方便
+
+缺点：  
+   1. 不灵活。在 Caffe 中，每个节点被当做一个层，因此如果你想要一种新的层类型，你需要定义完整的前向、后向和梯度更新过程。这些层是网络的构建模块，你需要在无穷无尽的列表中进行选择。（相反，在 TensorFlow 中，每个节点被当做一个张量运算例如矩阵相加、相乘或卷积。你可以轻易地定义一个层作为这些运算的组合。因此 TensorFlow 的构建模块更小巧，允许更灵活的模块化。）
+   2. 需要大量的非必要冗长代码。如果你希望同时支持 CPU 和 GPU，你需要为每一个实现额外的函数。你还需要使用普通的文本编辑器来定义你的模型。真令人头疼！几乎每个人都希望程序化地定义模型，因为这有利于不同组件之间的模块化。有趣的是，Caffe 的主要架构师现在在 TensorFlow 团队工作
+   3. 专一性。仅定位在计算机视觉（但做得很不错）  
+   4. 不是以 Python 编写！如果你希望引入新的变动，你需要在 C++和 CUDA 上编程（对于更小的变动，你可以使用它的 Python 和 Matlab 接口）
+   5. 糟糕的文档
+   6. 安装比较困难！有大量的依赖包
+
+
 
 * Caffe2
+
+
 
 * MxNet
 MxNet是dmlc社区推出的深度学习框架，MXNet由学术界发起，包括数个顶尖大学的多个学科的研究人员的贡献，在2017年被亚马逊指定为官方框架。
 mxnet的最知名的优点就是其对多GPU的支持和扩展性强，其优秀的性能使之在工业界占有一席之地，在amazon支持之后，其文档和开发进度明显好很多。除了高可扩展性，MXNet 还提供混合编程模型（命令式和声明式），同时兼容多种编程语言（包括 Python、C ++、R、Scala、Julia、Matlab 和 JavaScript）的代码，目前主要在推python高层接口gluon
 
-优点：
-（1）多GPU支持好，扩展性强，支持多种编程语言接口，主要是由华人团队开发，中文社区活跃，中文文档资源和课程丰富
-（2）针对两大热门领域推出gluoncv和gluonNLP模块，复现经典论文，达到State-of-the-art，接口设计简单，文档齐全，拿来就可以用
-缺点:
-（1）现在mxnet官方社区主要在推gluon接口，接口稍有混乱，坑较多，入手门槛稍高
-（2）偏小众，经典网络和项目的开源实现相对于tensorflow和pytorch还是比较少，很多还是需要自己手动实现
-相关资源链接：
-1，官方教程：http://mxnet.incubator.apache.org 提供有快速入门教程和详细文档说明
-2，中文教程：http://zh.gluon.ai/ 官方的中文教程，此课程有对应的中文版视频，主要由李沐大神讲课
-3，中文论坛：https://discuss.gluon.ai/ 官方发中文论坛，mxnet的主要作者都在这里，论坛比较活跃，可及时得到作者的回答
-4，基于mxnet的开源项目实现：https://github.com/chinakook/Awesome-MXNet这里主要列举了mxnet在各个领域的项目的开源实现
+优点：  
+   1. 多GPU支持好，扩展性强，支持多种编程语言接口，主要是由华人团队开发，中文社区活跃，中文文档资源和课程丰富
+   2. 针对两大热门领域推出gluoncv和gluonNLP模块，复现经典论文，达到State-of-the-art，接口设计简单，文档齐全，拿来就可以用
+缺点:  
+   1. 现在mxnet官方社区主要在推gluon接口，接口稍有混乱，坑较多，入手门槛稍高
+   2. 偏小众，经典网络和项目的开源实现相对于tensorflow和pytorch还是比较少，很多还是需要自己手动实现
+相关资源链接：  
+   1. 官方教程：http://mxnet.incubator.apache.org 提供有快速入门教程和详细文档说明
+   2. 中文教程：http://zh.gluon.ai/ 官方的中文教程，此课程有对应的中文版视频，主要由李沐大神讲课
+   3. 中文论坛：https://discuss.gluon.ai/ 官方发中文论坛，mxnet的主要作者都在这里，论坛比较活跃，可及时得到作者的回答
+   4. 基于mxnet的开源项目实现：https://github.com/chinakook/Awesome-MXNet这里主要列举了mxnet在各个领域的项目的开源实现
 
 * CNTK
 
