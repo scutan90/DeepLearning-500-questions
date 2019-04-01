@@ -14,7 +14,18 @@ This project is to integrate the relevant knowledge of AI and brainstorm ideas t
 1. Seek friends, editors, and writers who are willing to continue to improve; if you are interested in cooperation, improve the book (become a co-author).
 2. All contributors who submit content will reflect the contributor's personal information in the text (eg: Daxie-West Lake University)
 3, in order to make the content more complete and thoughtful, brainstorming, welcome to Fork the project and participate in the preparation. Please note your name-unit (Dayu-Stanford University) while modifying the MD file (or direct message). Once adopted, the contributor's information will be displayed in the original text, thank you!
-4. It is recommended to use the typora-Markdown reader: https://typora.io/
+4. It is recommended to use the typora-Markdown reader: https://typora.io/  
+
+Setting:
+File->Preference
+- Syntax Support
+  - Inline Math
+  - Subscript
+  - Superscript
+  - Highlight
+  - Diagrams
+
+Check these items on
 
 Example:
 
@@ -45,12 +56,7 @@ Submitted MD version chapter: Please check MarkDown
 
    (Into the group, after the MD version is added, improved, and submitted, it is easier to enter the group and enjoy sharing knowledge to help others.)
 
-   Into the group please add WeChat Client 1: HQJ199508212176 Client 2: Xuwumin1203 Client 3: tianyuzy
-
-
-
-   !["Deep Learning 500 Questions" WeChat Exchange Group QR Code](/WechatIMG3.jpeg)
-
+   Into the "Deep Learning 500 Questions" wechat group please add WeChat Client 1: HQJ199508212176 Client 2: Xuwumin1203 Client 3: tianyuzy
 
 3. Markdown reader recommendation: https://typora.io/ Free and support for mathematical formulas is better.
 
