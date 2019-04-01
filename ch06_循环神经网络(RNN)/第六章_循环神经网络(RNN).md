@@ -26,8 +26,7 @@ LSTM 的核心思想?
 如何逐步理解LSTM?   
 常见的RNNs扩展和改进模型   
 RNN种类?   
-讲解CNN+RNN的各种组合方式 http://www.elecfans.com/d/775895.html 
-RNN学习和实践过程中常常碰到的疑问
+讲解CNN+RNN的各种组合方式 http://www.elecfans.com/d/775895.html  
 ## CNN和RNN的对比 http://www.elecfans.com/d/775895.html   
 1、CNN卷积神经网络与RNN递归神经网络直观图
 2、相同点：
@@ -37,8 +36,7 @@ RNN学习和实践过程中常常碰到的疑问
 3、不同点
 3.1. CNN空间扩展，神经元与特征卷积；RNN时间扩展，神经元与多个时间输出计算
 3.2. RNN可以用于描述时间上连续状态的输出，有记忆功能，CNN用于静态输出
-3.3. CNN高级100+深度，RNN深度有限
-
+3. 3. CNN高级100+深度，RNN深度有限
 
 
 http://blog.csdn.net/heyongluoyao8/article/details/48636251
@@ -247,9 +245,3 @@ CW-RNNs与SRNs网络结构类似，也包括输入层(Input)、隐藏层(Hidden)
 
 ### 6.6.10 CNN-LSTMs
 1. 为了同时利用CNN以及LSTMs的优点，CNN-LSTMs被提出。在该模型中，CNN用于提取对象特征，LSTMs用于预测。CNN由于卷积特性，其能够快速而且准确地捕捉对象特征。LSTMs的优点在于能够捕捉数据间的长时依赖性。
-
-
-
-### 6.7 常见疑问
-1. 从学习RNN伊始，常常说RNN结构可以解决不定长的数据，不像CNN中一般输入数据是图片，是一般是在建网络结构开始把图片resize到固定宽高，而RNN能解决不定长，这里指的是，time_steps可以不固定，而每次time，input的维度这是固定的。比如，语音特征数据或时间序列数据，一个完整的数据，时间帧数上可以不固定，但每帧的数据维度是固定的。
-2. time_steps的不固定，在构建计算图中，就相当于是构建是动态神经网络图，因为每个数据的时间维度是不固定的，这在编程过程中，Tensorflow其实是以静态图著称，但TensorFlow中提供了**tf.nn.dynamic_rnn()**，达到动态图机制，，但是还是建议大家用PyTorch去搭建RNN模型，因为Pytorch原生就是动态图著称，理解上更容易。
