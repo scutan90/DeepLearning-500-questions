@@ -56,7 +56,7 @@ Submitted MD version chapter: Please check MarkDown
 
    (Into the group, after the MD version is added, improved, and submitted, it is easier to enter the group and enjoy sharing knowledge to help others.)
 
-   Into the "Deep Learning 500 Questions" wechat group please add WeChat Client 1: HQJ199508212176 Client 2: Xuwumin1203 Client 3: tianyuzy
+   Into the "Deep Learning 500 Questions" WeChat group please add WeChat Client 1: HQJ199508212176 Client 2: Xuwumin1203 Client 3: tianyuzy
 
 3. Markdown reader recommendation: https://typora.io/ Free and support for mathematical formulas is better.
 
