@@ -1,5 +1,5 @@
 # 英文版本 
-[English version](/README-en.md)
+[English version](/en/README.md)
 
 # 1. 版权声明  
 请尊重作者的知识产权，版权所有，翻版必究。   未经许可，严禁转发内容！     
