@@ -421,3 +421,6 @@ mxnet是dmlc社区推出的深度学习框架，在2017年被亚马逊指定为�
  (2)TVM
 
  (3)ONNX
+ 
+ ## 参考文献  
+ [《动手学深度学习》附录 购买GPU](https://github.com/d2l-ai/d2l-zh/blob/master/chapter_appendix/buy-gpu.md) Aston Zhang   选择GPU  
