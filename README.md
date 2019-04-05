@@ -1,7 +1,5 @@
-[]: 
 
 # 英文版本 
-[English version](/en)
 
 [English version](https://github.com/scutan90/DeepLearning-500-questions/tree/master/English%20version)
 
