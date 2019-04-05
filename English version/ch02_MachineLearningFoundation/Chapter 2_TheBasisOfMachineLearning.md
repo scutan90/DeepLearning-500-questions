@@ -944,7 +944,7 @@ The main steps are as follows:
 5. Normalize the eigenvectors to get the eigenvector matrix $W$ .
 6. Convert each sample in the sample set $z^{(i)} = W^T x^{(i)}$ .
 7. Get the output matrix $D' = \left( z^{(1)},z^{(2)},...,z^{(n)} \right) $ .
-*Note*: In dimension reduction, sometimes the target dimension is not specified, but the principal component weighting threshold value kk (k \epsilon(0,1]) $ is specified. The assumed $n $ eigenvalues For $\lambda_1 \geq \lambda_2 \geq ... \gEq \lambda_n $ , then $n' $ can be obtained from $\sum^{n'}_{i=1} \lambda_i \geq k \times \sum^n_{i=1} \lambda_i $.
+*Note*: In dimension reduction, sometimes the target dimension is not specified, but the principal component weighting threshold value $kk (k \epsilon(0,1]) $ is specified. The assumed $n $ eigenvalues For $\lambda_1 \geq \lambda_2 \geq ... \geq \lambda_n $ , then $n' $ can be obtained from $\sum^{n'}_{i=1} \lambda_i \geq k \times \sum^n_{i=1} \lambda_i $.
 
 ### 2.15.5 Main advantages and disadvantages of PCA algorithm
 | Advantages and Disadvantages | Brief Description |
@@ -1484,7 +1484,7 @@ $$
 ### 2.17.6 Understanding of Information Gain
 Definition: The difference in entropy before and after the data set is divided by a feature.
 Entropy can represent the uncertainty of the sample set. The larger the entropy, the greater the uncertainty of the sample. Therefore, the difference between the set entropy before and after the partition can be used to measure the effect of using the current feature on the partitioning of the sample set D.
-It is assumed that the entropy of the sample set D before division is H(D). The data set D is divided by a certain feature A, and the entropy of the divided data subset is calculated as H(D|A).
+It is assumed that the entropy of the sample set D before division is H(D). The data set D is divided by a certain feature A, and the entropy of the divided data subset is calculated as $H(D|A)$.
 
 Then the information gain is:
 $$
@@ -1771,7 +1771,7 @@ Https://www.cnblogs.com/hxyue/p/5873566.html
 
 Https://www.cnblogs.com/super-zhang-828/p/8082500.html
 
-Bayesian decision theory uses the **false positive loss** to select the optimal category classification by using the ** correlation probability known**.
+Bayesian decision theory uses the **false positive loss** to select the optimal category classification by using the **correlation probability known**.
 
 Suppose there are $N$ possible classification tags, denoted as $Y=\{c_1,c_2,...,c_N\}$, which category does it belong to for the sample $x$?
 
@@ -1889,7 +1889,7 @@ The Expectation-Maximization algorithm (EM) is a kind of optimization algorithm 
 
 The basic idea of ​​the maximum expectation algorithm is to calculate it alternately in two steps:
 
-The first step is to calculate the expectation (E), using the existing estimates of the hidden variables, to calculate its maximum likelihood estimate**;
+The first step is to calculate the expectation (E), using the existing estimates of the hidden variables, to calculate its maximum likelihood estimate;
 
 The second step is to maximize (M) and maximize the maximum likelihood value found on the E step to calculate the value of the parameter.
 
