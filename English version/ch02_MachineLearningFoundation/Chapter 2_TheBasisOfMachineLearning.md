@@ -1587,7 +1587,7 @@ $$
 $$
 **step 1**. Conversion issues:
 $$
-\min_{\boldsymbol w, b} \max_{\alpha_i \geq 0} \left\{{\frac 1 2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i( 1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))\right\} \tag{2}
+\min_{\boldsymbol w, b} \max_{\alpha_i \geq 0} \left\{\frac{1}{2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i( 1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))\right\} \tag{2}
 $$
 The above formula is equivalent to the original problem, because if the inequality constraint in (1) is satisfied, then $\alpha_i(1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))$ must be taken when (2) is used to find max 0, equivalent to (1); if the inequality constraint in (1) is not satisfied, the max in (2) will get infinity. Exchange min and max to get their dual problem:
 $$
