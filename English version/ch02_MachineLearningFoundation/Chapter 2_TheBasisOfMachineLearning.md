@@ -1581,7 +1581,7 @@ In the hard-space support vector machine, the solution of the problem can be tra
 Assume that the optimization goal is
 $$
 \begin{align}
-&\min_{\boldsymbol w, b}{\frac 1 2}||\boldsymbol w||^2\\
+&\min_{\boldsymbol w, b}\frac{1}{2}||\boldsymbol w||^2\\
 &s.t. y_i(\boldsymbol w^T\boldsymbol x_i+b)\geq1, i=1,2,\cdots,m.\\
 \end{align} \tag{1}
 $$
