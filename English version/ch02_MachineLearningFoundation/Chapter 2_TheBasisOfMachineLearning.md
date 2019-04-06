@@ -1591,7 +1591,7 @@ $$
 $$
 The above formula is equivalent to the original problem, because if the inequality constraint in (1) is satisfied, then $\alpha_i(1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))$ must be taken when (2) is used to find max 0, equivalent to (1); if the inequality constraint in (1) is not satisfied, the max in (2) will get infinity. Exchange min and max to get their dual problem:
 $$
-\max_{\alpha_i \geq 0} \min_{\boldsymbol w, b} \left\{{\frac 1 2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i( 1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))\right\}
+\max_{\alpha_i \geq 0} \min_{\boldsymbol w, b} \left\{\frac{1}{2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i( 1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))\right\}
 $$
 The dual problem after the exchange is not equal to the original problem. The solution of the above formula is less than the solution of the original problem.
 
@@ -1602,11 +1602,11 @@ $$
 $$
 If equation (3) has no solution, then v is a lower bound of question (1). If (3) has a solution, then
 $$
-\forall \boldsymbol \alpha > 0 , \ \min_{\boldsymbol w, b} \left\{{\frac 1 2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i (1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))\right\} < v
+\forall \boldsymbol \alpha > 0 , \ \min_{\boldsymbol w, b} \left\{\frac{1}{2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i (1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))\right\} < v
 $$
 From the inverse of the proposition: if
 $$
-\exists \boldsymbol \alpha > 0 , \ \min_{\boldsymbol w, b} \left\{{\frac 1 2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i (1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))\right\} \geq v
+\exists \boldsymbol \alpha > 0 , \ \min_{\boldsymbol w, b} \left\{\frac{1}{2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i (1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))\right\} \geq v
 $$
 Then (3) no solution.
 
@@ -1615,11 +1615,11 @@ Then v is the problem
 A lower bound of (1).
  Ask for a good lower bound, take the maximum
 $$
-\max_{\alpha_i \geq 0} \min_{\boldsymbol w, b} \left\{{\frac 1 2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i( 1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))\right\}
+\max_{\alpha_i \geq 0} \min_{\boldsymbol w, b} \left\{\frac{1}{2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i( 1 - y_i(\boldsymbol w^T\boldsymbol x_i+b))\right\}
 $$
 **step 3**. Order
 $$
-L(\boldsymbol w, b,\boldsymbol a) = {\frac 1 2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i(1 - y_i(\boldsymbol w^T \boldsymbol x_i+b))
+L(\boldsymbol w, b,\boldsymbol a) = \frac{1}{2}||\boldsymbol w||^2 + \sum_{i=1}^m\alpha_i(1 - y_i(\boldsymbol w^T \boldsymbol x_i+b))
 $$
 $p^*$ is the minimum value of the original question, the corresponding $w, b$ are $w^*, b^*$, respectively, for any $a>0$:
 $$
