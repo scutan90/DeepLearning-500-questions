@@ -297,7 +297,7 @@ $$L=-{\rm E}_{x\sim{p_{data}}(x)}[f_w(x)] + {\rm E}_{x\sim{p_g}(x)}[f_w(x)]+\lam
 
 LSGAN（Least Squares GAN）这篇文章主要针对标准GAN的稳定性和图片生成质量不高做了一个改进。作者将原始GAN的交叉熵损失采用最小二乘损失替代。LSGAN的Loss：
 $$\mathop{\min }\limits_DJ(D)=\mathop{\min}\limits_D[{\frac{1}{2}}{\rm E}_{x\sim{p_{data}}(x)}[D(x)-a]^2 + {\frac{1}{2}}{\rm E}_{z\sim{p_z}(z)}[D(G(z))-b]^2]$$
-$$\mathop{\min }\limits_GJ(G)=\mathop{\min}\limits_G{\frac{1}{2}}{{\rm E}_{z\sim{p_z}(z)}}[D(G(z))-c]^2$$
+$$\mathop{\min }\limits_GJ(G)=\mathop{\min}\limits_G{\frac{1}{2}}{\rm E}_{z\sim{p_z}(z)}[D(G(z))-c]^2$$
 实际实现的时候非常简单，最后一层去掉sigmoid，并且计算Loss的时候用平方误差即可。之所以这么做，作者在原文给出了一张图:
 ![LSGAN交叉熵与最小二乘损失对比图](./img/ch7/LSGAN%E4%BA%A4%E5%8F%89%E7%86%B5%E4%B8%8E%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%8D%9F%E5%A4%B1%E5%AF%B9%E6%AF%94%E5%9B%BE.png)
 上面是作者给出的基于交叉熵损失以及最小二乘损失的Loss函数。横坐标代表Loss函数的输入，纵坐标代表输出的Loss值。可以看出，随着输入的增大，sigmoid交叉熵损失很快趋于0，容易导致梯度饱和问题。如果使用右边的Loss设计，则只在x=0点处饱和。因此使用LSGAN可以很好的解决交叉熵损失的问题。
