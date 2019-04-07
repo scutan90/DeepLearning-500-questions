@@ -40,11 +40,11 @@
 对于上述神经网络模型，如果想要学习其参数，首先需要一个目标函数。GAN的目标函数定义如下：
 
 $$
-\mathop {\min }\limits_G \mathop {\max }\limits_D V(D,G) = {{\rm E}_{x\sim{p_{data}}(x)}}[\log D(x)] + {{\rm E}_{z\sim{p_z}(z)}}[\log (1 - D(G(z)))]
+\mathop {\min }\limits_G \mathop {\max }\limits_D V(D,G) = {\rm E}_{x\sim{p_{data}(x)}}[\log D(x)] + {\rm E}_{z\sim{p_z}(z)}[\log (1 - D(G(z)))]
 $$
 这个目标函数可以分为两个部分来理解：
 
-判别器的优化通过$\mathop {\max}\limits_D V(D,G)​$实现，$V(D,G)​$为判别器的目标函数，其第一项${{\rm E}_{x\sim{p_{data}}(x)}}[\log D(x)]​$表示对于从真实数据分布 中采用的样本 ,其被判别器判定为真实样本概率的数学期望。对于真实数据分布 中采样的样本，其预测为正样本的概率当然是越接近1越好。因此希望最大化这一项。第二项${{\rm E}_{z\sim{p_z}(z)}}[\log (1 - D(G(z)))]​$表示：对于从噪声P_z(z)分布当中采样得到的样本经过生成器生成之后得到的生成图片，然后送入判别器，其预测概率的负对数的期望，这个值自然是越大越好，这个值越大， 越接近0，也就代表判别器越好。
+判别器的优化通过$\mathop {\max}\limits_D V(D,G)$实现，$V(D,G)$为判别器的目标函数，其第一项${\rm E}_{x\sim{p_{data}(x)}}[\log D(x)]$表示对于从真实数据分布 中采用的样本 ,其被判别器判定为真实样本概率的数学期望。对于真实数据分布 中采样的样本，其预测为正样本的概率当然是越接近1越好。因此希望最大化这一项。第二项${{\rm E}_{z\sim{p_z}(z)}}[\log (1 - D(G(z)))]$表示：对于从噪声P_z(z)分布当中采样得到的样本经过生成器生成之后得到的生成图片，然后送入判别器，其预测概率的负对数的期望，这个值自然是越大越好，这个值越大， 越接近0，也就代表判别器越好。
 
 生成器的优化通过$\mathop {\min }\limits_G({\mathop {\max }\limits_D V(D,G)})​$实现。注意，生成器的目标不是$\mathop {\min }\limits_GV(D,G)​$，即生成器**不是最小化判别器的目标函数**，生成器最小化的是**判别器目标函数的最大值**，判别器目标函数的最大值代表的是真实数据分布与生成数据分布的JS散度(详情可以参阅附录的推导)，JS散度可以度量分布的相似性，两个分布越接近，JS散度越小。
 
@@ -64,7 +64,7 @@ $$
 
 对于很多GAN的初学者在实践过程中可能会纳闷，为什么GAN的Loss一直降不下去。GAN到底什么时候才算收敛？其实，作为一个训练良好的GAN，其Loss就是降不下去的。衡量GAN是否训练好了，只能由人肉眼去看生成的图片质量是否好。不过，对于没有一个很好的评价是否收敛指标的问，也有许多学者做了一些研究，后文提及的WGAN就提出了一种新的Loss设计方式，较好的解决了难以判断收敛性的问题。下面我们分析一下GAN的Loss为什么降不下去？
 对于判别器而言，GAN的Loss如下：
-$$\mathop {\min }\limits_G \mathop {\max }\limits_D V(D,G) = {{\rm E}_{x\sim{p_{data}}(x)}}[\log D(x)] + {{\rm E}_{z\sim{p_z}(z)}}[\log (1 - D(G(z)))]$$
+$$\mathop {\min }\limits_G \mathop {\max }\limits_D V(D,G) = {\rm E}_{x\sim{p_{data}(x)}}[\log D(x)] + {\rm E}_{z\sim{p_z}(z)}[\log (1 - D(G(z)))]​$$
 从$\mathop {\min }\limits_G \mathop {\max }\limits_D V(D,G)​$可以看出，生成器和判别器的目的相反，也就是说两个生成器网络和判别器网络互为对抗，此消彼长。不可能Loss一直降到一个收敛的状态。
 
 - 对于生成器，其Loss下降快，很有可能是判别器太弱，导致生成器很轻易的就"愚弄"了判别器。
@@ -148,22 +148,22 @@ Mini-batch discrimination在判别器的中间层建立一个mini-batch layer用
 - 对于所有类别，其输出的概率分布应该趋向于一个均匀分布，这样才不会出现mode dropping等，可以保证生成样本的多样性。
 
 因此，可以设计如下指标：
-$$IS(P_g)=e^{E_{x\sim P_g}[KL(p_M(y|x)\Vert{p_M(y)})]}$$
-根据前面分析，如果是一个训练良好的GAN，$p_M(y|x)$趋近于脉冲分布，$p_M(y)$趋近于均匀分布。二者KL散度会很大。Inception Score自然就高。实际实验表明，Inception Score和人的主观判别趋向一致。IS的计算没有用到真实数据，具体值取决于模型M的选择
+$$IS(P_g)=e^{E_{x\sim P_g}[KL(p_M(y|x)\Vert{p_M(y)})]}​$$
+根据前面分析，如果是一个训练良好的GAN，$p_M(y|x)​$趋近于脉冲分布，$p_M(y)​$趋近于均匀分布。二者KL散度会很大。Inception Score自然就高。实际实验表明，Inception Score和人的主观判别趋向一致。IS的计算没有用到真实数据，具体值取决于模型M的选择
 
 **特点：可以一定程度上衡量生成样本的多样性和准确性，但是无法检测过拟合。Mode Score也是如此。不推荐在和ImageNet数据集差别比较大的数据上使用。**
 
 #### Mode Score
 
 Mode Score作为Inception Score的改进版本，添加了关于生成样本和真实样本预测的概率分布相似性度量一项。具体公式如下：
-$$MS(P_g)=e^{E_{x\sim P_g}[KL(p_M(y|x)\Vert{p_M(y)})-KL(p_M(y)\Vert p_M(y^*))]}$$
+$$MS(P_g)=e^{E_{x\sim P_g}[KL(p_M(y|x)\Vert{p_M(y)})-KL(p_M(y)\Vert p_M(y^*))]}​$$
 
 #### Kernel MMD (Maximum Mean Discrepancy)
 
 计算公式如下：
-$$MMD^2(P_r,P_g)=E_{x_r\sim{P_r},x_g\sim{P_g}}[\lVert\Sigma_{i=1}^{n1}k(x_r)-\Sigma_{i=1}^{n2}k(x_g)\rVert]$$
-对于Kernel MMD值的计算，首先需要选择一个核函数$k$，这个核函数把样本映射到再生希尔伯特空间(Reproducing Kernel Hilbert Space, RKHS) ，RKHS相比于欧几里得空间有许多优点，对于函数内积的计算是完备的。将上述公式展开即可得到下面的计算公式：
-$$MMD^2(P_r,P_g)=E_{x_r,x_r{'}\sim{P_r},x_g,x_g{'}\sim{P_g}}[k(x_r,x_r{'})-2k(x_r,x_g)+k(x_g,x_g{'})]$$
+$$MMD^2(P_r,P_g)=E_{x_r\sim{P_r},x_g\sim{P_g}}[\lVert\Sigma_{i=1}^{n1}k(x_r)-\Sigma_{i=1}^{n2}k(x_g)\rVert]​$$
+对于Kernel MMD值的计算，首先需要选择一个核函数$k​$，这个核函数把样本映射到再生希尔伯特空间(Reproducing Kernel Hilbert Space, RKHS) ，RKHS相比于欧几里得空间有许多优点，对于函数内积的计算是完备的。将上述公式展开即可得到下面的计算公式：
+$$MMD^2(P_r,P_g)=E_{x_r,x_r{'}\sim{P_r},x_g,x_g{'}\sim{P_g}}[k(x_r,x_r{'})-2k(x_r,x_g)+k(x_g,x_g{'})]​$$
 MMD值越小，两个分布越接近。
 
 **特点：可以一定程度上衡量模型生成图像的优劣性，计算代价小。推荐使用。**
@@ -171,8 +171,8 @@ MMD值越小，两个分布越接近。
 #### Wasserstein distance
 
 Wasserstein distance在最优传输问题中通常也叫做推土机距离。这个距离的介绍在WGAN中有详细讨论。公式如下：
-$$WD(P_r,P_g)=min_{\omega\in\mathbb{R}^{m\times n}}\Sigma_{i=1}^n\Sigma_{i=1}^m\omega_{ij}d(x_i^r,x_j^g)$$
-$$s.t. \Sigma_{i=1}^mw_{i,j}=p_r(x_i^r),  \forall i;\Sigma_{j=1}^nw_{i,j}=p_g(x_j^g),  \forall j$$
+$$WD(P_r,P_g)=min_{\omega\in\mathbb{R}^{m\times n}}\Sigma_{i=1}^n\Sigma_{i=1}^m\omega_{ij}d(x_i^r,x_j^g)​$$
+$$s.t. \Sigma_{i=1}^mw_{i,j}=p_r(x_i^r),  \forall i;\Sigma_{j=1}^nw_{i,j}=p_g(x_j^g),  \forall j​$$
 Wasserstein distance可以衡量两个分布之间的相似性。距离越小，分布越相似。
 
 **特点：如果特征空间选择合适，会有一定的效果。但是计算复杂度为$O(n^3)​$太高**
@@ -237,7 +237,7 @@ PixelCNN/RNN定义了一个易于处理的密度函数，我们可以直接优�
 条件生成对抗网络（CGAN, Conditional Generative Adversarial Networks）作为一个GAN的改进，其一定程度上解决了GAN生成结果的不确定性。如果在Mnist数据集上训练原始GAN，GAN生成的图像是完全不确定的，具体生成的是数字1，还是2，还是几，根本不可控。为了让生成的数字可控，我们可以把数据集做一个切分，把数字0~9的数据集分别拆分开训练9个模型，不过这样太麻烦了，也不现实。因为数据集拆分不仅仅是分类麻烦，更主要在于，每一个类别的样本少，拿去训练GAN很有可能导致欠拟合。因此，CGAN就应运而生了。我们先看一下CGAN的网络结构：
 ![CGAN网络结构](./img/ch7/CGAN网络结构.png)
 从网络结构图可以看到，对于生成器Generator，其输入不仅仅是随机噪声的采样z，还有欲生成图像的标签信息。比如对于mnist数据生成，就是一个one-hot向量，某一维度为1则表示生成某个数字的图片。同样地，判别器的输入也包括样本的标签。这样就使得判别器和生成器可以学习到样本和标签之间的联系。Loss如下：
-$$\mathop {\min }\limits_G \mathop {\max }\limits_D V(D,G) = {{\rm E}_{x\sim{p_{data}}(x)}}[\log D(x|y)] + {{\rm E}_{z\sim{p_z}(z)}}[\log (1 - D(G(z|y)))]$$
+$$\mathop {\min }\limits_G \mathop {\max }\limits_D V(D,G) = {\rm E}_{x\sim{p_{data}(x)}}[\log D(x|y)] + {\rm E}_{z\sim{p_z}(z)}[\log (1 - D(G(z|y)))]​$$
 Loss设计和原始GAN基本一致，只不过生成器，判别器的输入数据是一个条件分布。在具体编程实现时只需要对随机噪声采样z和输入条件y做一个级联即可。
 
 
@@ -272,11 +272,11 @@ GAN原始判别器的Loss在判别器达到最优的时候，等价于最小化�
 #### WGAN如何解决训练崩溃问题？
 
 WGAN作者提出了使用Wasserstein距离，以解决GAN网络训练过程难以判断收敛性的问题。Wasserstein距离定义如下:
-$$L={{\rm E}_{x\sim{p_{data}}(x)}}[f_w(x)] - {{\rm E}_{x\sim{p_g}(x)}}[f_w(x)]$$
+$$L={\rm E}_{x\sim{p_{data}}(x)}[f_w(x)] - {\rm E}_{x\sim{p_g}(x)}[f_w(x)]$$
 通过最小化Wasserstein距离，得到了WGAN的Loss：
 
-- WGAN生成器Loss：$- {{\rm E}_{x\sim{p_g}(x)}}[f_w(x)]$
-- WGAN判别器Loss：$L=-{{\rm E}_{x\sim{p_{data}}(x)}}[f_w(x)] + {{\rm E}_{x\sim{p_g}(x)}}[f_w(x)]$
+- WGAN生成器Loss：$- {\rm E}_{x\sim{p_g}(x)}[f_w(x)]​$
+- WGAN判别器Loss：$L=-{\rm E}_{x\sim{p_{data}}(x)}[f_w(x)] + {\rm E}_{x\sim{p_g}(x)}[f_w(x)]$
 
 从公式上GAN似乎总是让人摸不着头脑，在代码实现上来说，其实就以下几点：
 
@@ -288,7 +288,7 @@ $$L={{\rm E}_{x\sim{p_{data}}(x)}}[f_w(x)] - {{\rm E}_{x\sim{p_g}(x)}}[f_w(x)]$$
 
 实际实验过程发现，WGAN没有那么好用，主要原因在于WAGN进行梯度截断。梯度截断将导致判别网络趋向于一个二值网络，造成模型容量的下降。
 于是作者提出使用梯度惩罚来替代梯度裁剪。公式如下：
-$$L=-{{\rm E}_{x\sim{p_{data}}(x)}}[f_w(x)] + {{\rm E}_{x\sim{p_g}(x)}}[f_w(x)]+\lambda{{\rm E}_{x\sim{p_x}(x)}}[\lVert\nabla_x(D(x))\rVert_p-1]^2$$
+$$L=-{\rm E}_{x\sim{p_{data}}(x)}[f_w(x)] + {\rm E}_{x\sim{p_g}(x)}[f_w(x)]+\lambda{\rm E}_{x\sim{p_x}(x)}[\lVert\nabla_x(D(x))\rVert_p-1]^2​$$
 由于上式是对每一个梯度进行惩罚，所以不适合使用BN，因为它会引入同个batch中不同样本的相互依赖关系。如果需要的话，可以选择Layer Normalization。实际训练过程中，就可以通过Wasserstein距离来度量模型收敛程度了：
 ![Wass距离随迭代次数变化](./img/ch7/Wass%E8%B7%9D%E7%A6%BB%E9%9A%8F%E8%BF%AD%E4%BB%A3%E6%AC%A1%E6%95%B0%E5%8F%98%E5%8C%96.png)
 上图纵坐标是Wasserstein距离，横坐标是迭代次数。可以看出，随着迭代的进行，Wasserstein距离趋于收敛，生成图像也趋于稳定。
@@ -296,7 +296,7 @@ $$L=-{{\rm E}_{x\sim{p_{data}}(x)}}[f_w(x)] + {{\rm E}_{x\sim{p_g}(x)}}[f_w(x)]+
 ### 7.2.5 LSGAN
 
 LSGAN（Least Squares GAN）这篇文章主要针对标准GAN的稳定性和图片生成质量不高做了一个改进。作者将原始GAN的交叉熵损失采用最小二乘损失替代。LSGAN的Loss：
-$$\mathop{\min }\limits_DJ(D)=\mathop{\min}\limits_D[{\frac{1}{2}}{{\rm E}_{x\sim{p_{data}}(x)}}[D(x)-a]^2 + {\frac{1}{2}}{{\rm E}_{z\sim{p_z}(z)}}[D(G(z))-b]^2]$$
+$$\mathop{\min }\limits_DJ(D)=\mathop{\min}\limits_D[{\frac{1}{2}}{\rm E}_{x\sim{p_{data}}(x)}[D(x)-a]^2 + {\frac{1}{2}}{\rm E}_{z\sim{p_z}(z)}[D(G(z))-b]^2]$$
 $$\mathop{\min }\limits_GJ(G)=\mathop{\min}\limits_G{\frac{1}{2}}{{\rm E}_{z\sim{p_z}(z)}}[D(G(z))-c]^2$$
 实际实现的时候非常简单，最后一层去掉sigmoid，并且计算Loss的时候用平方误差即可。之所以这么做，作者在原文给出了一张图:
 ![LSGAN交叉熵与最小二乘损失对比图](./img/ch7/LSGAN%E4%BA%A4%E5%8F%89%E7%86%B5%E4%B8%8E%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%8D%9F%E5%A4%B1%E5%AF%B9%E6%AF%94%E5%9B%BE.png)
@@ -390,7 +390,7 @@ cycleGAN的生成器采用U-Net，判别器采用LS-GAN。
 
 #### Loss设计
 总的Loss就是X域和Y域的GAN Loss，以及Cycle consistency loss：
-$$L(G,F,D_X,D_Y)=L_{GAN}(G,D_Y,X,Y)+L_{GAN}(F,D_X,Y,X)+\lambda L_{cycle}(G,F)$$
+$$L(G,F,D_X,D_Y)=L_{GAN}(G,D_Y,X,Y)+L_{GAN}(F,D_X,Y,X)+\lambda L_{cycle}(G,F)​$$
 整个过程End to end训练，效果非常惊艳，利用这一框架可以完成非常多有趣的任务
 
 #### 多领域的无监督图像翻译：StarGAN
