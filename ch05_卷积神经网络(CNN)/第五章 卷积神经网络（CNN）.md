@@ -221,7 +221,7 @@ $$
 
 首先给出一个输入输出结果
 
-![image](E:/500/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0500%E9%97%AE-20190113/ch05_%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C(CNN)/img/ch5/img32.png)
+![image](./img/ch5/img32.png)
 
 那是怎样计算的呢？
 
