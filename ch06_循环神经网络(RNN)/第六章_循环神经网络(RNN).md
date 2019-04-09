@@ -132,9 +132,9 @@
 4. 在标准的RNN结构中，隐层的神经元之间也是带有权值的，且权值共享。
 5. 理论上，RNNs能够对任何长度序列数据进行处理。但是在实践中，为了降低复杂度往往假设当前的状态只与之前某几个时刻状态相关，**下图便是一个典型的RNNs**：
 
-![](E:/DeepLearning-500-questions/ch06_%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C(RNN)/img/ch6/figure_6.2_1.png)
+![](./img/ch6/figure_6.2_1.png)
 
-![](E:/DeepLearning-500-questions/ch06_%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C(RNN)/img/ch6/figure_6.2_2.jpg)
+![](./img/ch6/figure_6.2_2.jpg)
 
 输入单元(Input units)：输入集$\bigr\{x_0,x_1,...,x_t,x_{t+1},...\bigr\}$，
 
