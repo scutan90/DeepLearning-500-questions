@@ -76,9 +76,7 @@
 
 # 6. 友情链接
 
-[FlyAI-AI竞赛平台](www.flyai.com)
-
-[FlyAI-AI竞赛平台]: www.flyai.com
+[FlyAI-AI竞赛平台](https://www.flyai.com/)
 
 
 
