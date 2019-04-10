@@ -78,6 +78,10 @@
 
 [FlyAI-AI竞赛平台](www.flyai.com)
 
+[FlyAI-AI竞赛平台]: www.flyai.com
+
+
+
 # 7. 目录
 
 **第一章 数学基础	1**
