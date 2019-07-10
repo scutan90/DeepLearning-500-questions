@@ -59,19 +59,11 @@ GPU整体的架构而言，某种意义上是同时支持以上两种并行模�
 深度学习在最近几年内出现的井喷现象背后也是GPU的存在和发展作为坚实的推动力量。
 
 哪些场景使用GPU
-在涉及大型矩阵运算的时候使用GPU可以显著加速处理速度，由于GPU架构的独特设计，针对矩阵运算可以实现高速并行计算，极大提高计算速度。
-一般在高性能计算，机器学习，深度学习，图像渲染等等场景中会比较多的使用矩阵运算，使用GPU可以显著加快处理速度。
-在一般的深度学习训练中，通常来说使用GPU比使用CPU都有10倍以上的速度提升，所以几乎所有深度学习的研究者几乎都是在使用GPU进行训练。
 
 ImageNet的例子
 
 
 ### 15.3.5 新图灵架构里的tensor core对深度学习有什么作用？
-我们知道在深度学习中,矩阵-矩阵乘法运算（BLAS GEMM）是神经网络训练和推理的核心，并且矩阵乘法运算占据了所有计算量的大部分，而Tensor core就是为了解决这个问题而推出的，它的出现极大的提高了计算效率，大大加速了深度学习的计算速度，对深度学习的发展具有极大意义。
-
-Tensor Core是Volta架构最重磅特性，是专门针对Deep Learning应用而设计的专用ASIC单元，实际上是一种矩阵乘累加的计算单元。（矩阵乘累加计算在Deep Learning网络层算法中，比如卷积层、全连接层等是最重要、最耗时的一部分。）Tensor Core可以在一个时钟周期内实现两个4×4矩阵乘法以及与另一个4×4矩阵加法。整个计算的个数，就是在一个时钟周期内可以实现64次乘和64次加。
-
-所以Tensor Core就是为了矩阵乘法的加速而设计的，使用具有Tensor Core的GPU来进行深度学习的训练会极大的提高训练速度。
 
 
 ## 15.4 CUDA 框架
@@ -102,11 +94,14 @@ GPU的性能主要由以下三个参数构成：
 
 如果大家继续比较GTX较早的系列，也可以发现类似的规律。据此，我们推荐大家在能力范围内尽可能买较新的GPU。
 
+对于RTX系列，新增了Tensor Cores单元及支持FP16，使得显卡的可选择范围更加多元。
+
 ### 15.5.2 购买建议
-##### 首先给出一些总体的建议
-最好的GPU整体（小幅度）：Titan Xp
-综合性价比高，但略贵：GTX 1080 Ti，GTX 1070，GTX 1080
-性价比还不错且便宜：GTX 1060（6GB）
+首先给出一些总体的建议：
+
+性价比高但较贵：RTX 2070，GTX 1080 Ti
+
+性价比高又便宜：RTX 2060，GTX 1060（6GB）
 
 当使用数据集> 250GB：GTX Titan X（Maxwell） ，NVIDIA Titan X Pascal或NVIDIA Titan Xp
 
@@ -114,15 +109,15 @@ GPU的性能主要由以下三个参数构成：
 
 几乎没有钱，入门级：GTX 1050 Ti（4GB）
 
-做Kaggle比赛：GTX 1060（6GB）适用于任何“正常”比赛，或GTX 1080 Ti用于“深度学习竞赛”
+做Kaggle比赛：RTX 2070、GTX 1060（6GB）适用于任何“正常”比赛，GTX 1080 Ti（预算足够可以选择RTX 2080 Ti）用于“深度学习竞赛”
 
-计算机视觉研究员：NVIDIA Titan Xp；不要买现在新出的Titan X（Pascal或Maxwell）
+计算机视觉研究员：RTX 2080 Ti（涡轮散热或水冷散热较好，方便后期增加新的显卡）如果网络很深可以选择Titan RTX
 
-一名研究员人员：GTX 1080 Ti。在某些情况下，如自然语言处理，一个GTX 1070或GTX 1080已经足够了-检查你现在模型的内存需求
+一名NLP研究人员：RTX 2080 Ti，并使用FP16来训练
 
 搭建一个GPU集群：这个有点复杂，另做探讨。
 
-刚开始进行深度学习研究：从GTX 1060（6GB）开始。根据你下一步兴趣（入门，Kaggle比赛，研究，应用深度学习）等等，在进行选择。目前，GTX 1060更合适。
+刚开始进行深度学习研究：从RTX 2060或GTX 1060（6GB）开始，根据你下一步兴趣（入门，Kaggle比赛，研究，应用深度学习）等等，再进行选择。目前，RTX 2060和GTX 1060都比较合适入门的选择。
 
 想尝试下深度学习，但没有过多要求：GTX 1050 ti（4或2GB）
 
@@ -386,46 +381,48 @@ mxnet的最知名的优点就是其对多GPU的支持和扩展性强，其优秀
 
 ### 15.2.1 常用框架简介
 
-1，tensorflow：
+1. tensorflow：
 tensorflow由于有google的强大背书，加上其优秀的分布式设计，丰富的教程资源和论坛，工业部署方便，基本很多人都是从tensorflow入门的
 优点：google的强大背书，分布式训练，教程资源丰富，常见问题基本都可以在互联网中找到解决办法，工业部署方便
 缺点: 接口混乱，官方文档不够简洁，清晰，
 
-2，keras:
+2. keras:
 keras是一种高层编程接口，其可以选择不同的后端，比如tensorflow，therao等等
 优点：接口简洁，上手快，文档好，资源多
 缺点: 封装的太好了导致不理解其技术细节
 
-3,pytorch:
+3. pytorch:
 
 
-4,caffe2:
+4. caffe2:
 caffe2是在caffe之后的第二代版本，同属于Facebook。。。
 优点：支持模型的全平台部署，。。。。
 缺点:使用人数相对较少，资源较少，和pytorch合并后应该会更受欢迎
 
-5,mxnet
+5. mxnet
 mxnet是dmlc社区推出的深度学习框架，在2017年被亚马逊指定为官方框架
 优点：支持多种语言，代码设计优秀，省显存，华人团队开发，中文社区活跃，官方复现经典论文推出gluoncv和gluonNLP模块，非常方便，拿来就可以用。
 缺点:现在mxnet官方社区主要在推gluon接口，接口稍有混乱，坑较多，入手门槛稍高
 
-6，caffe：
+6. caffe：
 目前很多做深度学习比较早的大厂基本都是在用caffe，因为在2013-2015年基本就是caffe的天下，并且caffe的代码设计很优秀，基本所有代码都被翻了很多遍了，被各种分析，大厂基本都是魔改caffe，基于caffe来进行二次开发，所在目前在很多大厂还是在使用caffe
 优点：资源丰富，代码容易理解，部署方便
 缺点：入门门槛高，文档较少
 
-###15.2.1 框架选型总结
-1，新手入门，首推pytorch，上手快，资源丰富,官方文档写的非常好(https://pytorch.org/tutorials/)
-2，目前工业部署，tensorflow是首选,资源丰富，并且在分布式训练这一块基本一家独大
-3，mxnet的gluon接口有比较丰富的中文资源（教程：zh.gluon.ai，论坛：discuss.gluon.ai）,gluoncv模块（https://gluon-cv.mxnet.io）,gluonNLP模块（https://gluon-nlp.mxnet.io）
+框架选型总结:
+1. 新手入门，首推pytorch，上手快，资源丰富,官方文档写的非常好(https://pytorch.org/tutorials/)
+2. 目前工业部署，tensorflow是首选,资源丰富，并且在分布式训练这一块基本一家独大
+3. mxnet的gluon接口有比较丰富的中文资源（教程：zh.gluon.ai，论坛：discuss.gluon.ai）,gluoncv模块（https://gluon-cv.mxnet.io）,gluonNLP模块（https://gluon-nlp.mxnet.io）
 
 
-##15.3 模型部署
+## 15.3 模型部署
 我们一般都是通过python或者其他语言来编码训练模型，然后基于后端来进行部署
 一般的框架都有自身的部署框架，比如tensorflow，pytorch，caffe2，mxnet等等
 有一些框架是专门做推理部署使用的，比如
-（1）tensorRT
-
+ (1)tensorRT
  (2)TVM
-
  (3)ONNX
+ 
+ ## 相关文献  
+ [1] Aston Zhang, Mu Li, Zachary C. Lipton, and Alex J. Smola. [《动手学深度学习》附录 购买GPU](https://github.com/d2l-ai/d2l-zh/blob/master/chapter_appendix/buy-gpu.md), 2019.
+ [2] Tim Dettmers. [Which GPU(s) to Get for Deep Learning: My Experience and Advice for Using GPUs in Deep Learning](http://timdettmers.com/2019/04/03/which-gpu-for-deep-learning/), 2019.
