@@ -18,7 +18,7 @@ As shown in Figure 4.1, LeNet-5 consists of 7 layers (the input layer is not use
 Table 4.1 LeNet-5 Network Parameter Configuration
 
 | Network Layer | Input Size | Core Size | Output Size | Trainable Parameter Quantity |
-| :-------------: | :------------------: | :----------- -----------: | :------------------: | :--------------- --------------: |
+| :-----------: | :--------: | :-------: | :---------: | :--------------------------: |
 | Convolutional Layer $C_1$ | $32\times32\times1$ | $5\times5\times1/1,6$ | $28\times28\times6$ | $(5\times5\times1+1)\times6$ |
 | Downsampling layer $S_2$ | $28\times28\times6$ | $2\times2/2$ | $14\times14\times6$ | $(1+1)\times6$ $^*$ |
 | Convolutional Layer $C_3$ | $14\times14\times6$ | $5\times5\times6/1,16$ | $10\times10\times16$ | $1516^*$ |
@@ -62,7 +62,7 @@ As shown in Figure 4.3, except for downsampling (pooling layer) and Local Respon
 Table 4.2 AlexNet Network Parameter Configuration
 
 | Network Layer | Input Size | Core Size | Output Size | Trainable Parameter Quantity |
-| :-------------------: | :-------------------------- --------: | :--------------------------------------: | :----------------------------------: | :----------- --------------------------: |
+| :-----------: | :--------: | :-------: | :---------: | :--------------------------: |
 | Convolutional Layer $C_1$ $^*$ | $224\times224\times3$ | $11\times11\times3/4,48(\times2_{GPU})$ | $55\times55\times48(\times2_{GPU})$ | $(11\times11\times3+1)\times48\times2$ |
 | Downsampling layer $S_{max}$$^*$ | $55\times55\times48(\times2_{GPU})$ | $3\times3/2(\times2_{GPU})$ | $27\times27\times48(\ Times2_{GPU})$ | 0 |
 | Convolutional Layer $C_2$ | $27\times27\times48(\times2_{GPU})$ | $5\times5\times48/1,128(\times2_{GPU})$ | $27\times27\times128(\times2_{GPU}) $ | $(5\times5\times48+1)\times128\times2$ |
@@ -114,7 +114,7 @@ Figure 4.5 (a) Characteristic map of the first layer output of ZFNet (b) Charact
 
 Table 4.3 ZFNet Network Parameter Configuration
 | Network Layer | Input Size | Core Size | Output Size | Trainable Parameter Quantity |
-| :-------------------: | :-------------------------- --------: | :--------------------------------------: | :----------------------------------: | :----------- --------------------------: |
+| :-----------: | :--------: | :-------: | :---------: | :--------------------------: |
 | Convolutional Layer $C_1$ $^*$ | $224\times224\times3$ | $7\times7\times3/2,96$ | $110\times110\times96$ | $(7\times7\times3+1)\times96$ |
 | Downsampling layer $S_{max}$ | $110\times110\times96$ | $3\times3/2$ | $55\times55\times96$ | 0 |
 | Convolutional Layer $C_2$ $^*$ | $55\times55\times96$ | $5\times5\times96/2,256$ | $26\times26\times256$ | $(5\times5\times96+1)\times256$ |
@@ -190,7 +190,7 @@ In the original paper, VGGNet contains six versions of evolution, corresponding 
 Table 4.5 VGG16 network parameter configuration
 
 | Network Layer | Input Size | Core Size | Output Size | Number of Parameters |
-| :--------------------: | :-------------------: | :--- ------------------: | :--------------------: | :------ -----------------------: |
+| :-----------: | :--------: | :-------: | :---------: | :------------------: |
 | Convolutional Layer $C_{11}$ | $224\times224\times3$ | $3\times3\times64/1$ | $224\times224\times64$ | $(3\times3\times3+1)\times64$ |
 | Convolutional Layer $C_{12}$ | $224\times224\times64$ | $3\times3\times64/1$ | $224\times224\times64$ | $(3\times3\times64+1)\times64$ |
 | Downsampling layer $S_{max1}$ | $224\times224\times64$ | $2\times2/2$ | $112\times112\times64$ | $0$ |
@@ -243,7 +243,7 @@ Figure 4.10 Inception$_{v1-4}$ structure diagram
 Table 4.6 Inception$_{v1}$ Network Parameter Configuration in GoogLeNet
 
 | Network Layer | Input Size | Core Size | Output Size | Number of Parameters |
-| :--------------------: | :-------------------: | :--- ------------------: | :--------------------: | :------ -----------------------: |
+| :-----------: | :--------: | :-------: | :---------: | :------------------: |
 | Convolutional layer $C_{11}$ | $H\times{W}\times{C_1}$ | $1\times1\times{C_2}/2$ | $\frac{H}{2}\times\frac {W}{2}\times{C_2}$ | $(1\times1\times{C_1}+1)\times{C_2}$ |
 | Convolutional layer $C_{21}$ | $H\times{W}\times{C_2}$ | $1\times1\times{C_2}/2$ | $\frac{H}{2}\times\frac {W}{2}\times{C_2}$ | $(1\times1\times{C_2}+1)\times{C_2}$ |
 | Convolutional Layer $C_{22}$ | $H\times{W}\times{C_2}$ | $3\times3\times{C_2}/1$ | $H\times{W}\times{C_2}/ 1$ | $(3\times3\times{C_2}+1)\times{C_2}$ |
