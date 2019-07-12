@@ -719,7 +719,7 @@ $$
 The table below briefly compares the difference between stochastic gradient descent (SGD), batch gradient descent (BGD), small batch gradient descent (mini-batch GD), and online GD:
 
 || BGD | SGD | Mini-batch GD | Online GD |
-|:----:|:---:|:-------------:|:---------:|
+|:--:|:----:|:---:|:-------------:|:---------:|
 | training set | fixed | fixed | fixed | real-time update |
 |Single iteration sample number | Whole training set | Single sample | Subset of training set | According to specific algorithm |
 | Algorithm Complexity | High | Low | General | Low |
