@@ -10,8 +10,8 @@ xxx-xxx
 **Contributors (in no particular order): **
 Content contributors can add information
 
-Liu Yanchao - Southeast University
-Liu Yuande-Shanghai University of Technology (Content Revision)
-Jingwen Zheng - Data Scientist
+Liu Yanchao - Southeast University  
+Liu Yuande-Shanghai University of Technology (Content Revision)  
+Jingwen Zheng - Data Scientist  
 
 ###########################################################
