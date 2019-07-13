@@ -700,7 +700,7 @@ One problem associated with stochastic gradient descent is that the noise is muc
 The stochastic gradient descent method and the batch gradient descent method are relatively extreme, and the simple comparison is as follows:
 
 | Method | Features |
-| :----------: | :----------------------------------- ------------------------ |
+| :----: | :------- |
 | Batch gradient descent | a) Use all data to gradient down. b) The batch gradient descent method is slow in training when the sample size is large. |
 | Stochastic Gradient Descent | a) Stochastic gradient descent with a sample to gradient down. b) Training is fast.
 c) The stochastic gradient descent method uses only one sample to determine the direction of the gradient, which may result in a solution that is not optimal.
@@ -718,8 +718,8 @@ $$
 ### 2.12.8 Comparison of various gradient descent methods
 The table below briefly compares the difference between stochastic gradient descent (SGD), batch gradient descent (BGD), small batch gradient descent (mini-batch GD), and online GD:
 
-|BGD|SGD|GD|Mini-batch GD|Online GD|
-|:-:|:-:|:-:|:-:|:-:|:-:|
+|| BGD | SGD | Mini-batch GD | Online GD |
+|:--:|:----:|:---:|:-------------:|:---------:|
 | training set | fixed | fixed | fixed | real-time update |
 |Single iteration sample number | Whole training set | Single sample | Subset of training set | According to specific algorithm |
 | Algorithm Complexity | High | Low | General | Low |
@@ -1634,11 +1634,11 @@ $$
 
 ### 2.18.7 What are the common kernel functions?
 | Kernel Functions | Expressions | Notes |
-| ---------------------------- | -------------------- ---------------------------------------- | --------- -------------------------- |
-Linear Kernel Linear Kernel | $k(x,y)=xy$ | |
-Polynomial Kernel Polynomial Kernel | $k(x,y)=(ax^{t}y+c)^{d}$ | $d>=1$ is the number of polynomials |
-Exponential Kernel Exponent Kernel Function | $k(x,y)=exp(-\frac{\left \|x-y \right \|}{2\sigma ^{2}})$ | $\sigma>0$ |
-Gaussian Kernel Gaussian Kernel Function | $k(x,y)=exp(-\frac{\left \|xy \right \|^{2}}{2\sigma ^{2}})$ | $\sigma $ is the bandwidth of the Gaussian kernel, $\sigma>0$, |
+| ---------------- | ----------- | ----- |
+| Linear Kernel Linear Kernel | $k(x,y)=xy$ | |
+| Polynomial Kernel Polynomial Kernel | $k(x,y)=(ax^{t}y+c)^{d}$ | $d>=1$ is the number of polynomials |
+| Exponential Kernel Exponent Kernel Function | $k(x,y)=exp(-\frac{\left \|x-y \right \|}{2\sigma ^{2}})$ | $\sigma>0$ |
+| Gaussian Kernel Gaussian Kernel Function | $k(x,y)=exp(-\frac{\left \|xy \right \|^{2}}{2\sigma ^{2}})$ | $\sigma $ is the bandwidth of the Gaussian kernel, $\sigma>0$, |
 | Laplacian Kernel Laplacian Kernel | $k(x,y)=exp(-\frac{\left \|x-y \right|}{\sigma})$ | $\sigma>0$ |
 | ANOVA Kernel | $k(x,y)=exp(-\sigma(x^{k}-y^{k})^{2})^{d}$ | |
 | Sigmoid Kernel | $k(x,y)=tanh(ax^{t}y+c)$ | $tanh$ is a hyperbolic tangent function, $a>0,c<0$ |
@@ -1819,31 +1819,31 @@ The training set is as follows:
 
 Https://www.cnblogs.com/super-zhang-828/p/8082500.html
 
-| Number | Color | Roots | Knock | Texture | Umbilical | Tactile | Density | Sugar Content |
-| :--: | :--: | :-- | : :--: | :--: | :--: | :--: | :---: | :----: | --: |
-| 1 | Green | Condensation | Turbidity | Clear | Sag | Hard slip | 0.697 | 0.460 |
-| 2 | Black | Cursed | Dull | Clear | Sag | Hard slip | 0.774 | 0.376 |
-| 3 | Black | Cursed | Turbid | Clear | Hollow | Hard slip | 0.634 | 0.264 |
-4 | Green | Collapse | Dull | Clear | Hollow | Hard slip | 0.608 | 0.318 |
-| 5 | White | Cursed | Turbid | Clear | Sag | Hard slip | 0.556 | 0.215 |
-| 6 | Green | A little bit | 浊 | | Clear | slightly concave | soft sticky | 0.403 | 0.237 |
-| 7 | Black | Slightly 蜷 | 浊响 | Slightly sloppy | Slightly concave | Soft sticky | 0.481 | 0.149 |
-| 8 | Black | Slightly 蜷 | 浊 | | Clear | Slightly concave | Hard slip | 0.437 | 0.211 |
-| 9乌黑 | 蜷 蜷 | dull | slightly battered | slightly concave | hard slip | 0.666 | 0.091 |
-| 10 | Green | Tough | Crisp | Clear | Flat | Soft Sticky | 0.243 | 0.267 |
-| 11 | White | Hard | Crisp | Blur | Flat | Hard slip | 0.245 | 0.057 |
-| 12 | White | Collapse | Turbidity | Blur | Flat | Soft Sticky | 0.343 | 0.099 |
-| 13 | Green | Slightly 蜷 | 浊响 | Slightly smeared | Sag | Hard slip | 0.639 | 0.161 |
-| 14 | 白白 | 蜷 蜷 | dull | slightly paste | dent | hard slip | 0.657 | 0.198 |
-| 15 | black | slightly 蜷 | 浊 | | Clear | slightly concave | soft sticky | 0.360 | 0.370 |
-| 16 | White | Cursed | Turbid | Blurred | Flat | Hard slip | 0.593 | 0.042 |
-| 17 | Green | Collapse | Dull | Slightly Paste | Slightly concave | Hard slip | 0.719 | 0.103 |
+| Number | Color |        Roots       |  Knock |     Texture     |    Umbilical    |   Tactile   | Density | Sugar Content | Delicious |
+| :----: | :---: | :----------------: | :----: | :-------------: | :-------------: | :---------: | :-----: | :-----------: | :-------: |
+|    1   | Green | Rolled-up          | Turbid | Clear           | Sunken          | Hard slip   |   0.697 |         0.460 | True      |
+|    2   | Black | Rolled-up          | Dull   | Clear           | Sunken          | Hard slip   |   0.774 |         0.376 | True      |
+|    3   | Black | Rolled-up          | Turbid | Clear           | Sunken          | Hard slip   |   0.634 |         0.264 | True      |
+|    4   | Green | Rolled-up          | Dull   | Clear           | Sunken          | Hard slip   |   0.608 |         0.318 | True      |
+|    5   | White | Rolled-up          | Turbid | Clear           | Sunken          | Hard slip   |   0.556 |         0.215 | True      |
+|    6   | Green | Slightly rolled-up | Turbid | Clear           | Slightly sunken | Soft sticky |   0.403 |         0.237 | True      |
+|    7   | Black | Slightly rolled-up | Turbid | Slightly blurry | Slightly sunken | Soft sticky |   0.481 |         0.149 | True      |
+|    8   | Black | Slightly rolled-up | Turbid | Clear           | Slightly sunken | Hard slip   |   0.437 |         0.211 | True      |
+|    9   | Black | Slightly rolled-up | Dull   | Slightly blurry | Slightly sunken | Hard slip   |   0.666 |         0.091 | False     |
+|   10   | Green | Firm               | Crisp  | Clear           | Flat            | Soft sticky |   0.243 |         0.267 | False     |
+|   11   | White | Firm               | Crisp  | Blurry          | Flat            | Hard slip   |   0.245 |         0.057 | False     |
+|   12   | White | Rolled-up          | Turbid | Blurry          | Flat            | Soft sticky |   0.343 |         0.099 | False     |
+|   13   | Green | Slightly rolled-up | Turbid | Slightly blurry | Sunken          | Hard slip   |   0.639 |         0.161 | False     |
+|   14   | White | Slightly rolled-up | Dull   | Slightly blurry | Sunken          | Hard slip   |   0.657 |         0.198 | False     |
+|   15   | black | Slightly rolled-up | Turbid | Clear           | Slightly sunken | Soft sticky |   0.360 |         0.370 | False     |
+|   16   | White | Rolled-up          | Turbid | Blurry          | Flat            | Hard slip   |   0.593 |         0.042 | False     |
+|   17   | Green | Rolled-up          | Dull   | Slightly blurry | Slightly sunken | Hard slip   |   0.719 |         0.103 | False     |
 
 The following test example "Measure 1" is classified:
 
-Number | Color | Roots | Knock | Texture | Umbilical | Tactile | Density | Sugar Content |
-| :--: | :--: | :-- | : :--: | :--: | :--: | :--: | :---: | :----: | --: |
-| 1 | Green | Cursed | Turbid | Clear | Hollow | Hard slip | 0.697 | 0.460 | |
+| Number | Color |   Roots   |  Knock | Texture | Umbilical |  Tactile  | Density | Sugar Content | Delicious |
+| :----: | :---: | :--------:| :----: | :-----: | :-------: | :-------: | :-----: | :-----------: | :-------: |
+|   1    | Green | Rolled-up | Turbid | Clear   | Blurry    | Hard slip |   0.697 |         0.460 |     ?     |
 
 First, estimate the class prior probability $P(c_j)$, there is
 $$
