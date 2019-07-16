@@ -455,6 +455,9 @@ cycleGAN模型较好的解决了无监督图像转换问题，可是这种单一
 ![cycleGAN数据增广](./img/ch7/cycleGAN数据增广.png)
 
 ​	对于每一对摄像头都训练一个cycleGAN，这样就可以实现将一个摄像头下的数据转换成另一个摄像头下的数据，但是内容（人物）保持不变。
+在CVPR19中，[9]进一步提升了图像的生成质量，进行了“淘宝换衣”式的高质量图像生成（如下图），提供了更高质量的行人训练数据。
+
+![DG-Net数据增广](https://github.com/NVlabs/DG-Net/raw/master/NxN.jpg)
 
 ### 7.5.2 图像超分辨与图像补全
 
@@ -481,6 +484,8 @@ cycleGAN模型较好的解决了无监督图像转换问题，可是这种单一
 [7] Pascual S , Bonafonte A , Serrà, Joan. SEGAN: Speech Enhancement Generative Adversarial Network[J]. 2017.
 
 [8]  Donahue C ,  Li B ,  Prabhavalkar R . Exploring Speech Enhancement with Generative Adversarial Networks for Robust Speech Recognition[J].  2017.
+
+[9] Zheng, Z., Yang, X., Yu, Z., Zheng, L., Yang, Y., & Kautz, J. Joint discriminative and generative learning for person re-identification. IEEE Conference on Computer Vision and Pattern Recognition (CVPR)[C]. 2019.
 
 
 
