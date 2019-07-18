@@ -291,7 +291,7 @@ $$
 J(\theta_0, \theta_1) = \frac{1}{m}\sum_{i=1}^m(h(x^{(i)})-y^{(i)})^2
 $$
 
-**The optimal solution is the minimum value of the cost function **$\min J(\theta_0, \theta_1) ​$. If it is a parameter, the cost function is generally visualized by a two-dimensional curve. If it is 2 parameters, the cost function can see the effect through the 3D image. The more parameters, the more complicated.
+**The optimal solution is the minimum value of the cost function**$\min J(\theta_0, \theta_1) ​$. If it is a parameter, the cost function is generally visualized by a two-dimensional curve. If it is 2 parameters, the cost function can see the effect through the 3D image. The more parameters, the more complicated.
 When the parameter is 2, the cost function is a three-dimensional image.
 
 ![](./img/ch2/2.16/2.jpg)
@@ -340,7 +340,7 @@ $$
 $$
 
 The larger the error, the larger the gradient, the faster the weights $w$ and offset $b$ are adjusted, and the faster the training.
-**The quadratic cost function is suitable for the case where the output neuron is linear, and the cross entropy cost function is suitable for the case where the output neuron is a sigmoid function. **
+**The quadratic cost function is suitable for the case where the output neuron is linear, and the cross entropy cost function is suitable for the case where the output neuron is a sigmoid function.**
 
 3. **log-likelihood cost**:
 Log-likelihood functions are commonly used as cost functions for softmax regression. The common practice in deep learning is to use softmax as the last layer. The commonly used cost function is the log-likelihood cost function.
@@ -615,7 +615,7 @@ $$
 $$
 5) After the update is completed, transfer to 1).
 
-**Example **. Take linear regression as an example.
+**Example**. Take linear regression as an example.
 Suppose the sample is
 $$
 (x^{(0)}_1,x^{(0)}_2,...,x^{(0)}_n,y_0),(x^{(1)}_1,x^{(1 )}_2,...,x^{(1)}_n,y_1),...,
@@ -643,11 +643,11 @@ Out, the gradient direction of the current position is determined by all samples
 
 ### 2.12.5 How to tune the gradient descent method?
 When the gradient descent method is actually used, each parameter index can not reach the ideal state in one step, and the optimization of the gradient descent method is mainly reflected in the following aspects:
-1. **Algorithm iteration step $\alpha$ selection. **
+1. **Algorithm iteration step $\alpha$ selection.**
     When the algorithm parameters are initialized, the step size is sometimes initialized to 1 based on experience. The actual value depends on the data sample. You can take some values ​​from big to small, and run the algorithm to see the iterative effect. If the loss function is smaller, the value is valid. If the value is invalid, it means to increase the step size. However, the step size is too large, sometimes causing the iteration speed to be too fast and missing the optimal solution. The step size is too small, the iteration speed is slow, and the algorithm runs for a long time.
-2. **The initial value selection of the parameter. **
+2. **The initial value selection of the parameter.**
     The initial values ​​are different, and the minimum values ​​obtained may also be different. It is possible to obtain a local minimum due to the gradient drop. If the loss function is a convex function, it must be the optimal solution. Due to the risk of local optimal solutions, it is necessary to run the algorithm with different initial values ​​multiple times, the minimum value of the key loss function, and the initial value of the loss function minimized.
-3. **Standardization process. **
+3. **Standardization process.**
     Due to the different samples, the range of feature values ​​is different, resulting in slow iteration. In order to reduce the influence of feature values, the feature data can be normalized so that the new expectation is 0 and the new variance is 1, which can save the algorithm running time.
 
 ### 2.12.7 What is the difference between random gradients and batch gradients?
@@ -665,7 +665,7 @@ J(\theta_0, \theta_1, ... , \theta_n) =
 $$
 Among them, $m $ is the number of samples, and $j $ is the number of parameters.
 
-1, **batch gradient descent solution ideas are as follows: **
+1. **batch gradient descent solution ideas are as follows:**
 
 a) Get the gradient corresponding to each $\theta ​$:
 $$
@@ -680,7 +680,7 @@ $$
 c) It can be noticed from the above equation that although it is a global optimal solution, all data of the training set is used for each iteration. If the sample data is large, the iteration speed of this method is very slow.
 In contrast, a random gradient drop can avoid this problem.
 
-2. **The solution to the stochastic gradient descent is as follows: **
+2. **The solution to the stochastic gradient descent is as follows:**
 a) Compared to all training samples compared to the batch gradient drop, the loss function in the stochastic gradient descent method corresponds to the granularity of each sample in the training set.
 The loss function can be written in the form of
 $$
@@ -696,7 +696,7 @@ $$
 c) The random gradient descent is iteratively updated by each sample.
 One problem associated with stochastic gradient descent is that the noise is much lower than the batch gradient, so that the stochastic gradient descent is not the direction of overall optimization for each iteration.
 
-**summary:**
+**Summary:**
 The stochastic gradient descent method and the batch gradient descent method are relatively extreme, and the simple comparison is as follows:
 
 | Method | Features |
@@ -708,7 +708,7 @@ d) In terms of convergence speed, the stochastic gradient descent method iterate
 
 The following describes a small batch gradient descent method that combines the advantages of both methods.
 
-3, **small batch (mini-batch) gradient drop solution is as follows **
+3, **small batch (mini-batch) gradient drop solution is as follows**
 For data with a total of $m​$ samples, according to the sample data, select $n(1< n< m)​$ subsamples to iterate. Its parameter $\theta​$ updates the $\theta_i​$ formula in the gradient direction as follows:
 $$
 \theta_i = \theta_i - \alpha \sum^{t+n-1}_{j=t}
@@ -992,7 +992,7 @@ The eigenvalue decomposition of the covariance matrix is ​​performed in a hi
 ### 2.16.1 Common methods for model evaluation?
 In general, a single scoring standard cannot fully evaluate a machine learning model. Using only good and bad to deviate from the real scene to evaluate a model is a poor way to evaluate. The following is a description of commonly used classification models and regression model evaluation methods.
 
-**Classification method commonly used in classification models: **
+**Classification method commonly used in classification models:**
 
 |Indicators|Description|
 |:-:|:-:|
@@ -1018,7 +1018,7 @@ In general, a single scoring standard cannot fully evaluate a machine learning m
 
 In machine learning, Bias (variation), Error (error), and Variance (variance) have the following differences and connections:
 
-**For Error **:
+**For Error:**
 
 - Error: In general, we refer to the difference between the actual predicted output of the learner and the true output of the sample as the "error".
 
@@ -1414,7 +1414,7 @@ For example, when the classification task is to identify the small class, the we
 
 For example, in the classification problem, the sample of the small class is used as the abnormal point, and the problem is transformed into the abnormal point detection or the change trend detection problem. Outlier detection is the identification of rare events. The change trend detection is distinguished from the abnormal point detection in that it is identified by detecting an unusual change trend.
 
-8, the problem is refined and analyzed
+8 the problem is refined and analyzed
 
 Analyze and mine the problem, divide the problem into smaller problems, and see if these small problems are easier to solve.
 
@@ -1448,19 +1448,19 @@ Pruning: Decision trees are easy to overfit, generally requiring pruning, reduci
 
 4. The decision tree algorithm can handle numbers and data categories compared to other algorithms that intelligently analyze a type of variable.
 
-5, able to handle the problem of multiple output.
+5. able to handle the problem of multiple output.
 
 6. Not sensitive to missing values.
 
-7, can handle irrelevant feature data.
+7. can handle irrelevant feature data.
 
-8, high efficiency, decision tree only needs to be constructed once, repeated use, the maximum number of calculations per prediction does not exceed the depth of the decision tree.
+8. high efficiency, decision tree only needs to be constructed once, repeated use, the maximum number of calculations per prediction does not exceed the depth of the decision tree.
 
 **The disadvantages of the decision tree algorithm**:
 
 1. It is hard to predict the field of continuity.
 
-2, easy to appear over-fitting.
+2. easy to appear over-fitting.
 
 3. When there are too many categories, the error may increase faster.
 
@@ -1695,13 +1695,14 @@ Same point:
 
 - LR and SVM are both **classification** algorithms
 - Both LR and SVM are **supervised learning** algorithms.
-- Both LR and SVM are ** discriminant models**.
+- Both LR and SVM are **discriminant models**.
 - If the kernel function is not considered, both LR and SVM are **linear classification** algorithms, which means that their classification decision surfaces are linear.
    Note: LR can also use the kernel function. But LR usually does not use the kernel function method. (**The amount of calculation is too large**)
 
-difference:
+Differences:
 
-**1, LR uses log loss, SVM uses hinge loss. **
+**1. LR uses log loss, SVM uses hinge loss.**
+
 Logistic regression loss function:
 $$
 J(\theta)=-\frac{1}{m}\left[\sum^m_{i=1}y^{(i)}logh_{\theta}(x^{(i)})+ ( 1-y^{(i)})log(1-h_{\theta}(x^{(i)}))\right]
@@ -1722,17 +1723,20 @@ Support vector machines to change non-support vector samples do not cause change
 
 Changing any sample in a logistic regression can cause changes in the decision surface.
 
-**3, the calculation complexity is different. For massive data, SVM is less efficient and LR efficiency is higher**
+**3. the calculation complexity is different. For massive data, SVM is less efficient and LR efficiency is higher**
 
 When the number of samples is small and the feature dimension is low, the running time of SVM and LR is relatively short, and the SVM is shorter. For accuracy, LR is significantly higher than SVM. When the sample is slightly increased, the SVM runtime begins to grow, but the accuracy has surpassed LR. Although the SVM time is long, it is within the receiving range. When the amount of data grows to 20,000, when the feature dimension increases to 200, the running time of the SVM increases dramatically, far exceeding the running time of the LR. But the accuracy rate is almost the same as LR. (The main reason for this is that a large number of non-support vectors participate in the calculation, resulting in secondary planning problems for SVM)
 
-**4. Different ways of dealing with nonlinear problems, LR mainly relies on feature structure, and must combine cross-characteristics and feature discretization. SVM can also be like this, but also through the kernel (because only the support vector participates in the core calculation, the computational complexity is not high). ** (Because the kernel function can be used, the SVM can be efficiently processed by the dual solution. LR is poor when the feature space dimension is high.)
+**4. Different ways of dealing with nonlinear problems**
 
-**5, SVM loss function comes with regular! ! ! (1/2 ||w||^2 in the loss function), which is why SVM is the structural risk minimization algorithm! ! ! And LR must add a regular item to the loss function! ! ! **
+LR mainly relies on feature structure, and must combine cross-characteristics and feature discretization. SVM can also be like this, but also through the kernel (because only the support vector participates in the core calculation, the computational complexity is not high). (Because the kernel function can be used, the SVM can be efficiently processed by the dual solution. LR is poor when the feature space dimension is high.)
 
-6, SVM comes with ** structural risk minimization**, LR is ** empirical risk minimization**.
+**5. SVM loss function comes with regular**
+1/2 ||w||^2 in the loss function, which is why SVM is the structural risk minimization algorithm! ! ! And LR must add a regular item to the loss function! ! !
 
-7, SVM will use the kernel function and LR generally does not use [nuclear function] (https://www.cnblogs.com/huangyc/p/9940487.html).
+6. SVM comes with **structural risk minimization**, LR is **empirical risk minimization**.
+
+7. SVM will use the kernel function and LR generally does not use [nuclear function] (https://www.cnblogs.com/huangyc/p/9940487.html).
 
 ## 2.19 Bayesian classifier
 ### 2.19.1 Graphical Maximum Likelihood Estimation
@@ -1872,7 +1876,7 @@ $$
 
 ### 2.19.4 Naive Bayes Classifier
 
-Naïve Bayes adopts the "attribute conditional independence hypothesis". The basic idea of ​​the semi-simple Bayesian classifier is to properly consider the interdependence information between some attributes. ** One-Dependent Estimator (ODE) is one of the most commonly used strategies for semi-simple Bayesian classifiers. As the name implies, the sole dependency assumes that each attribute depends on at most one other attribute outside the category, ie
+Naïve Bayes adopts the "attribute conditional independence hypothesis". The basic idea of ​​the semi-simple Bayesian classifier is to properly consider the interdependence information between some attributes. **One-Dependent Estimator (ODE)** is one of the most commonly used strategies for semi-simple Bayesian classifiers. As the name implies, the sole dependency assumes that each attribute depends on at most one other attribute outside the category, ie
 $$
 P(x|c_i)=\prod_{j=1}^d P(x_j|c_i,{\rm pa}_j).
 $$
@@ -2044,7 +2048,7 @@ Suppose there is a two-dimensional feature space, such as the rectangle shown in
 
 ### 2.21.2 How to avoid dimension disaster
 
-**To be improved! ! ! **
+**To be improved!!!**
 
 Solve the dimensional disaster problem:
 
