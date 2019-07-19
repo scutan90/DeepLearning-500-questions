@@ -291,7 +291,7 @@ $$
 J(\theta_0, \theta_1) = \frac{1}{m}\sum_{i=1}^m(h(x^{(i)})-y^{(i)})^2
 $$
 
-**The optimal solution is the minimum value of the cost function **$\min J(\theta_0, \theta_1) ​$. If it is a parameter, the cost function is generally visualized by a two-dimensional curve. If it is 2 parameters, the cost function can see the effect through the 3D image. The more parameters, the more complicated.
+**The optimal solution is the minimum value of the cost function**$\min J(\theta_0, \theta_1) ​$. If it is a parameter, the cost function is generally visualized by a two-dimensional curve. If it is 2 parameters, the cost function can see the effect through the 3D image. The more parameters, the more complicated.
 When the parameter is 2, the cost function is a three-dimensional image.
 
 ![](./img/ch2/2.16/2.jpg)
@@ -340,9 +340,10 @@ $$
 $$
 
 The larger the error, the larger the gradient, the faster the weights $w$ and offset $b$ are adjusted, and the faster the training.
-**The quadratic cost function is suitable for the case where the output neuron is linear, and the cross entropy cost function is suitable for the case where the output neuron is a sigmoid function. **
+**The quadratic cost function is suitable for the case where the output neuron is linear, and the cross entropy cost function is suitable for the case where the output neuron is a sigmoid function.**
 
 3. **log-likelihood cost**:
+
 Log-likelihood functions are commonly used as cost functions for softmax regression. The common practice in deep learning is to use softmax as the last layer. The commonly used cost function is the log-likelihood cost function.
 The combination of log-likelihood cost function and softmax and the combination of cross-entropy and sigmoid function are very similar. The log-likelihood cost function can be reduced to the form of a cross-entropy cost function in the case of two classifications.
 In tensorflow:
@@ -354,9 +355,11 @@ The cross entropy function used with softmax: `torch.nn.CrossEntropyLoss()`.
 
 ### 2.10.5 Why use cross entropy instead of quadratic cost function
 1. **Why not use the quadratic cost function**
+
 As you can see from the previous section, the partial derivative of the weight $w$ and the offset $b$ is $\frac{\partial J}{\partial w}=(ay)\sigma'(z)x$,$\frac {\partial J}{\partial b}=(ay)\sigma'(z)$, the partial derivative is affected by the derivative of the activation function, and the derivative of the sigmoid function is very small when the output is close to 0 and 1, which causes some instances to be Learning very slowly when starting training.
 
 2. **Why use cross entropy**
+
 The gradient of the cross entropy function weights $w$ and the offset $b$ is derived as:
 
 $$
@@ -490,6 +493,7 @@ $$
 It can be seen that the log-like loss function and the log-likelihood function of the maximum likelihood estimation are essentially the same. So logistic regression directly uses the logarithmic loss function.
 
 ### 2.11.4 How does the logarithmic loss function measure loss?
+
 Example:
 In the Gaussian distribution, we need to determine the mean and standard deviation.
 How to determine these two parameters? Maximum likelihood estimation is a more common method. The goal of maximum likelihood is to find some parameter values ​​whose distributions maximize the probability of observing the data.
@@ -502,7 +506,6 @@ $$
 P(x_i;\mu,\sigma)=\frac{1}{\sigma \sqrt{2\pi}}\exp
 \left( - \frac{(x_i-\mu)^2}{2\sigma^2} \right)
 $$
-
 
 3. Its joint probability is
      $$
@@ -552,11 +555,13 @@ $$
 5. In machine learning, the gradient descent method mainly includes stochastic gradient descent method and batch gradient descent method.
 
 ### 2.12.2 What are the disadvantages of the gradient descent method?
+
 1. Convergence slows down near the minimum value.
 2. There may be some problems when searching in a straight line.
 3. It may fall "zigzag".
 
 Gradient concepts need to be noted:
+
 1. A gradient is a vector, that is, it has a direction and a size;
 2. The direction of the gradient is the direction of the maximum direction derivative;
 3. The value of the gradient is the value of the maximum direction derivative.
@@ -574,7 +579,7 @@ Thus, as can be seen from the above explanation, the gradient descent does not n
 
 1. Initialize the parameters and randomly select any number within the range of values;
 2. Iterative operation:
- a) calculate the current gradient;
+a) calculate the current gradient;
 b) modify the new variable;
 c) calculate one step towards the steepest downhill direction;
 d) determine whether termination is required, if not, return a);
@@ -615,7 +620,7 @@ $$
 $$
 5) After the update is completed, transfer to 1).
 
-**Example **. Take linear regression as an example.
+**Example**. Take linear regression as an example.
 Suppose the sample is
 $$
 (x^{(0)}_1,x^{(0)}_2,...,x^{(0)}_n,y_0),(x^{(1)}_1,x^{(1 )}_2,...,x^{(1)}_n,y_1),...,
@@ -643,11 +648,11 @@ Out, the gradient direction of the current position is determined by all samples
 
 ### 2.12.5 How to tune the gradient descent method?
 When the gradient descent method is actually used, each parameter index can not reach the ideal state in one step, and the optimization of the gradient descent method is mainly reflected in the following aspects:
-1. **Algorithm iteration step $\alpha$ selection. **
+1. **Algorithm iteration step $\alpha$ selection.**
     When the algorithm parameters are initialized, the step size is sometimes initialized to 1 based on experience. The actual value depends on the data sample. You can take some values ​​from big to small, and run the algorithm to see the iterative effect. If the loss function is smaller, the value is valid. If the value is invalid, it means to increase the step size. However, the step size is too large, sometimes causing the iteration speed to be too fast and missing the optimal solution. The step size is too small, the iteration speed is slow, and the algorithm runs for a long time.
-2. **The initial value selection of the parameter. **
+2. **The initial value selection of the parameter.**
     The initial values ​​are different, and the minimum values ​​obtained may also be different. It is possible to obtain a local minimum due to the gradient drop. If the loss function is a convex function, it must be the optimal solution. Due to the risk of local optimal solutions, it is necessary to run the algorithm with different initial values ​​multiple times, the minimum value of the key loss function, and the initial value of the loss function minimized.
-3. **Standardization process. **
+3. **Standardization process.**
     Due to the different samples, the range of feature values ​​is different, resulting in slow iteration. In order to reduce the influence of feature values, the feature data can be normalized so that the new expectation is 0 and the new variance is 1, which can save the algorithm running time.
 
 ### 2.12.7 What is the difference between random gradients and batch gradients?
@@ -665,7 +670,7 @@ J(\theta_0, \theta_1, ... , \theta_n) =
 $$
 Among them, $m $ is the number of samples, and $j $ is the number of parameters.
 
-1, **batch gradient descent solution ideas are as follows: **
+1. **Batch gradient descent solution ideas are as follows:**
 
 a) Get the gradient corresponding to each $\theta ​$:
 $$
@@ -680,7 +685,7 @@ $$
 c) It can be noticed from the above equation that although it is a global optimal solution, all data of the training set is used for each iteration. If the sample data is large, the iteration speed of this method is very slow.
 In contrast, a random gradient drop can avoid this problem.
 
-2. **The solution to the stochastic gradient descent is as follows: **
+2. **The solution to the stochastic gradient descent is as follows:**
 a) Compared to all training samples compared to the batch gradient drop, the loss function in the stochastic gradient descent method corresponds to the granularity of each sample in the training set.
 The loss function can be written in the form of
 $$
@@ -696,7 +701,7 @@ $$
 c) The random gradient descent is iteratively updated by each sample.
 One problem associated with stochastic gradient descent is that the noise is much lower than the batch gradient, so that the stochastic gradient descent is not the direction of overall optimization for each iteration.
 
-**summary:**
+**Summary:**
 The stochastic gradient descent method and the batch gradient descent method are relatively extreme, and the simple comparison is as follows:
 
 | Method | Features |
@@ -708,7 +713,7 @@ d) In terms of convergence speed, the stochastic gradient descent method iterate
 
 The following describes a small batch gradient descent method that combines the advantages of both methods.
 
-3, **small batch (mini-batch) gradient drop solution is as follows **
+3. **Small batch (mini-batch) gradient drop solution is as follows**
 For data with a total of $m​$ samples, according to the sample data, select $n(1< n< m)​$ subsamples to iterate. Its parameter $\theta​$ updates the $\theta_i​$ formula in the gradient direction as follows:
 $$
 \theta_i = \theta_i - \alpha \sum^{t+n-1}_{j=t}
@@ -992,7 +997,7 @@ The eigenvalue decomposition of the covariance matrix is ​​performed in a hi
 ### 2.16.1 Common methods for model evaluation?
 In general, a single scoring standard cannot fully evaluate a machine learning model. Using only good and bad to deviate from the real scene to evaluate a model is a poor way to evaluate. The following is a description of commonly used classification models and regression model evaluation methods.
 
-**Classification method commonly used in classification models: **
+**Classification method commonly used in classification models:**
 
 |Indicators|Description|
 |:-:|:-:|
@@ -1018,7 +1023,7 @@ In general, a single scoring standard cannot fully evaluate a machine learning m
 
 In machine learning, Bias (variation), Error (error), and Variance (variance) have the following differences and connections:
 
-**For Error **:
+**For Error:**
 
 - Error: In general, we refer to the difference between the actual predicted output of the learner and the true output of the sample as the "error".
 
@@ -1121,7 +1126,9 @@ There are many ways to cross-validate, but the most common ones are: leave a cro
 2. In each case, train the model with the training set and test the model with the test set to calculate the generalization error of the model.
 3. Cross-validation is repeated K times, each verification is performed, the average K times results or other combination methods are used, and finally a single estimation is obtained, and the final generalization error of the model is obtained.
 4. In the case of K, the generalization error of the model is averaged to obtain the final generalization error of the model.
+
 **Note**:
+
 1. Generally 2<=K<=10. The advantage of k-fold cross-validation is that it repeatedly uses randomly generated sub-samples for training and verification. Each time the results are verified once, 10-fold cross-validation is the most commonly used.
 2. The number of samples in the training set should be sufficient, generally at least 50% of the total number of samples.
 3. The training set and test set must be evenly sampled from the complete data set. The purpose of uniform sampling is to reduce the deviation between the training set, the test set, and the original data set. When the number of samples is sufficient, the effect of uniform sampling can be achieved by random sampling.
@@ -1202,9 +1209,9 @@ step:
 ![](./img/ch2/2.40.11/1.jpg)
 
 ### 2.16.13 How to calculate TPR, FPR?
-1, analysis of data
+1. Analysis of data
 Y_true = [0, 0, 1, 1]; scores = [0.1, 0.4, 0.35, 0.8];
-2, the list
+2. The list
 
 | Sample | Predict the probability of belonging to P (score) | Real Category |
 | ---- | ---------------------- | -------- |
@@ -1267,6 +1274,7 @@ The positive and negative examples are as follows:
 
 Therefore:
 TPR = TP / (TP + FN) = 0.5; FPR = FP / (TN + FP) = 0;
+
 4. According to the TPR and FPR values, the FPR is plotted on the horizontal axis and the TPR is plotted on the vertical axis.
 
 ### 2.16.14 How to calculate Auc?
@@ -1377,7 +1385,7 @@ Classification learning algorithms usually assume that the number of training ex
 ### 2.16.26 Common category imbalance problem solving method
 To prevent the impact of category imbalance on learning, it is necessary to deal with the problem of classification imbalance before constructing the classification model. The main solutions are:
 
-1, expand the data set
+1. Expand the data set
 
 Add data that contains small sample data, and more data can get more distribution information.
 
@@ -1402,19 +1410,19 @@ ADASYN: Uses a weighted distribution for different minority categories of sample
 
 If the current evaluation indicator does not apply, you should look for other convincing evaluation indicators. For example, the accuracy index is not applicable or even misleading in the classification task with unbalanced categories. Therefore, in the category unbalanced classification task, more convincing evaluation indicators are needed to evaluate the classifier.
 
-5, choose a new algorithm
+5. Choose a new algorithm
 
 Different algorithms are suitable for different tasks and data, and should be compared using different algorithms.
 
-6, data cost weighting
+6. Data cost weighting
 
 For example, when the classification task is to identify the small class, the weight of the small class sample data of the classifier can be added, and the weight of the large sample can be reduced, so that the classifier concentrates on the small sample.
 
-7, the conversion problem thinking angle
+7. The conversion problem thinking angle
 
 For example, in the classification problem, the sample of the small class is used as the abnormal point, and the problem is transformed into the abnormal point detection or the change trend detection problem. Outlier detection is the identification of rare events. The change trend detection is distinguished from the abnormal point detection in that it is identified by detecting an unusual change trend.
 
-8, the problem is refined and analyzed
+8. The problem is refined and analyzed
 
 Analyze and mine the problem, divide the problem into smaller problems, and see if these small problems are easier to solve.
 
@@ -1448,19 +1456,19 @@ Pruning: Decision trees are easy to overfit, generally requiring pruning, reduci
 
 4. The decision tree algorithm can handle numbers and data categories compared to other algorithms that intelligently analyze a type of variable.
 
-5, able to handle the problem of multiple output.
+5. able to handle the problem of multiple output.
 
 6. Not sensitive to missing values.
 
-7, can handle irrelevant feature data.
+7. can handle irrelevant feature data.
 
-8, high efficiency, decision tree only needs to be constructed once, repeated use, the maximum number of calculations per prediction does not exceed the depth of the decision tree.
+8. high efficiency, decision tree only needs to be constructed once, repeated use, the maximum number of calculations per prediction does not exceed the depth of the decision tree.
 
 **The disadvantages of the decision tree algorithm**:
 
 1. It is hard to predict the field of continuity.
 
-2, easy to appear over-fitting.
+2. easy to appear over-fitting.
 
 3. When there are too many categories, the error may increase faster.
 
@@ -1562,17 +1570,17 @@ The wide application of the kernel function method is inseparable from its chara
 
 1. The dual problem turns the constraint in the original problem into the equality constraint in the dual problem. The dual problem is often easier to solve.
 
-2, you can naturally refer to the kernel function (the Lagrangian expression has an inner product, and the kernel function is also mapped by the inner product).
+2. You can naturally refer to the kernel function (the Lagrangian expression has an inner product, and the kernel function is also mapped by the inner product).
 
 3. In the optimization theory, the objective function f(x) can take many forms: if the objective function and the constraint are both linear functions of the variable x, the problem is called linear programming; if the objective function is a quadratic function, the constraint For a linear function, the optimization problem is called quadratic programming; if the objective function or the constraint is a nonlinear function, the optimization problem is called nonlinear programming. Each linear programming problem has a dual problem corresponding to it. The dual problem has very good properties. Here are a few:
 
-a, the duality of the dual problem is the original problem;
+a. The duality of the dual problem is the original problem;
 
-b, whether the original problem is convex or not, the dual problem is a convex optimization problem;
+b. Whether the original problem is convex or not, the dual problem is a convex optimization problem;
 
-c, the dual problem can give a lower bound on the original problem;
+c. The dual problem can give a lower bound on the original problem;
 
-d, when certain conditions are met, the original problem is completely equivalent to the solution to the dual problem.
+d. When certain conditions are met, the original problem is completely equivalent to the solution to the dual problem.
 
 ### 2.18.5 How to understand the dual problem in SVM
 
@@ -1659,11 +1667,11 @@ Features:
 
 (6) A few support vectors determine the final result, which not only helps us to grasp the key samples, “cull” a large number of redundant samples, but also destined that the method is not only simple, but also has good “robustness”. This "robustness" is mainly reflected in:
 
-1 Adding or deleting non-support vector samples has no effect on the model;
+1. Adding or deleting non-support vector samples has no effect on the model;
 
-2 Support vector sample sets have certain robustness;
+2. Support vector sample sets have certain robustness;
 
-3 In some successful applications, the SVM method is not sensitive to the selection of cores.
+3. In some successful applications, the SVM method is not sensitive to the selection of cores.
 
 (7) The SVM learning problem can be expressed as a convex optimization problem, so the global minimum of the objective function can be found using a known effective algorithm. Other classification methods (such as rule-based classifiers and artificial neural networks) use a greedy learning-based strategy to search for hypothesis space. This method generally only obtains local optimal solutions.
 
@@ -1695,13 +1703,14 @@ Same point:
 
 - LR and SVM are both **classification** algorithms
 - Both LR and SVM are **supervised learning** algorithms.
-- Both LR and SVM are ** discriminant models**.
+- Both LR and SVM are **discriminant models**.
 - If the kernel function is not considered, both LR and SVM are **linear classification** algorithms, which means that their classification decision surfaces are linear.
    Note: LR can also use the kernel function. But LR usually does not use the kernel function method. (**The amount of calculation is too large**)
 
-difference:
+Differences:
 
-**1, LR uses log loss, SVM uses hinge loss. **
+**1. LR uses log loss, SVM uses hinge loss.**
+
 Logistic regression loss function:
 $$
 J(\theta)=-\frac{1}{m}\left[\sum^m_{i=1}y^{(i)}logh_{\theta}(x^{(i)})+ ( 1-y^{(i)})log(1-h_{\theta}(x^{(i)}))\right]
@@ -1714,7 +1723,7 @@ The logistic regression method is based on probability theory. The probability t
 
 The support vector machine is based on the principle of geometric interval maximization，and it is considered that the classification plane with the largest geometric interval is the optimal classification plane.
 
-2. **LR is sensitive to outliers and SVM is not sensitive to outliers**.
+**2. LR is sensitive to outliers and SVM is not sensitive to outliers**.
 
 The support vector machine only considers points near the local boundary line, while logistic regression considers the global. The hyperplane found by the LR model tries to keep all points away from him, and the hyperplane that the SVM looks for is to keep only those points closest to the middle dividing line as far away as possible, that is, only those samples that support vectors.
 
@@ -1722,17 +1731,21 @@ Support vector machines to change non-support vector samples do not cause change
 
 Changing any sample in a logistic regression can cause changes in the decision surface.
 
-**3, the calculation complexity is different. For massive data, SVM is less efficient and LR efficiency is higher**
+**3. the calculation complexity is different. For massive data, SVM is less efficient and LR efficiency is higher**
 
 When the number of samples is small and the feature dimension is low, the running time of SVM and LR is relatively short, and the SVM is shorter. For accuracy, LR is significantly higher than SVM. When the sample is slightly increased, the SVM runtime begins to grow, but the accuracy has surpassed LR. Although the SVM time is long, it is within the receiving range. When the amount of data grows to 20,000, when the feature dimension increases to 200, the running time of the SVM increases dramatically, far exceeding the running time of the LR. But the accuracy rate is almost the same as LR. (The main reason for this is that a large number of non-support vectors participate in the calculation, resulting in secondary planning problems for SVM)
 
-**4. Different ways of dealing with nonlinear problems, LR mainly relies on feature structure, and must combine cross-characteristics and feature discretization. SVM can also be like this, but also through the kernel (because only the support vector participates in the core calculation, the computational complexity is not high). ** (Because the kernel function can be used, the SVM can be efficiently processed by the dual solution. LR is poor when the feature space dimension is high.)
+**4. Different ways of dealing with nonlinear problems**
 
-**5, SVM loss function comes with regular! ! ! (1/2 ||w||^2 in the loss function), which is why SVM is the structural risk minimization algorithm! ! ! And LR must add a regular item to the loss function! ! ! **
+LR mainly relies on feature structure, and must combine cross-characteristics and feature discretization. SVM can also be like this, but also through the kernel (because only the support vector participates in the core calculation, the computational complexity is not high). (Because the kernel function can be used, the SVM can be efficiently processed by the dual solution. LR is poor when the feature space dimension is high.)
 
-6, SVM comes with ** structural risk minimization**, LR is ** empirical risk minimization**.
+**5. SVM loss function comes with regular**
 
-7, SVM will use the kernel function and LR generally does not use [nuclear function] (https://www.cnblogs.com/huangyc/p/9940487.html).
+1/2 ||w||^2 in the loss function, which is why SVM is the structural risk minimization algorithm! ! ! And LR must add a regular item to the loss function! ! !
+
+6. SVM comes with **structural risk minimization**, LR is **empirical risk minimization**.
+
+7. SVM will use the kernel function and LR generally does not use [nuclear function] (https://www.cnblogs.com/huangyc/p/9940487.html).
 
 ## 2.19 Bayesian classifier
 ### 2.19.1 Graphical Maximum Likelihood Estimation
@@ -1872,7 +1885,7 @@ $$
 
 ### 2.19.4 Naive Bayes Classifier
 
-Naïve Bayes adopts the "attribute conditional independence hypothesis". The basic idea of ​​the semi-simple Bayesian classifier is to properly consider the interdependence information between some attributes. ** One-Dependent Estimator (ODE) is one of the most commonly used strategies for semi-simple Bayesian classifiers. As the name implies, the sole dependency assumes that each attribute depends on at most one other attribute outside the category, ie
+Naïve Bayes adopts the "attribute conditional independence hypothesis". The basic idea of ​​the semi-simple Bayesian classifier is to properly consider the interdependence information between some attributes. **One-Dependent Estimator (ODE)** is one of the most commonly used strategies for semi-simple Bayesian classifiers. As the name implies, the sole dependency assumes that each attribute depends on at most one other attribute outside the category, ie
 $$
 P(x|c_i)=\prod_{j=1}^d P(x_j|c_i,{\rm pa}_j).
 $$
@@ -2044,7 +2057,7 @@ Suppose there is a two-dimensional feature space, such as the rectangle shown in
 
 ### 2.21.2 How to avoid dimension disaster
 
-**To be improved! ! ! **
+**To be improved!!!**
 
 Solve the dimensional disaster problem:
 
@@ -2175,7 +2188,7 @@ The same point between GBDT and random forest:
 
 Differences between GBDT and random forests:
 1. The tree that constitutes a random forest can be a classification tree or a regression tree; and GBDT consists only of regression trees.
-2, the trees that make up the random forest can be generated in parallel; and GBDT can only be serially generated
+2. the trees that make up the random forest can be generated in parallel; and GBDT can only be serially generated
 3. For the final output, random forests use majority voting, etc.; while GBDT accumulates all results, or weights up and accumulate
 4. Random forest is not sensitive to outliers, GBDT is very sensitive to outliers
 5. Random forests treat training sets equally, and GBDT is a weak classifier based on weights.
