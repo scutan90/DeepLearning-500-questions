@@ -3,10 +3,19 @@
 
 ## 请提交内容的各位，私加微信tan_weixin88.提交个人信息：姓名-毕业学校-学历-工作单位-职位-电话-邮箱
 
-
 ### 学习交流群
 
-![](./qun23.png)
+
+
+<center>
+    <img src="qun.png" width="300"/>
+    <br>
+    <div">学习交流群</div>
+</center>
+
+
+
+
 
 ## 理解CNN、CNN可视化  CNN-Visualization 
 
