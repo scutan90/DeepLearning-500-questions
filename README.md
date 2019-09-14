@@ -8,7 +8,7 @@
 
 
 <center>
-    <img src="qun7.png" width="300"/>
+    <img src="qun.png" width="300"/>
     <br>
     <div">学习交流群</div>
 </center>
