@@ -14,7 +14,7 @@ The feature neuron model in the multi-layer perceptron is called the perceptron 
 
 The simple perceptron is shown below:
 
-![](./img/ch3/3-1.png)
+![](img/ch3/3-1.png)
 
 Where $x_1$, $x_2$, $x_3$ is the input to the perceptron, and its output is:
 
@@ -46,30 +46,30 @@ $$
 
 Set the appropriate $x$ and $b$ , a simple perceptual unit's NAND gate is expressed as follows:
 
-![](./img/ch3/3-2.png)
+![](img/ch3/3-2.png)
 
 When the input is $0$, $1$, the perceptron output is $ 0 * (-2) + 1 * (-2) + 3 = 1$.
 
 More complex perceptrons are composed of simple perceptron units:
 
-![](./img/ch3/3-3.png)
+![](img/ch3/3-3.png)
 
 **Multilayer Perceptron**
 
 The multi-layer perceptron is promoted by the perceptron. The most important feature is that there are multiple neuron layers, so it is also called deep neural network. Each neuron in the $i$ layer of the multilayer perceptron is connected to each neuron in the $i-1$ layer compared to a separate perceptron.
 
-![](./img/ch3/3.1.1.5.png)
+![](img/ch3/3.1.1.5.png)
 
 The output layer can have more than $1$ neurons. The hidden layer can have only $1 $ layers, or it can have multiple layers. The output layer is a neural network of multiple neurons such as the following:
 
-![](./img/ch3/3.1.1.6.png)
+![](img/ch3/3.1.1.6.png)
 
 
 ### 3.1.2 What are the common model structures of neural networks?
 
 The figure below contains most of the commonly used models:
 
-![](./img/ch3/3-7.jpg)
+![](img/ch3/3-7.jpg)
 
 ### 3.1.3 How to choose a deep learning development platform?
 
@@ -108,14 +108,14 @@ Some platforms are specifically developed for deep learning research and applica
 
     The reason for the disappearance of the gradient is affected by many factors, such as the size of the learning rate, the initialization of the network parameters, and the edge effect of the activation function. In the deep neural network, the gradient calculated by each neuron is passed to the previous layer, and the gradient received by the shallower neurons is affected by all previous layer gradients. If the calculated gradient value is very small, as the number of layers increases, the obtained gradient update information will decay exponentially, and the gradient disappears. The figure below shows the learning rate of different hidden layers:
 
-![](./img/ch3/3-8.png)
+![](img/ch3/3-8.png)
 
 2. Exploding Gradient
     In a network structure such as a deep network or a Recurrent Neural Network (RNN), gradients can accumulate in the process of network update, becoming a very large gradient, resulting in a large update of the network weight value, making the network unstable; In extreme cases, the weight value will even overflow and become a $NaN$ value, which cannot be updated anymore.
 
 3. Degeneration of the weight matrix results in a reduction in the effective degrees of freedom of the model. The degradation rate of learning in the parameter space is slowed down, which leads to the reduction of the effective dimension of the model. The available degrees of freedom of the network contribute to the gradient norm in learning. As the number of multiplication matrices (ie, network depth) increases, The product of the matrix becomes more and more degraded. In nonlinear networks with hard saturated boundaries (such as ReLU networks), as the depth increases, the degradation process becomes faster and faster. The visualization of this degradation process is shown in a 2014 paper by Duvenaud et al:
 
-![](./img/ch3/3-9.jpg)
+![](img/ch3/3-9.jpg)
 
 As the depth increases, the input space (shown in the upper left corner) is twisted into thinner and thinner filaments at each point in the input space, and only one direction orthogonal to the filament affects the response of the network. In this direction, the network is actually very sensitive to change.
 
@@ -129,9 +129,9 @@ Traditional machine learning needs to define some manual features to purposefull
 
 
 
-![](./img/ch3/3.1.6.1.png)
+![](img/ch3/3.1.6.1.png)
 
-![](./img/ch3/3-11.jpg)
+![](img/ch3/3-11.jpg)
 
 ## 3.2 Network Operations and Calculations
 
@@ -141,7 +141,7 @@ There are two main types of neural network calculations: foward propagation (FP)
 
 ** Forward Propagation**
 
-![](./img/ch3/3.2.1.1.png)
+![](img/ch3/3.2.1.1.png)
 
 Suppose the upper node $ i, j, k, ... $ and so on are connected to the node $ w $ of this layer, so what is the value of the node $ w $? That is, the weighting operation is performed by the nodes of $i, j, k, ... $ above and the corresponding connection weights, and the final result is added with an offset term (for simplicity in the figure) Finally, through a non-linear function (ie activation function), such as $ReLu $, $ sigmoid $ and other functions, the final result is the output of this layer node $ w $.
 
@@ -149,7 +149,7 @@ Finally, through this method of layer by layer operation, the output layer resul
 
 **Backpropagation**
 
-![](./img/ch3/3.2.1.2.png)
+![](img/ch3/3.2.1.2.png)
 
 Because of the final result of our forward propagation, taking the classification as an example, there is always an error in the end. How to reduce the error? One algorithm that is widely used at present is the gradient descent algorithm, but the gradient requires the partial derivative. The Chinese alphabet is used as an example to explain:
 
@@ -157,7 +157,7 @@ Let the final error be $ E $ and the activation function of the output layer be 
 
 ### 3.2.2 How to calculate the output of the neural network?
 
-![](./img/ch3/3.2.2.1.png)
+![](img/ch3/3.2.2.1.png)
 
 As shown in the figure above, the input layer has three nodes, which we numbered as 1, 2, and 3; the four nodes of the hidden layer are numbered 4, 5, 6, and 7; the last two nodes of the output layer are numbered 8. 9. For example, node 4 of the hidden layer is connected to the three nodes 1, 2, and 3 of the input layer, and the weights on the connection are $ w_{41}, w_{42}, w_{43} $.
 
@@ -185,7 +185,7 @@ For the same reason, we can also calculate $ y_2 $. So that the output values �
 
 Suppose there is a 5\*5 image, convolved with a 3\*3 filter, and I want a 3\*3 Feature Map, as shown below:
 
-![](./img/ch3/3.2.3.1.png)
+![](img/ch3/3.2.3.1.png)
 
 $ x_{i,j} $ represents the $ j $ column element of the $ i $ line of the image. $ w_{m,n} $ means filter $ m $ line $ n $ column weight. $ w_b $ represents the offset of $filter$. Table $a_i, _j$ shows the feature map $ i$ line $ j $ column element. $f$ represents the activation function, here the $ReLU$ function is used as an example.
 
@@ -211,15 +211,15 @@ $$
 
 The calculation process is illustrated as follows:
 
-![](./img/ch3/3.2.3.2.png)
+![](img/ch3/3.2.3.2.png)
 
 By analogy, all Feature Maps are calculated.
 
-![](./img/ch3/3.2.3.4.png)
+![](img/ch3/3.2.3.4.png)
 
 When the stride is 2, the Feature Map is calculated as follows
 
-![](./img/ch3/3.2.3.5.png)
+![](img/ch3/3.2.3.5.png)
 
 Note: Image size, stride, and the size of the Feature Map after convolution are related. They satisfy the following relationship:
 
@@ -252,7 +252,7 @@ Where $D$ is the depth; $F$ is the size of the filter; $w_{d,m,n}$ represents th
 
 There can be multiple filters per convolutional layer. After each filter is convolved with the original image, you get a Feature Map. The depth (number) of the Feature Map after convolution is the same as the number of filters in the convolutional layer. The following illustration shows the calculation of a convolutional layer with two filters. $7*7*3$ Input, after two convolutions of $3*3*3$ filter (step size is $2$), get the output of $3*3*2$. The Zero padding in the figure is $1$, which is a $0$ around the input element.
 
-![](./img/ch3/3.2.3.6.png)
+![](img/ch3/3.2.3.6.png)
 
 The above is the calculation method of the convolutional layer. This is a partial connection and weight sharing: each layer of neurons is only connected to the upper layer of neurons (convolution calculation rules), and the weight of the filter is the same for all neurons in the previous layer. For a convolutional layer containing two $3 * 3 * 3 $ fitlers, the number of parameters is only $ (3 * 3 * 3+1) * 2 = 56 $, and the number of parameters is the same as the previous one. The number of layers of neurons is irrelevant. Compared to a fully connected neural network, the number of parameters is greatly reduced.
 
@@ -260,7 +260,7 @@ The above is the calculation method of the convolutional layer. This is a partia
 
 The main role of the Pooling layer is to downsample, further reducing the number of parameters by removing unimportant samples from the Feature Map. There are many ways to pooling, the most common one is Max Pooling. Max Pooling actually takes the maximum value in the sample of n\*n as the sampled value after sampling. The figure below is 2\*2 max pooling:
 
-![](./img/ch3/3.2.4.1.png)
+![](img/ch3/3.2.4.1.png)
 
 In addition to Max Pooing, Average Pooling is also commonly used - taking the average of each sample.
 For a Feature Map with a depth of $ D $ , each layer does Pooling independently, so the depth after Pooling is still $ D $.
@@ -269,7 +269,7 @@ For a Feature Map with a depth of $ D $ , each layer does Pooling independently,
 
 A typical three-layer neural network is as follows:
 
-![](./img/ch3/3.2.5.1.png)
+![](img/ch3/3.2.5.1.png)
 
 Where Layer $ L_1 $ is the input layer, Layer $ L_2 $ is the hidden layer, and Layer $ L_3 $ is the output layer.
 
@@ -279,11 +279,11 @@ If the input and output are the same, it is a self-encoding model. If the raw da
 
 Suppose you have the following network layer:
 
-![](./img/ch3/3.2.5.2.png)
+![](img/ch3/3.2.5.2.png)
 
 The input layer contains neurons $ i_1, i_2 $, offset $ b_1 $; the hidden layer contains neurons $ h_1, h_2 $, offset $ b_2 $, and the output layer is $ o_1, o_2 $, $ W_i $ is the weight of the connection between the layers, and the activation function is the $sigmoid $ function. Take the initial value of the above parameters, as shown below:
 
-![](./img/ch3/3.2.5.3.png)
+![](img/ch3/3.2.5.3.png)
 
 among them:
 
@@ -365,7 +365,7 @@ $$
 
 The following diagram can be more intuitive to see how the error propagates back:
 
-![](./img/ch3/3.2.5.4.png)
+![](img/ch3/3.2.5.4.png)
 
 ### 3.2.6 What is the meaning of the neural network more "deep"?
 
@@ -429,7 +429,7 @@ Among them, the search process requires a search algorithm, generally: grid sear
 
    The function image is as follows:
 
-![](./img/ch3/3-26.png)
+![](img/ch3/3-26.png)
 
 2. tanh activation function
 
@@ -437,7 +437,7 @@ Among them, the search process requires a search algorithm, generally: grid sear
 
    The function image is as follows:
 
-![](./img/ch3/3-27.png)
+![](img/ch3/3-27.png)
 
 3. Relu activation function
 
@@ -445,7 +445,7 @@ Among them, the search process requires a search algorithm, generally: grid sear
 
    The function image is as follows:
 
-![](./img/ch3/3-28.png)
+![](img/ch3/3-28.png)
 
 4. Leak Relu activation function
 
@@ -458,7 +458,7 @@ Among them, the search process requires a search algorithm, generally: grid sear
 
    The image is as follows ($ a = 0.5 $):
 
-![](./img/ch3/3-29.png)
+![](img/ch3/3-29.png)
 
 5. SoftPlus activation function
 
@@ -466,7 +466,7 @@ Among them, the search process requires a search algorithm, generally: grid sear
 
    The function image is as follows:
 
-![](./img/ch3/3-30.png)
+![](img/ch3/3-30.png)
 
 6. softmax function
 
@@ -478,7 +478,7 @@ Among them, the search process requires a search algorithm, generally: grid sear
 
 For common activation functions, the derivative is calculated as follows:
 
-![](./img/ch3/3-31.png)
+![](img/ch3/3-31.png)
 
 ### 3.4.4 What are the properties of the activation function?
 
@@ -517,7 +517,7 @@ The following are common choices:
 
 The Relu activation function image is as follows:
 
-![](./img/ch3/3-32.png)
+![](img/ch3/3-32.png)
 
 According to the image, it can be seen that it has the following characteristics:
 
@@ -543,15 +543,15 @@ $$
 
 From the following figure, the neural network contains the input layer, and then processed by two feature layers. Finally, the softmax analyzer can get the probability under different conditions. Here, it needs to be divided into three categories, and finally get $ y=0. , y=1, y=2 probability value of $.
 
-![](./img/ch3/3.4.9.1.png)
+![](img/ch3/3.4.9.1.png)
 
 Continuing with the picture below, the three inputs pass through softmax to get an array of $[0.05, 0.10, 0.85] $, which is the function of soft.
 
-![](./img/ch3/3.4.9.2.png)
+![](img/ch3/3.4.9.2.png)
 
 The more visual mapping process is shown below:
 
-![****](./img/ch3/3.4.9.3.png)
+![****](img/ch3/3.4.9.3.png)
 
 In the case of softmax, the original output is $3,1,-3$, which is mapped to the value of $(0,1)$ by the softmax function, and the sum of these values ​​is $1 $( Satisfy the nature of the probability), then we can understand it as a probability, when we finally select the output node, we can select the node with the highest probability (that is, the value corresponds to the largest) as our prediction target!
 
@@ -668,7 +668,7 @@ At this time, a batch-grading learning method (Mini-batches Learning) can be emp
 
 ### 3.6.3 Why can normalization improve the solution speed?
 
-![](./img/ch3/3.6.3.1.png)
+![](img/ch3/3.6.3.1.png)
 
 The above figure is the optimal solution finding process that represents whether the data is uniform (the circle can be understood as a contour). The left image shows the search process without normalization, and the right image shows the normalized search process.
 
@@ -684,7 +684,7 @@ Suppose $w1$ ranges in $[-10, 10]$, while $w2$ ranges in $[-100, 100]$, the grad
 
 This will result in a more bias toward the direction of $ w1 $ during the search. Go out of the "L" shape, or become the "Zigzag" shape.
 
-![](./img/ch3/3-37.png)
+![](img/ch3/3-37.png)
 
 ### 3.6.5 What types of normalization?
 
@@ -742,7 +742,7 @@ among them,
 
 A simple diagram is as follows:
 
-![](./img/ch3/3.6.7.1.png)
+![](img/ch3/3.6.7.1.png)
 
 ### 3.6.8 What is Batch Normalization?
 
@@ -892,7 +892,7 @@ Deviation Initialization Trap: Both are initialized to the same value.
 Take a three-layer network as an example:
 First look at the structure
 
-![](./img/ch3/3.8.2.1.png)
+![](img/ch3/3.8.2.1.png)
 
 Its expression is:
 
@@ -1051,8 +1051,8 @@ tf.train.RMSPropOptimizer
 
 ### 3.12.2 Why is regularization helpful in preventing overfitting?
 
-![](./img/ch3/3.12.2.1.png)
-![](./img/ch3/3.12.2.2.png)
+![](img/ch3/3.12.2.1.png)
+![](img/ch3/3.12.2.2.png)
 
 The left picture is high deviation, the right picture is high variance, and the middle is Just Right, which we saw in the previous lesson.
 

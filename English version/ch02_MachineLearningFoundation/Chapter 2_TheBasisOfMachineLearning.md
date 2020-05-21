@@ -12,19 +12,19 @@ Machine Learning (ML), as the name suggests, lets the machine learn. Here, the m
 
 |Regression Algorithm|Clustering Algorithm|Regularization Method|
 |:-:|:-:|:-:|
-|![](./img/ch2/2.1/1.jpg)|![](./img/ch2/2.1/2.jpg)|![](./img/ch2/2.1/3.jpg )|
+|![](img/ch2/2.1/1.jpg)|![](img/ch2/2.1/2.jpg)|![](img/ch2/2.1/3.jpg )|
 
 | Decision Tree Learning | Bayesian Methods | Kernel-Based Algorithms |
 |:-:|:-:|:-:|
-|![](./img/ch2/2.2.4.png)|![](./img/ch2/2.1/5.jpg)|![](./img/ch2/2.1/6.jpg )|
+|![](img/ch2/2.2.4.png)|![](img/ch2/2.1/5.jpg)|![](img/ch2/2.1/6.jpg )|
 
 |Clustering Algorithm|Association Rule Learning|Artificial Neural Network|
 |:-:|:-:|:-:|
-|![](./img/ch2/2.1/7.jpg)|![](./img/ch2/2.2.8.png)|![](./img/ch2/2.2.09.png )|
+|![](img/ch2/2.1/7.jpg)|![](img/ch2/2.2.8.png)|![](img/ch2/2.2.09.png )|
 
 |Deep Learning|Lower Dimensional Algorithm|Integrated Algorithm|
 |:-:|:-:|:-:|
-|![](./img/ch2/2.2.10.png)|![](./img/ch2/2.2.11.png)|![](./img/ch2/2.2.12.png )|
+|![](img/ch2/2.2.10.png)|![](img/ch2/2.2.11.png)|![](img/ch2/2.2.12.png )|
 
 ## 2.3 Supervised learning, unsupervised learning, semi-supervised learning, weak supervision learning?
 There are different ways to model a problem, depending on the type of data. According to different learning methods and input data, machine learning is mainly divided into the following four learning methods.
@@ -95,7 +95,7 @@ For example, Full Connected (FC) neural network, its rules include:
 
     **Neural Network Architecture**
     The picture below is a neural network system, which consists of many layers. The input layer is responsible for receiving information, such as a picture of a cat. The output layer is the result of the computer's judgment on this input information, it is not a cat. The hidden layer is the transfer and processing of input information.
-    ![](./img/ch2/2.5.1.png)
+    ![](img/ch2/2.5.1.png)
 
 ## 2.7 Understanding Local Optimization and Global Optimization
 
@@ -138,7 +138,7 @@ Therefore, when using the classification model or the regression model in the ac
    3) False negatives (FN): the number of instances that are incorrectly divided into negative examples, that is, the number of instances that are actually positive but are classified as negative by the classifier;
    4) True negatives(TN): The number of negative cases that are correctly divided into negative examples, which are actually negative examples and are divided into negative examples by the classifier.
 
-![](./img/ch2/2.9/1.png)
+![](img/ch2/2.9/1.png)
 
 The figure above is the confusion matrix of these four terms, and the following is explained:
 1) P = TP + FN represents the number of samples that are actually positive examples.
@@ -184,7 +184,7 @@ In order to integrate the classification of multiple categories and evaluate the
 
 The ROC curve is an abbreviation for (Receiver Operating Characteristic Curve), which is a performance evaluation curve with sensitivity (true positive rate) as the ordinate and 1-specific (false positive rate) as the abscissa. . The ROC curves of different models for the same data set can be plotted in the same Cartesian coordinate system. The closer the ROC curve is to the upper left corner, the more reliable the corresponding model is. The model can also be evaluated by the area under the ROC curve (Area Under Curve, AUC). The larger the AUC, the more reliable the model.
 
-![](./img/ch2/2.7.3.png)
+![](img/ch2/2.7.3.png)
 
 Figure 2.7.3 ROC curve
 
@@ -283,7 +283,7 @@ $$
 Suppose there are two parameters, $A$ and $B$, in the function. When the parameters change, it is assumed that the function state will also change.
 As shown below:
 
-![](./img/ch2/2.16/1.jpg)
+![](img/ch2/2.16/1.jpg)
 
 To fit the discrete points in the graph, we need to find the best $A$ and $B$ as possible to make this line more representative of all the data. How to find the optimal solution, which needs to be solved using the cost function, taking the squared error cost function as an example, assuming the function is $h(x)=\theta_0x$.
 The main idea of ​​the square error cost function is to make the difference between the value given by the actual data and the corresponding value of the fitted line, and find the difference between the fitted line and the actual line. In practical applications, in order to avoid the impact of individual extreme data, a similar variance is used to take one-half of the variance to reduce the impact of individual data. Therefore, the cost function is derived:
@@ -294,7 +294,7 @@ $$
 **The optimal solution is the minimum value of the cost function**$\min J(\theta_0, \theta_1) ​$. If it is a parameter, the cost function is generally visualized by a two-dimensional curve. If it is 2 parameters, the cost function can see the effect through the 3D image. The more parameters, the more complicated.
 When the parameter is 2, the cost function is a three-dimensional image.
 
-![](./img/ch2/2.16/2.jpg)
+![](img/ch2/2.16/2.jpg)
 
 ### 2.10.3 Why is the cost function non-negative?
 There is a lower bound on the objective function. In the optimization process, if the optimization algorithm can reduce the objective function continuously, according to the monotonically bounded criterion, the optimization algorithm can prove that the convergence is effective.
@@ -319,7 +319,7 @@ Where $z ​$ represents the input of the neuron and $\sigma ​$ represents the
 
 *Note*: The activation function commonly used in neural networks is the sigmoid function. The curve of this function is as follows:
 
-![](./img/ch2/2.18/1.jpg)
+![](img/ch2/2.18/1.jpg)
 
 Compare the two points of 0.88 and 0.98 as shown:
 Assume that the target is to converge to 1.0. 0.88 is farther from the target 1.0, the gradient is larger, and the weight adjustment is larger. 0.98 is closer to the target 1.0, the gradient is smaller, and the weight adjustment is smaller. The adjustment plan is reasonable.
@@ -569,7 +569,7 @@ Gradient concepts need to be noted:
 ### 2.12.3 Gradient descent method intuitive understanding?
 Classical illustration of the gradient descent method:
 
-![](./img/ch2/2.25/1.png)
+![](img/ch2/2.25/1.png)
 
 Visualization example:
 > From the above picture, if at the beginning, we are somewhere on a mountain, because there are strangers everywhere, we don’t know the way down the mountain, so we can only explore the steps based on intuition, in the process, Every time you go to a position, it will solve the gradient of the current position, go down one step along the negative direction of the gradient, that is, the current steepest position, and then continue to solve the current position gradient, and the steepest position along this step. The easiest place to go down the mountain. Constantly cycle through the gradients, and so on, step by step, until we feel that we have reached the foot of the mountain. Of course, if we go on like this, it is possible that we cannot go to the foot of the mountain, but to the low point of a certain local peak.
@@ -784,7 +784,7 @@ If you summarize the LDA idea in one sentence, that is, "the variance within the
 ### 2.14.2 Graphical LDA Core Ideas
 Assume that there are two types of data, red and blue. These data features are two-dimensional, as shown in the following figure. Our goal is to project these data into one dimension, so that the projection points of each type of similar data are as close as possible, and the different types of data are as far as possible, that is, the distance between the red and blue data centers in the figure is as large as possible.
 
-![](./img/ch2/2.29/1.png)
+![](img/ch2/2.29/1.png)
 
 The left and right images are two different projections.
 
@@ -885,7 +885,7 @@ The PCA can solve the problem that there are too many data features or cumbersom
 
 Suppose the data set is m n-dimensional, $(x^{(1)}, x^{(2)}, \cdots, x^{(m)})$. If n=2, you need to reduce the dimension to $n'=1$. Now you want to find the data of a dimension that represents these two dimensions. The figure below has $u_1, u_2$ two vector directions, but which vector is what we want, can better represent the original data set?
 
-![](./img/ch2/2.34/1.png)
+![](img/ch2/2.34/1.png)
 
 As can be seen from the figure, $u_1$ is better than $u_2$, why? There are two main evaluation indicators:
 1. The sample point is close enough to this line.
@@ -1048,7 +1048,7 @@ Noise: Describes the lower bound of the expected generalization error that any l
 - The smaller the Variance, the higher the generalization of the model; conversely, the lower the ability of the model to generalize.
 - If the model has a good fitting effect on the training set, but the fitting effect on the test set is relatively poor, the variance is large, indicating that the stability of the model is poor. This phenomenon may be due to the model training set. Caused by the fit. As shown in the right column of the figure below.
 
-> ![](./img/ch2/2.16.20.1.png)
+> ![](img/ch2/2.16.20.1.png)
 >
 
 ### 2.16.3 Empirical error and generalization error
@@ -1061,7 +1061,7 @@ Generalization error: The error of the model on the new sample set (test set) is
 Under-fitting is different from over-fitting plots depending on the coordinate method.
 1. **The horizontal axis is the number of training samples and the vertical axis is the error**
 
-![](./img/ch2/2.16.4.1.jpg)
+![](img/ch2/2.16.4.1.jpg)
 
 As shown in the figure above, we can visually see the difference between under-fitting and over-fitting:
 
@@ -1073,7 +1073,7 @@ The model is normal: there are relatively low deviations and variances on both t
 
 2. **The horizontal axis is the complexity of the model and the vertical axis is the error**
 
-![](./img/ch2/2.16.4.2.png)
+![](img/ch2/2.16.4.2.png)
 
 The red line is the Error on the test set, and the blue line is the Error on the training set.
 
@@ -1085,7 +1085,7 @@ The model is normal: the model complexity control is optimal at point B.
 
 3. **The horizontal axis is the regular term coefficient and the vertical axis is the error**
 
-![](./img/ch2/2.16.4.3.png)
+![](img/ch2/2.16.4.3.png)
 
 The red line is the Error on the test set, and the blue line is the Error on the training set.
 
@@ -1182,7 +1182,7 @@ The ROC curve is calculated by setting a continuous variable to a plurality of d
 
 For classifiers, or classification algorithms, the evaluation indicators mainly include precision, recall, and F-score. The figure below is an example of a ROC curve.
 
-![](./img/ch2/2.40.10/1.png)
+![](img/ch2/2.40.10/1.png)
 
 The abscissa of the ROC curve is the false positive rate (FPR) and the ordinate is the true positive rate (TPR). among them
 $$
@@ -1206,7 +1206,7 @@ step:
 3. Select a different threshold each time to get a set of FPR and TPR, which is a point on the ROC curve. In this way, a total of 20 sets of FPR and TPR values ​​were obtained. The FPR and TPR are briefly understood as follows:
 4. Draw according to each coordinate point in 3).
 
-![](./img/ch2/2.40.11/1.jpg)
+![](img/ch2/2.40.11/1.jpg)
 
 ### 2.16.13 How to calculate TPR, FPR?
 1. Analysis of data
@@ -1291,7 +1291,7 @@ Because the ROC curve has a very good property: when the distribution of positiv
 ### 2.16.17 Intuitive understanding of AUC
 The figure below shows the values ​​of the three AUCs:
 
-![](./img/ch2/2.40.15/1.png)
+![](img/ch2/2.40.15/1.png)
 
 AUC is an evaluation index to measure the pros and cons of the two-category model, indicating the probability that the positive example is in front of the negative example. Other evaluation indicators have accuracy, accuracy, and recall rate, and AUC is more common than the three.
 Generally, in the classification model, the prediction results are expressed in the form of probability. If the accuracy is to be calculated, a threshold is usually set manually to convert the corresponding probability into a category, which greatly affects the accuracy of the model. Rate calculation.
@@ -1299,19 +1299,19 @@ Example:
 
 Now suppose that a trained two-classifier predicts 10 positive and negative samples (5 positive cases and 5 negative examples). The best prediction result obtained by sorting the scores in high to low is [1, 1, 1, 1, 1, 0, 0, 0, 0, 0], that is, 5 positive examples are ranked in front of 5 negative examples, and the positive example is 100% in front of the negative example. Then draw its ROC curve, since it is 10 samples, we need to draw 10 points in addition to the origin, as follows:
 
-![](./img/ch2/2.16.17-1.png)
+![](img/ch2/2.16.17-1.png)
 
 The method of traversing starts from left to right according to the score of the sample prediction result. Starting from the origin, every time you encounter 1, move the y-axis in the positive direction of the y-axis with a minimum step size of 1 unit, here is 1/5=0.2; every time you encounter 0, move to the x-axis positive direction, the x-axis minimum step size is 1 Unit, here is also 0.2. It is not difficult to see that the AUC of the above figure is equal to 1, which confirms that the probability that the positive example is in front of the negative example is indeed 100%.
 
 Assume that the prediction result sequence is [1, 1, 1, 1, 0, 1, 0, 0, 0, 0].
 
-![](./img/ch2/2.16.17-2.png)
+![](img/ch2/2.16.17-2.png)
 
 Calculate the AUC of the above figure is 0.96 and the probability of calculating the positive example is 0.8 × 1 + 0.2 × 0.8 = 0.96 in front of the negative example, and the area of ​​the shadow in the upper left corner is the probability that the negative example is in front of the positive example. × 0.2 = 0.04.
 
 Assume that the prediction result sequence is [1, 1, 1, 0, 1, 0, 1, 0, 0, 0].
 
-![](./img/ch2/2.16.17-3.png)
+![](img/ch2/2.16.17-3.png)
 
 Calculate the AUC of the above figure is 0.88 and the probability of calculating the positive example and the front of the negative example is equal to 0.6 × 1 + 0.2 × 0.8 + 0.2 × 0.6 = 0.88. The area of ​​the shaded part in the upper left corner is the negative example in front of the positive example. The probability is 0.2 × 0.2 × 3 = 0.12.
 
@@ -1319,7 +1319,7 @@ Calculate the AUC of the above figure is 0.88 and the probability of calculating
 
 Different errors can come at different costs. Taking the dichotomy as an example, set the cost matrix as follows:
 
-![](./img/ch2/2-1.png)
+![](img/ch2/2-1.png)
 
 When the judgment is correct, the value is 0. When it is incorrect, it is $Cost_{01} $ and $Cost_{10} $ respectively.
 
@@ -1353,7 +1353,7 @@ Note: Each point of the ROC corresponds to a line on the cost plane.
 
 For example, on the ROC (TPR, FPR), FNR=1-TPR is calculated, and a line segment from (0, FPR) to (1, FNR) is drawn on the cost plane, and the area is the expected overall cost under the condition. The area under the bounds of all segments, the expected overall cost of the learner under all conditions.
 
-![](./img/ch2/2.16.18.1.png)
+![](img/ch2/2.16.18.1.png)
 
 ### 2.16.19 What are the comparison test methods for the model?
 Correctness analysis: model stability analysis, robustness analysis, convergence analysis, trend analysis, extreme value analysis, etc.
@@ -1442,7 +1442,7 @@ Pruning: Decision trees are easy to overfit, generally requiring pruning, reduci
 
 ### 2.17.3 Decision Tree Learning Basic Algorithm
 
-![](./img/ch2/2-5.png)
+![](img/ch2/2-5.png)
 
 ### 2.17.4 Advantages and disadvantages of decision tree algorithms
 
@@ -1530,7 +1530,7 @@ Support Vector Machine (SVM): The meaning is a classifier that supports vector o
 
 In a two-dimensional environment, points R, S, G and other points near the middle black line can be seen as support vectors, which can determine the specific parameters of the classifier, black line.
 
-![](./img/ch2/2-6.png)
+![](img/ch2/2-6.png)
 
 The support vector machine is a two-class model. Its purpose is to find a hyperplane to segment the sample. The principle of segmentation is to maximize the interval and finally transform it into a convex quadratic programming problem. The simple to complex models include:
 
@@ -1752,7 +1752,7 @@ LR mainly relies on feature structure, and must combine cross-characteristics an
 
 The principle of maximum likelihood estimation is illustrated by a picture, as shown in the following figure:
 
-![](./img/ch2/2.19.1.1.png)
+![](img/ch2/2.19.1.1.png)
 
 Example: There are two boxes with the same shape. There are 99 white balls and 1 black ball in the 1st box. There are 1 white ball and 99 black balls in the 2nd box. In one experiment, the black ball was taken out. Which box was taken out from?
 
@@ -1867,7 +1867,7 @@ $$
 $$
 Then, estimate the conditional probability for each attribute (here, for continuous attributes, assume they follow a normal distribution)
 
-![](./img/ch2/2.19.5C.png)
+![](img/ch2/2.19.5C.png)
 
 Then there is
 $$
@@ -1954,7 +1954,7 @@ The above is the M step of the EM algorithm, $\sum\limits_{z^{(i)}}Q_i(z^{(i)})l
 
 Considering the formula (a) in the previous section, there are hidden variables in the expression. It is difficult to find the parameter estimation directly. The EM algorithm is used to iteratively solve the maximum value of the lower bound until convergence.
 
-![](./img/ch2/2.20.1.jpg)
+![](img/ch2/2.20.1.jpg)
 
 The purple part of the picture is our target model $p(x|\theta)$. The model is complex and difficult to find analytical solutions. In order to eliminate the influence of the hidden variable $z^{(i)}$, we can choose one not. The $r(x|\theta)$ model containing $z^{(i)}$ is such that it satisfies the condition $r(x|\theta) \leq p(x|\theta) $.
 
@@ -1999,23 +1999,23 @@ If the data set contains 10 photos, the photo contains both triangle and circle 
 
 
 
-![](./img/ch2/2.21.1.1.png)
+![](img/ch2/2.21.1.1.png)
 
 Figure 2.21.1.a
 
 As can be seen from the above figure, if only one feature is classified, the triangle and the circle are almost evenly distributed on this line segment, and it is difficult to linearly classify 10 photos. So what happens when you add a feature:
 
-![](./img/ch2/2.21.1.2.png)
+![](img/ch2/2.21.1.2.png)
 
 Figure 2.21.1.b
 
 After adding a feature, we found that we still couldn't find a straight line to separate the cat from the dog. So, consider adding another feature:
 
-![](./img/ch2/2.21.1.3.png)
+![](img/ch2/2.21.1.3.png)
 
 Figure 2.21.1.c
 
-![](./img/ch2/2.21.1.4.png)
+![](img/ch2/2.21.1.4.png)
 
 Figure 2.21.1.d
 
@@ -2033,25 +2033,25 @@ By analogy, if you continue to increase the number of features, the sample densi
 
 Let's look at what happens when you map the classification results of high-dimensional space to low-dimensional space.
 
-![](./img/ch2/2.21.1.5.png)
+![](img/ch2/2.21.1.5.png)
 
 Figure 2.21.1.e
 
 The above figure is the result of mapping the 3D feature space to the 2D feature space. Although the training samples are linearly separable in the high dimensional feature space, the results are reversed after mapping to the low dimensional space. In fact, increasing the number of features makes the high-dimensional space linearly separable, which is equivalent to training a complex nonlinear classifier in a low-dimensional space. However, this nonlinear classifier is too "smart" to learn only a few special cases. If it is used to identify test samples that have not appeared in the training sample, the results are usually not ideal and can cause over-fitting problems.
 
-![](./img/ch2/2.21.1.6a.png)
+![](img/ch2/2.21.1.6a.png)
 
 Figure 2.21.1.f
 
 The linear classifier with only two features shown in the above figure is divided into some training samples. The accuracy does not seem to be as high as in Figure 2.21.1.e. However, the generalization ability ratio of linear classifiers with two features is shown. A linear classifier with three features is stronger. Because the linear classifier with two features learns not only the special case, but an overall trend, which can be better distinguished for those samples that have never appeared before. In other words, by reducing the number of features, over-fitting problems can be avoided, thereby avoiding "dimensionality disasters."
 
-![](./img/ch2/2.21.1.6.png)
+![](img/ch2/2.21.1.6.png)
 
 From another perspective, the "dimensional disaster" is explained. Assuming that there is only one feature, the range of features is 0 to 1, and the eigenvalues ​​of each triangle and circle are unique. If we want the training sample to cover 20% of the eigenvalue range, then we need 20% of the total number of triangles and circles. After we add a feature, 45% (0.452 = 0.2) of the total number of triangles and circles is needed to continue covering 20% ​​of the eigenvalue range. After continuing to add a feature, 58% (0.583 = 0.2) of the total number of triangles and circles is required. As the number of features increases, more training samples are needed to cover 20% of the eigenvalue range. If there are not enough training samples, there may be over-fitting problems.
 
 Through the above example, we can see that the more the number of features, the more sparse the training samples will be, the less accurate the parameter estimates of the classifier will be, and the over-fitting problem will be more likely to occur. Another effect of the "dimension disaster" is that the sparsity of the training samples is not evenly distributed. The training samples at the center are more sparse than the surrounding training samples.
 
-![](./img/ch2/2.21.1.7.png)
+![](img/ch2/2.21.1.7.png)
 
 Suppose there is a two-dimensional feature space, such as the rectangle shown in Figure 8, with an inscribed circle inside the rectangle. As the sample closer to the center of the circle is sparse, those samples located at the four corners of the rectangle are more difficult to classify than the samples within the circle. When the dimension becomes larger, the capacity of the feature hyperspace does not change, but the capacity of the unit circle tends to zero. In the high-dimensional space, most of the training data resides in the corner of the feature hyperspace. Data scattered in the corner is harder to classify than data in the center.
 
@@ -2073,13 +2073,13 @@ Clustering is used to find the distribution structure inherent in data, either a
 
 1) In some recommendation systems, the type of new user needs to be determined, but it is not easy to define the “user type”. In this case, the original user data can be clustered first, and each cluster is clustered according to the clustering result. Defined as a class, and then based on these classes to train the classification model to identify the type of new user.
 
-![](./img/ch2/2.21.3.1.png)
+![](img/ch2/2.21.3.1.png)
 
 2) Dimensionality reduction is an important method to alleviate the dimensionality disaster. It is to transform the original high-dimensional attribute space into a low-dimensional "subspace" through some mathematical transformation. It is based on the assumption that although the data samples that people usually observe are high-dimensional, what is actually related to the learning task is a low-dimensional distribution. Therefore, the description of the data can be realized through the most important feature dimensions, which is helpful for the subsequent classification. For example, the Titanic on Kaggle was still a problem. By giving a person a number of characteristics such as age, name, gender, fare, etc., to determine whether it can survive in a shipwreck. This requires first feature screening to identify the main features and make the learned models more generalizable.
 
 Both clustering and dimensionality reduction can be used as preprocessing steps for classification and other issues.
 
-![](./img/ch2/2-19.jpg)
+![](img/ch2/2-19.jpg)
 
 But although they can achieve the reduction of data. However, the two objects are different, the clustering is for data points, and the dimension reduction is for the characteristics of the data. In addition, they have a variety of implementation methods. K-means, hierarchical clustering, density-based clustering, etc. are commonly used in clustering; PCA, Isomap, LLE, etc. are commonly used in dimension reduction.
 
@@ -2120,7 +2120,7 @@ Steps:
 According to the order of hierarchical decomposition, whether it is bottom-up or top-down, the hierarchical clustering algorithm is divided into a condensed hierarchical clustering algorithm and a split hierarchical clustering algorithm.
 The strategy of condensed hierarchical clustering is to first treat each object as a cluster, then merge the clusters into larger and larger clusters until all objects are in one cluster, or a certain termination condition is satisfied. Most hierarchical clusters belong to agglomerative hierarchical clustering, which differ only in the definition of similarity between clusters. The four widely used methods for measuring the distance between clusters are as follows:
 
-![](./img/ch2/2-20.gif)
+![](img/ch2/2-20.gif)
 
 Here is the flow of the condensed hierarchical clustering algorithm using the minimum distance:
 
@@ -2148,7 +2148,7 @@ In 1965, Professor Zade of the University of California, Berkeley, first propose
 
 The FCM algorithm is an algorithm that determines the degree to which each data point belongs to a certain cluster degree by membership degree. This clustering algorithm is an improvement of the traditional hard clustering algorithm.
 
-![](./img/ch2/2-21.gif)
+![](img/ch2/2-21.gif)
 
 Algorithm flow:
 
@@ -2168,7 +2168,7 @@ In the experiment, IRIS [13] data set in the international UCI database dedicate
 
 Based on the previous algorithm principles and algorithm flow, the programming operation is performed by matlab, and the clustering results shown in Table 1 are obtained.
 
-![](./img/ch2/2-22.gif)
+![](img/ch2/2-22.gif)
 
 As shown in Table 1, for the four clustering algorithms, compare them in three aspects:
 

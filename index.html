@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>深度学习500问</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js"></script>
+  <style>
+    .sidebar>h1 a {
+      font-size: 20px;
+      color: black;
+    }
+    .content {
+      padding-top: 5px;
+    }
+    .markdown-section {
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      themeColor: '#fc7e09',
+      loadSidebar: true,
+      maxLevel: 2,
+      subMaxLevel: 2,
+      auto2top: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      markdown: {
+        latexRender: katex.renderToString.bind(katex)
+      },
+      search: {
+      	placeholder: 'Type to search',
+      	noData: 'No Results!',
+        paths: 'auto',
+        depth: 6
+      },
+      plugins: [
+        function(hook, vm) {
+          hook.beforeEach(function(content) {
+            // 每次开始解析 Markdown 内容时调用
+            // 将所有../img替换成img
+            // https://github.com/docsifyjs/docsify/issues/936
+            return content.replace(/..\/img/g, "img");
+          })
+
+          hook.doneEach(function () {
+            window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('app')]);
+          })
+        }
+      ],
+      externalLinkTarget: '_target',
+      name: '深度学习500问',
+      repo: 'https://github.com/scutan90/DeepLearning-500-questions'
+    }
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"]
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <script src="docsify.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-python.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
