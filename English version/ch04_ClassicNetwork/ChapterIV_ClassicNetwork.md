@@ -9,7 +9,7 @@ LeNet-5 is a Convolutional Neural Network (CNN) $^{[1]}$ proposed by $LeCun$ for
 
 ### 4.1.2 Model structure
 
-![](./img/ch4/LeNet-5.jpg)
+![](img/ch4/LeNet-5.jpg)
 
 Figure 4.1 LeNet-5 network structure
 
@@ -31,7 +31,7 @@ Table 4.1 LeNet-5 Network Parameter Configuration
 >
 > $^*$ $C_3$ Convolutional layer training parameters are not directly connected to all feature maps in $S_2$, but are connected using the sampling feature as shown in Figure 4.2 (sparse connection). The generated 16 channel feature maps are mapped according to the adjacent three feature maps, the adjacent four feature maps, the non-adjacent four feature maps, and all six feature maps. The calculated number of parameters is calculated as $6\ Times(25\times3+1)+6\times(25\times4+1)+3\times(25\times4+1)+1\times(25\times6+1)=1516$, explained in the original paper There are two reasons for using this sampling method: the number of connections is not too large (the computing power of the current year is weak); forcing the combination of different feature maps can make the mapped feature maps learn different feature patterns.
 
-![FeatureMap](./img/ch4/featureMap.jpg)
+![FeatureMap](img/ch4/featureMap.jpg)
 
 Figure 4.2 Sparse connection between feature maps between $S_2$ and $C_3$
 
@@ -53,7 +53,7 @@ AlexNet is the first deep convolutional neural network applied to image classifi
 
 ### 4.2.2 Model structure
 
-![](./img/ch4/alexnet.png)
+![](img/ch4/alexnet.png)
 
 Figure 4.3 AlexNet network structure
 
@@ -100,15 +100,15 @@ ZFNet is a large convolutional network based on AlexNet from $Matthew$ $D. Zeile
 
 ### 4.3.2 Model structure
 
-![](./img/ch4/image21.jpeg)
+![](img/ch4/image21.jpeg)
 
 Figure 4.4 ZFNet network structure diagram (original structure diagram and AlexNet style structure diagram)
 
 As shown in Figure 4.4, ZFNet is similar to AlexNet. It is a convolutional neural network consisting of 8 layers of networks, including 5 layers of convolutional layers and 3 layers of fully connected layers. The biggest difference between the two network architectures is that the ZFNet first-layer convolution replaces the convolution of the first-order convolution kernel $11\times11\times3/4$ in AlexNet with a convolution kernel of $7\times7\times3/2$. nuclear. In Figure 4.5, ZFNet contains more intermediate frequency information in the feature map of the first layer output than AlexNet, while the characteristic map of the first layer output of AlexNet is mostly low frequency or high frequency information, and the lack of intermediate frequency features leads to The characteristics of the subsequent network level as shown in Figure 4.5(c) are not detailed enough, and the root cause of this problem is that the convolution kernel and step size adopted by AlexNet in the first layer are too large.
 
-![](./img/ch4/zfnet-layer1.png)
+![](img/ch4/zfnet-layer1.png)
 
-![](./img/ch4/zfnet-layer2.png)
+![](img/ch4/zfnet-layer2.png)
 
 Figure 4.5 (a) Characteristic map of the first layer output of ZFNet (b) Characteristic map of the first layer output of AlexNet (c) Characteristic map of the output of the second layer of AlexNet (d) Characteristic map of the output of the second layer of ZFNet
 
@@ -148,7 +148,7 @@ NetwThe ork In Network (NIN) was proposed by $Min Lin$ et al. to achieve the bes
 
 ### 4.4.2 Model Structure
 
-![](./img/ch4/image23.jpeg)
+![](img/ch4/image23.jpeg)
 Figure 4.6 NIN network structure
 
 NIN consists of three layers of multi-layer perceptual convolutional layer (MLPConv Layer). Each layer of multi-layer perceptual convolutional layer is composed of several layers of local fully connected layers and nonlinear activation functions instead of traditional convolutional layers. Linear convolution kernel used. In network inference, the multi-layer perceptron calculates the local features of the input feature map, and the weights of the products corresponding to the local feature maps of each window are shared. The convolution operation is completely consistent, the biggest difference is that the multilayer perceptron performs a nonlinear mapping of local features, while the traditional convolution method is linear. NIN's network parameter configuration table 4.4 is shown (the original paper does not give the network parameters, the parameters in the table are the compiler combined network structure diagram and CIFAR-100 data set with $3\times3$ convolution as an example).
@@ -181,7 +181,7 @@ VGGNet is a deep convolutional network structure proposed by the Visual Geometry
 
 ### 4.5.2 Model structure
 
-![](./img/ch4/vgg16.png)
+![](img/ch4/vgg16.png)
 
 Figure 4.7 VGG16 network structure
 
@@ -225,19 +225,19 @@ Table 4.5 VGG16 network parameter configuration
 
 As the winner of the ILSVRC classification task in 2014, GoogLeNet pressured VGGNet and other models with an error rate of 6.65%. Compared with the previous two championships ZFNet and AlexNet, the accuracy of the classification is greatly improved. From the name **GoogLe**Net, you can know that this is a network structure designed by Google engineers, and the name Goog**LeNet** is a tribute to LeNet$^{[0]}$. The core part of GoogLeNet is its internal subnet structure, Inception, which is inspired by NIN and has undergone four iterations (Inception$_{v1-4}$).
 
-![](./img/ch4/img_inception_01.png)
+![](img/ch4/img_inception_01.png)
 Figure 4.8 Inception performance comparison chart
 
 ### 4.6.2 Model Structure
 
-![](./img/ch4/image25.jpeg)
+![](img/ch4/image25.jpeg)
 Figure 4.9 GoogLeNet network structure
 As shown in Figure 4.9, GoogLeNet extends the width of the network in addition to the depth of the previous convolutional neural network structure. The entire network is composed of a number of block subnetworks. This subnet constitutes the Inception structure. Figure 4.9 shows four versions of Inception: $Inception_{v1}$ uses different convolution kernels in the same layer and merges the convolution results; $Inception_{v2}$ combines the stacking of different convolution kernels, and The convolution results are merged; $Inception_{v3}$ is a deep combination attempt on the basis of $v_2$; the $Inception_{v4} $ structure is more complex than the previous version, nested in the subnet The internet.
 
-![](./img/ch4/img_inception_02.png)
-![](./img/ch4/img_inception_05.png)
-![](./img/ch4/img_inception_03.png)
-![](./img/ch4/img_inception_04.png)
+![](img/ch4/img_inception_02.png)
+![](img/ch4/img_inception_05.png)
+![](img/ch4/img_inception_03.png)
+![](img/ch4/img_inception_04.png)
 Figure 4.10 Inception$_{v1-4}$ structure diagram
 
 Table 4.6 Inception$_{v1}$ Network Parameter Configuration in GoogLeNet

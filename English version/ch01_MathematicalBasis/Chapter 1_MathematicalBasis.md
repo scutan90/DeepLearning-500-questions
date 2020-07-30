@@ -389,7 +389,7 @@ P(A/B) = P(A\cap B) / P(B)
 $$
 
 Description: The event or subset $A$ and $B$ in the same sample space $\Omega$, if an element randomly selected from $\Omega$ belongs to $B$, then the next randomly selected element The probability of belonging to $A$ is defined as the conditional probability of $A$ on the premise of $B$.
-![conditional probability](./img/ch1/conditional_probability.jpg)
+![conditional probability](img/ch1/conditional_probability.jpg)
 
 According to the Venn diagram, it can be clearly seen that in the event of event B, the probability of event A occurring is $P(A\bigcap B)$ divided by $P(B)$.
 Example: A couple has two children. What is the probability that one of them is a girl and the other is a girl? (I have encountered interviews and written tests)
