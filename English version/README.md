@@ -50,7 +50,7 @@ Submitted MD version chapter: Please check MarkDown
 # 5. More
 
 1. Seek friends, editors, and writers who are willing to continue to improve; if you are interested in cooperation, improve the book (become a co-author).
-  All contributors who submit content will reflect the contributor's personal information in the article (Dalong - West Lake University).
+    All contributors who submit content will reflect the contributor's personal information in the article (Dalong - West Lake University).
 
 2. Contact: Please contact scutjy2015@163.com (the only official email); WeChat Tan:
 
