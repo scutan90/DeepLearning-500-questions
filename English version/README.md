@@ -103,7 +103,7 @@ This was translated with Google Translate and partial human translation. Please 
    2. "Deep Learning 500 Questions" 
       1. please add WeChat Client 1: HQJ199508212176 Client 2: Xuwumin1203 Client 3: tianyuzy
 
-Table of Contents
+# Table of Contents
 
 Chapter 1 Mathematical Foundation 1
 
