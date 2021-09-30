@@ -75,7 +75,11 @@
 
 1.2.1 导数偏导计算 5
 
+<<<<<<< HEAD
 1.2.2 导数和偏导数的区别 6
+=======
+   ![](./qun23.png)
+>>>>>>> parent of c8c06ed (Merge pull request #477 from naah69/master)
 
 1.3 特征值和特征向量 6
 
