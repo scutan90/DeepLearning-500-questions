@@ -137,7 +137,7 @@ Traditional machine learning needs to define some manual features to purposefull
 
 ### 3.2.1 Forward Propagation and Back Propagation?
 
-There are two main types of neural network calculations: foward propagation (FP) acts on the input of each layer, and the output is obtained by layer-by-layer calculation; backward propagation (BP) acts on the output of the network. Calculate the gradient from deep to shallow to update the network parameters.
+There are two main types of neural network calculations: forward propagation (FP) acts on the input of each layer, and the output is obtained by layer-by-layer calculation; backward propagation (BP) acts on the output of the network. Calculate the gradient from deep to shallow to update the network parameters.
 
 ** Forward Propagation**
 
