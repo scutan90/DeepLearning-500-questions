@@ -4,7 +4,7 @@
 
 **负责人（排名不分先后）：**  
 xxx研究生-xxx（xxx）  
-xxx博士生-xxx  
+xxx博士生- 
 xxx-xxx  
 
 
