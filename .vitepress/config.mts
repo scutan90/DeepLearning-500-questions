@@ -17,9 +17,9 @@ export default defineConfig({
             { icon: "github", link: "https://github.com/scutan90/DeepLearning-500-questions" },
         ],
     },
+    ignoreDeadLinks: true,
     markdown: {
         math: true,
-        linkify: false,
     },
     vite: {
         assetsInclude: ["**/*.jpg", "**/*.jpeg", "**/*.bmp", "**/*.JPEG"],
