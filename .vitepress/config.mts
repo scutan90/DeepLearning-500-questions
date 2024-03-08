@@ -19,6 +19,7 @@ export default defineConfig({
     },
     markdown: {
         math: true,
+        linkify: false,
     },
     vite: {
         assetsInclude: ["**/*.jpg", "**/*.jpeg", "**/*.bmp", "**/*.JPEG"],
