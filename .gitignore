@@ -2,3 +2,6 @@
 .DS_Store
 .gitignore
 *.ipynb
+.idea
+.vscode
+node_modules
