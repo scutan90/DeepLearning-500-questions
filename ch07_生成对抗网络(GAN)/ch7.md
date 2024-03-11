@@ -254,7 +254,7 @@ $$
 - 在discriminator的所有层上使用LeakyReLU。
 
 网络结构图如下：
-![CGAN网络结构图](img/ch7/DCGAN%E7%BB%93%E6%9E%84%E5%9B%BE.png)
+![CGAN网络结构图](img/ch7/DCGAN结构图.png)
 
 ### 7.4.3 如何理解GAN中的输入随机噪声？
 
@@ -292,11 +292,11 @@ $$
 $$
 L=-{\rm E}_{x\sim{p_{data}}(x)}[f_w(x)] + {\rm E}_{x\sim{p_g}(x)}[f_w(x)]+\lambda{\rm E}_{x\sim{p_x}(x)}[\lVert\nabla_x(D(x))\rVert_p-1]^2
 由于上式是对每一个梯度进行惩罚，所以不适合使用BN，因为它会引入同个batch中不同样本的相互依赖关系。如果需要的话，可以选择Layer Normalization。实际训练过程中，就可以通过Wasserstein距离来度量模型收敛程度了：
-![Wass距离随迭代次数变化](img/ch7/Wass%E8%B7%9D%E7%A6%BB%E9%9A%8F%E8%BF%AD%E4%BB%A3%E6%AC%A1%E6%95%B0%E5%8F%98%E5%8C%96.png)
+![Wass距离随迭代次数变化](img/ch7/Wass距离随迭代次数变化.png)
 上图纵坐标是Wasserstein距离，横坐标是迭代次数。可以看出，随着迭代的进行，Wasserstein距离趋于收敛，生成图像也趋于稳定。
 $$
 ​	由于上式是对每一个梯度进行惩罚，所以不适合使用BN，因为它会引入同个batch中不同样本的相互依赖关系。如果需要的话，可以选择Layer Normalization。实际训练过程中，就可以通过Wasserstein距离来度量模型收敛程度了：
-![Wass距离随迭代次数变化](img/ch7/Wass%E8%B7%9D%E7%A6%BB%E9%9A%8F%E8%BF%AD%E4%BB%A3%E6%AC%A1%E6%95%B0%E5%8F%98%E5%8C%96.png)
+![Wass距离随迭代次数变化](img/ch7/Wass距离随迭代次数变化.png)
 ​	上图纵坐标是Wasserstein距离，横坐标是迭代次数。可以看出，随着迭代的进行，Wasserstein距离趋于收敛，生成图像也趋于稳定。
 
 ### 7.4.7 LSGAN

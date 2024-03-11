@@ -1,0 +1,7 @@
+pre, mjx-container {
+    overflow-x: auto;
+}
+
+mjx-container {
+    position: static!important;
+}
