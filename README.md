@@ -12,12 +12,12 @@ pnpm install
 
 ## Run
 ```bash
-pnpm docs:dev
+pnpm dev
 ``` 
 
 ## Preview
 ```bash
-pnpm docs:preview
+pnpm preview
 ```
 
 # 京东售卖链接：https://item.jd.com/12785031.html

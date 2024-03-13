@@ -5,8 +5,8 @@
     "vitepress": "1.0.0-rc.45"
   },
   "scripts": {
-    "docs:dev": "vitepress dev --host",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress build && vitepress preview --host --open"
+    "dev": "vitepress dev --host",
+    "build": "vitepress build",
+    "preview": "vitepress build && vitepress preview --host --open"
   }
 }

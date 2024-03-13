@@ -18,7 +18,7 @@ export default function rewrites(froms: ISides, tos: ISides) {
     })
 
     to.forEach((item, i) => {
-        rewrites[`${tos.lang}/${item}.md`] = `${tos.lang}/${from[i]}.md`
+        rewrites[`${item}.md`] = `${from[i]}.md`
     })
 
     return rewrites
