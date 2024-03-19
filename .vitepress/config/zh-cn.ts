@@ -9,7 +9,7 @@ export default defineConfig({
         },
 
         editLink: {
-            pattern: "https://github.com/scutan90/DeepLearning-500-questions/edit/master/index.html",
+            pattern: "https://github.com/scutan90/DeepLearning-500-questions/edit/master/:path",
             text: "在 GitHub 上编辑此页面",
         },
 

@@ -1,5 +1,4 @@
 import { defineConfig } from "vitepress"
-import sidebar from "./zh-cn"
 
 export default defineConfig({
     title: "深度学习500问",
