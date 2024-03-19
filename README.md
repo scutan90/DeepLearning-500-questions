@@ -1,4 +1,25 @@
 
+- [vitepress](https://vitepress.dev)  
+
+## Installation
+- **Node.js:**  [Home Page](https://nodejs.org)
+- **pnpm?:**  [Home Page](https://pnpm.io/zh/)
+
+```bash
+npm install -g pnpm
+pnpm install
+``` 
+
+## Run
+```bash
+pnpm dev
+``` 
+
+## Preview
+```bash
+pnpm preview
+```
+
 # 京东售卖链接：https://item.jd.com/12785031.html
 # 京东商城100多家书店有现货。
 

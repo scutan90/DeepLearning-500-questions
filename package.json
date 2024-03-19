@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
+    "vitepress": "1.0.0-rc.45"
+  },
+  "scripts": {
+    "dev": "vitepress dev --host",
+    "build": "vitepress build",
+    "preview": "vitepress build && vitepress preview --host --open"
+  }
+}
